@@ -74,6 +74,7 @@ const jsonLd = {
       (function () {
         var d = document.documentElement, def = d.getAttribute('data-default'), m = null;
         d.classList.add('js');
+        if (/[?&]confirm\b/.test(location.search)) d.classList.add('show-confirm');
         try { m = localStorage.getItem('pbn-mode'); } catch (e) {}
         if (m !== 'gameday' && m !== 'goldenhour') {
           m = def === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'gameday' : 'goldenhour') : def;

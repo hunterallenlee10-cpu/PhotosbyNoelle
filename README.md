@@ -148,9 +148,9 @@ drive SEO.
 
 ### `{{CONFIRM}}` placeholders
 
-Facts still waiting on Noelle render with a red **{{CONFIRM: ...}}** tag on the private
-preview. The tags disappear automatically when `PUBLIC_LAUNCH=true`, so resolve every one
-before launch. The full list is in the handoff section below.
+Facts still waiting on Noelle are marked in the markup. On the preview they're hidden so the
+demo reads cleanly; add `?confirm` to any URL to show them as red **{{CONFIRM: ...}}** tags.
+They're removed entirely when `PUBLIC_LAUNCH=true`, so resolve every one before launch. The full list is in the handoff section below.
 
 ---
 

@@ -238,6 +238,9 @@ const side = await photo(d.ogPhoto);
         if (body.errors) {
           for (const [k, v] of Object.entries(body.errors)) setError(k, String(v));
           status.textContent = 'Please fix the highlighted fields.';
+        } else if (r.status === 503 || r.status === 404 || r.status === 405) {
+          // Preview build: the inquiry function isn't connected to an inbox yet.
+          status.textContent = 'This is a preview and the form isn\u2019t connected yet, so nothing was sent. For now, DM me on Instagram @noelle.lanham!';
         } else if (r.status === 429) {
           status.textContent = 'That’s a lot of messages in a row. Try again in a few minutes, or DM me on Instagram.';
         } else {

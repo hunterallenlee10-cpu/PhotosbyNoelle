@@ -308,7 +308,10 @@ html { scrollbar-color: var(--fg-2) var(--bg); }
 :root:not(.js) [data-clock] { display: none; }
 
 /* Placeholder marker for facts still waiting on Noelle (preview only). */
-.confirm { text-decoration: underline dotted var(--accent); text-underline-offset: 0.2em; }
+/* Hidden for the client demo; add ?confirm to any URL to show every open question. */
+.confirm-tag { display: none !important; }
+:root.show-confirm .confirm { text-decoration: underline dotted var(--accent); text-underline-offset: 0.2em; }
+:root.show-confirm .confirm-tag { display: inline-block !important; }
 .confirm-tag {
   display: inline-block; margin-left: 0.4em; padding: 0.1em 0.45em; vertical-align: 0.1em;
   font: 700 0.62rem/1.4 var(--font-text); letter-spacing: 0.06em; text-transform: uppercase;

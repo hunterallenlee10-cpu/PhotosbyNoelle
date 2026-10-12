@@ -20,7 +20,7 @@ deploy:
 
 ## `{{CONFIRM}}` placeholders (resolve before launch)
 
-These show as red tags on the preview and disappear at launch:
+On the preview these are hidden for the client demo; add `?confirm` to any URL (e.g. `/?confirm`) to show them as red tags. They disappear entirely at launch:
 
 1. **Inquiry email address**: set `INQUIRY_TO_EMAIL`. Also decide the sender domain for `INQUIRY_FROM_EMAIL`.
 2. **Experience wording**: her home page says "four years of experience", but her About page says she went pro in March 2023. The site says "shooting since 2023". (`src/content/settings.json` → `since`)
