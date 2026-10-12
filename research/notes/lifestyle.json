@@ -1,0 +1,830 @@
+[
+ {
+  "id": "l001",
+  "alt": "A smiling young woman in a navy tee and jeans sits on a brick ledge by a white column, holding open a signed picture book.",
+  "focal": [
+   51,
+   27
+  ],
+  "tags": [
+   "senior",
+   "portrait",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "warm smile, nice keepsake prop"
+ },
+ {
+  "id": "l002",
+  "alt": "A couple laughs nose to nose as he dips her in a grassy field, both backlit by a low golden sun.",
+  "focal": [
+   58,
+   35
+  ],
+  "tags": [
+   "couple",
+   "golden-hour"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 5,
+  "featureReason": "joyful laugh in glowing backlight"
+ },
+ {
+  "id": "l003",
+  "alt": "A smiling graduate in a white off-shoulder dress and bright stoles leans against a carved stone pillar, one red heel kicked up.",
+  "focal": [
+   56,
+   30
+  ],
+  "tags": [
+   "graduation",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "bright colors, playful pose"
+ },
+ {
+  "id": "l004",
+  "alt": "Two graduates in navy gowns stand in a white doorway between tall columns, raising their caps overhead in celebration.",
+  "focal": [
+   50,
+   52
+  ],
+  "tags": [
+   "graduation",
+   "friends",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "symmetrical, celebratory"
+ },
+ {
+  "id": "l005",
+  "alt": "A man in a plaid flannel kisses the cheek of a smiling woman in a white sweater dress and cowboy boots on a dry grassy lawn.",
+  "focal": [
+   55,
+   28
+  ],
+  "tags": [
+   "couple"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "sweet moment, cozy styling"
+ },
+ {
+  "id": "l006",
+  "alt": "A young woman sits in tall grass and kisses the nose of a bay horse, both glowing in warm backlight from a low sun.",
+  "focal": [
+   47,
+   50
+  ],
+  "tags": [
+   "equine",
+   "golden-hour",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 5,
+  "featureReason": "tender moment, dreamy light"
+ },
+ {
+  "id": "l007",
+  "alt": "A smiling young woman in a polka dot dress leans on a white column, a black graduation gown slung over her shoulder.",
+  "focal": [
+   45,
+   22
+  ],
+  "tags": [
+   "graduation",
+   "portrait",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "clean colonnade lines"
+ },
+ {
+  "id": "l008",
+  "alt": "A beaming graduate in a white dress, purple stole, and colorful cords sits on a stone wall and holds her cap high.",
+  "focal": [
+   52,
+   35
+  ],
+  "tags": [
+   "graduation",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "bright, celebratory energy"
+ },
+ {
+  "id": "l009",
+  "alt": "A graduate in a navy cap peeks over a picture book titled \"Junie B. Jones Is a Graduation Girl\", only her eyes showing.",
+  "focal": [
+   50,
+   35
+  ],
+  "tags": [
+   "graduation",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "playful and witty"
+ },
+ {
+  "id": "l010",
+  "alt": "A smiling graduate in a black gown and gold stole stands on a turf field in front of empty bleachers and a brick press box.",
+  "focal": [
+   53,
+   52
+  ],
+  "tags": [
+   "graduation",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "strong setting, small subject"
+ },
+ {
+  "id": "l011",
+  "alt": "A graduate in a white dress and magenta stole looks back over her shoulder with a bright smile in front of arched wooden doors.",
+  "focal": [
+   50,
+   22
+  ],
+  "tags": [
+   "graduation",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "warm over the shoulder smile"
+ },
+ {
+  "id": "l012",
+  "alt": "A woman in a white dress and tan heels walks away holding a copy of \"Oh, the Places You'll Go!\" at her side.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "detail",
+   "graduation"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "charming storytelling detail"
+ },
+ {
+  "id": "l013",
+  "alt": "Two hands clasp tightly over a field of glowing golden grass, delicate bracelets catching the warm backlight.",
+  "focal": [
+   52,
+   52
+  ],
+  "tags": [
+   "detail",
+   "couple",
+   "golden-hour"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "warm, intimate detail"
+ },
+ {
+  "id": "l014",
+  "alt": "Two friends sit cross legged on a green lawn laughing, one in pink pants and the other in a blue \"TEACH\" tee.",
+  "focal": [
+   50,
+   30
+  ],
+  "tags": [
+   "friends",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "genuine laughter between friends"
+ },
+ {
+  "id": "l015",
+  "alt": "A couple rests forehead to forehead, both laughing, his plaid flannel against her cream sweater in soft overcast light.",
+  "focal": [
+   60,
+   32
+  ],
+  "tags": [
+   "couple"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 5,
+  "featureReason": "genuine shared laughter, intimate"
+ },
+ {
+  "id": "l016",
+  "alt": "A smiling young woman in a polka dot dress leans on a tall black post clock with one arm stretched out wide.",
+  "focal": [
+   52,
+   52
+  ],
+  "tags": [
+   "senior",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "fun pose, busy frame"
+ },
+ {
+  "id": "l017",
+  "alt": "A laughing young woman in a blue \"TEACH\" tee and wide leg jeans leans on a navy building sign beside a brick wall.",
+  "focal": [
+   70,
+   37
+  ],
+  "tags": [
+   "senior",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "cheerful, sign dominates"
+ },
+ {
+  "id": "l018",
+  "alt": "A smiling young woman in a polka dot dress stands on a turf field before a grandstand, washed in hazy sun flare.",
+  "focal": [
+   40,
+   55
+  ],
+  "tags": [
+   "senior",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 2,
+  "featureReason": "overexposed haze, stiff pose"
+ },
+ {
+  "id": "l019",
+  "alt": "A man lifts a woman in a patterned sundress as she kicks up one bare foot, both bathed in warm late sun.",
+  "focal": [
+   50,
+   25
+  ],
+  "tags": [
+   "couple",
+   "golden-hour"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "romantic lift, lovely glow"
+ },
+ {
+  "id": "l020",
+  "alt": "A smiling graduate in a white dress hugs a stack of children's books, a handprint painted stole around her neck.",
+  "focal": [
+   52,
+   32
+  ],
+  "tags": [
+   "graduation",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "personal, story-driven portrait"
+ },
+ {
+  "id": "l021",
+  "alt": "A hand holds a navy cap with a \"2026\" tassel charm against a navy gown, red crested stole, and colorful cords.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "detail",
+   "graduation"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "crisp graduation detail"
+ },
+ {
+  "id": "l022",
+  "alt": "Two friends hold up navy tassels with \"2026\" charms, showing matching small cross tattoos on their wrists.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "detail",
+   "friends",
+   "graduation"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "meaningful matching detail"
+ },
+ {
+  "id": "l023",
+  "alt": "A graduate in a white sequined dress looks back over her shoulder, colorful cords draped down her back, before a splashing fountain.",
+  "focal": [
+   55,
+   30
+  ],
+  "tags": [
+   "graduation",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "sparkling fountain backdrop"
+ },
+ {
+  "id": "l024",
+  "alt": "A cheerful young woman in a \"TEACH\" tee sits on a brick wall beside a row of children's books, one arm raised.",
+  "focal": [
+   58,
+   40
+  ],
+  "tags": [
+   "senior",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "upbeat, personal props"
+ },
+ {
+  "id": "l025",
+  "alt": "A smiling young woman in a polka dot dress and gold stole sits on sunlit concrete steps, leaning back on one hand.",
+  "focal": [
+   72,
+   30
+  ],
+  "tags": [
+   "graduation",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "relaxed pose, hazy light"
+ },
+ {
+  "id": "l026",
+  "alt": "A couple kisses in a dramatic dip, her white lace dress flowing, as the sun sets behind trees and water.",
+  "focal": [
+   38,
+   48
+  ],
+  "tags": [
+   "couple",
+   "golden-hour"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 5,
+  "featureReason": "dramatic sunset silhouette, romance"
+ },
+ {
+  "id": "l027",
+  "alt": "A graduate in a white dress and handprint painted stole tosses a red apple, mouth open in delight, on a green lawn.",
+  "focal": [
+   55,
+   25
+  ],
+  "tags": [
+   "graduation",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "fun, full of personality"
+ },
+ {
+  "id": "l028",
+  "alt": "A grinning woman in a cream sweater wraps her arms around a man in a camo cap as he kisses her cheek.",
+  "focal": [
+   62,
+   45
+  ],
+  "tags": [
+   "couple"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 5,
+  "featureReason": "pure joy, natural embrace"
+ },
+ {
+  "id": "l029",
+  "alt": "A smiling graduate in a navy gown, red stole, and cords stands in a white doorway framed by two tall columns.",
+  "focal": [
+   50,
+   40
+  ],
+  "tags": [
+   "graduation",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "classic, symmetrical framing"
+ },
+ {
+  "id": "l030",
+  "alt": "A smiling young woman in a cream \"NICU\" tee with a stethoscope around her neck stands on a sunlit lawn.",
+  "focal": [
+   47,
+   32
+  ],
+  "tags": [
+   "senior",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "warm smile, career story"
+ },
+ {
+  "id": "l031",
+  "alt": "A woman's hands rest clasped around a man's neck as they embrace, a ring visible on her finger.",
+  "focal": [
+   52,
+   35
+  ],
+  "tags": [
+   "detail",
+   "couple"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "quiet intimate detail"
+ },
+ {
+  "id": "l032",
+  "alt": "A graduate in a navy gown with a red stole and colorful cords gazes off to the side in front of a brick building.",
+  "focal": [
+   50,
+   30
+  ],
+  "tags": [
+   "graduation",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "calm, thoughtful portrait"
+ },
+ {
+  "id": "l033",
+  "alt": "A graduate in a white dress and magenta stole tosses her cap and kicks up one heel on wide stone steps.",
+  "focal": [
+   52,
+   48
+  ],
+  "tags": [
+   "graduation",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "joyful toss, grand setting"
+ },
+ {
+  "id": "l034",
+  "alt": "Hands hold open a copy of \"Oh, the Places You'll Go!\" filled with colorful handwritten notes.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "detail",
+   "graduation"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "heartfelt storytelling detail"
+ },
+ {
+  "id": "l035",
+  "alt": "Crossed legs in white slingback heels, a black tassel with a \"2026\" charm dangling from one heel.",
+  "focal": [
+   45,
+   45
+  ],
+  "tags": [
+   "detail",
+   "graduation"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "playful styled detail"
+ },
+ {
+  "id": "l036",
+  "alt": "A woman in a white dress raises joined hands as a man smiles behind her in a sunlit hay field.",
+  "focal": [
+   48,
+   30
+  ],
+  "tags": [
+   "couple",
+   "golden-hour"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "carefree, airy light"
+ },
+ {
+  "id": "l037",
+  "alt": "A young woman in a white dress sits on concrete steps, chin in hand, holding a cap decorated with a photo collage.",
+  "focal": [
+   40,
+   30
+  ],
+  "tags": [
+   "graduation",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "relaxed, personal cap"
+ },
+ {
+  "id": "l038",
+  "alt": "A smiling young woman in a white sundress leans her cheek against a bay horse as sunbeams stream through the trees.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "equine",
+   "golden-hour",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 5,
+  "featureReason": "radiant smile, glowing sunbeams"
+ },
+ {
+  "id": "l039",
+  "alt": "A couple kisses in front of a tall fountain and white stone railing, her heel kicked up behind her.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "couple"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "classic romantic pose"
+ },
+ {
+  "id": "l040",
+  "alt": "A smiling young woman in a polka dot dress glances back, a gold stole and cords held over her shoulder.",
+  "focal": [
+   48,
+   28
+  ],
+  "tags": [
+   "graduation",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "bright, clean portrait"
+ },
+ {
+  "id": "l041",
+  "alt": "Two graduates in white dresses and magenta stoles stand back to back, tipping up green bottles in front of arched doors.",
+  "focal": [
+   52,
+   38
+  ],
+  "tags": [
+   "graduation",
+   "friends"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "playful celebratory pairing"
+ },
+ {
+  "id": "l042",
+  "alt": "Two pairs of cowboy boots stand toe to toe on a gravel road, warm low sun lighting the field behind.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "detail",
+   "couple",
+   "golden-hour"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "rustic storytelling detail"
+ },
+ {
+  "id": "l043",
+  "alt": "Two friends in white dresses walk away down a long colonnade, each raising a navy cap high toward a brick arch.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "graduation",
+   "friends",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 5,
+  "featureReason": "perfect leading lines, celebration"
+ },
+ {
+  "id": "l044",
+  "alt": "A man kisses a woman's cheek as she kicks up a boot in a hay field, the sun setting behind the trees.",
+  "focal": [
+   45,
+   45
+  ],
+  "tags": [
+   "couple",
+   "golden-hour"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "sun flare, sweet kiss"
+ },
+ {
+  "id": "l045",
+  "alt": "A laughing young woman in a gray \"ALUMNI\" sweatshirt swishes a yellow gingham skirt, barefoot on a turf field.",
+  "focal": [
+   43,
+   45
+  ],
+  "tags": [
+   "senior",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "fun, casual energy"
+ },
+ {
+  "id": "l046",
+  "alt": "Two friends in white dresses walk hand in hand down a sunlit colonnade, laughing together.",
+  "focal": [
+   50,
+   30
+  ],
+  "tags": [
+   "friends",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 5,
+  "featureReason": "real laughter, clean symmetry"
+ },
+ {
+  "id": "l047",
+  "alt": "A graduate in a navy gown and red stole kicks up a heel and raises her cap, mouth open in excitement.",
+  "focal": [
+   50,
+   42
+  ],
+  "tags": [
+   "graduation",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "exuberant celebration"
+ },
+ {
+  "id": "l048",
+  "alt": "A young woman in a polka dot dress kicks up a heel with one arm raised on a turf field, washed in sun flare.",
+  "focal": [
+   40,
+   42
+  ],
+  "tags": [
+   "senior",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 2,
+  "featureReason": "overexposed haze"
+ },
+ {
+  "id": "l049",
+  "alt": "A woman laughs with her eyes closed as a man hugs her from behind in a sunlit field with soft lens flare.",
+  "focal": [
+   48,
+   40
+  ],
+  "tags": [
+   "couple",
+   "golden-hour"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "tender laugh, warm haze"
+ },
+ {
+  "id": "l050",
+  "alt": "A smiling young woman in a maroon number 25 jersey sprays sparkling wine across a football field beneath a large stadium sign.",
+  "focal": [
+   65,
+   45
+  ],
+  "tags": [
+   "senior",
+   "campus"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "fun spray, bold color"
+ },
+ {
+  "id": "l051",
+  "alt": "A man kisses a laughing woman's cheek at the edge of a tall dry field, a line of colorful trees behind them.",
+  "focal": [
+   50,
+   48
+  ],
+  "tags": [
+   "couple"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "sweet, subjects small"
+ },
+ {
+  "id": "l052",
+  "alt": "A couple embraces nose to nose as bright sun flares behind them over a green field.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "couple",
+   "golden-hour"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "intimate, strong backlight"
+ },
+ {
+  "id": "l053",
+  "alt": "A smiling graduate in a white dress and handprint painted stole holds \"Oh, the Places You'll Go!\" in a colonnade.",
+  "focal": [
+   50,
+   28
+  ],
+  "tags": [
+   "graduation",
+   "portrait"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "sweet, straightforward portrait"
+ },
+ {
+  "id": "l054",
+  "alt": "A man lifts a woman in a white dress as she smiles down at him, backlit by a low sun over a field.",
+  "focal": [
+   50,
+   35
+  ],
+  "tags": [
+   "couple",
+   "golden-hour"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 4,
+  "featureReason": "romantic lift, warm glow"
+ },
+ {
+  "id": "l055",
+  "alt": "A couple walks hand in hand through a green field, smiling at each other.",
+  "focal": [
+   55,
+   30
+  ],
+  "tags": [
+   "couple"
+  ],
+  "nearDuplicateOf": null,
+  "featureScore": 3,
+  "featureReason": "natural, relaxed walk"
+ }
+]

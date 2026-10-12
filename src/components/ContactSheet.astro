@@ -1,0 +1,143 @@
+---
+// Contact sheet: a justified grid that keeps every photo's own aspect ratio (nothing
+// awkwardly cropped), numbered like frames on a proof sheet. Each thumbnail links to the
+// full-size JPEG (works without JS); with JS it opens the lightbox at /page#frame-012.
+import { getImage } from 'astro:assets';
+import Photo from './Photo.astro';
+import { exifLine, frameNo, smart, type Photo as PhotoData } from '@/lib/content';
+
+interface Props {
+  photos: PhotoData[];
+  /** Unique per page; also the deep-link prefix for non-primary galleries. */
+  gallery: string;
+  /** Primary gallery frames link as #frame-012; others as #<gallery>-012. */
+  primary?: boolean;
+  filters?: boolean;
+  counter?: boolean;
+  label: string;
+  rowHeight?: number;
+}
+const { photos, gallery, primary = false, filters = false, counter = false, label, rowHeight = 300 } = Astro.props;
+const total = photos.length;
+const anchor = (i: number) => (primary ? `frame-${frameNo(i + 1)}` : `${gallery}-${frameNo(i + 1)}`);
+
+const SPORT_LABEL: Record<string, string> = {
+  baseball: 'Baseball', 'field-hockey': 'Field hockey', soccer: 'Soccer', lacrosse: 'Lacrosse',
+  volleyball: 'Volleyball', basketball: 'Basketball', softball: 'Softball', football: 'Football',
+};
+const sportCounts = new Map<string, number>();
+for (const p of photos) if (p.sport && SPORT_LABEL[p.sport]) sportCounts.set(p.sport, (sportCounts.get(p.sport) ?? 0) + 1);
+const chips = [...sportCounts.entries()].filter(([, n]) => n >= 3).sort((a, b) => b[1] - a[1]);
+
+const items = await Promise.all(
+  photos.map(async (p, i) => {
+    const full = await Promise.all(
+      [1280, 1920, 2400].filter((w) => w <= p.width).concat(p.width < 1280 ? [p.width] : []).map((w) => getImage({ src: p.file, width: w, format: 'webp', quality: 80 })),
+    );
+    const href = await getImage({ src: p.file, width: Math.min(1600, p.width), format: 'jpg', quality: 80 });
+    return {
+      p,
+      i,
+      id: anchor(i),
+      href: href.src,
+      srcset: full.map((f) => `${f.src} ${f.attributes.width ?? f.options.width}w`).join(', '),
+    };
+  }),
+);
+const data = items.map(({ p, i, id, srcset }) => ({
+  id,
+  n: frameNo(i + 1),
+  srcset,
+  w: p.width,
+  h: p.height,
+  alt: p.alt,
+  caption: p.caption ? smart(p.caption) : null,
+  exif: exifLine(p),
+  credit: p.credit,
+}));
+---
+<section class="sheet" data-gallery={gallery} data-total={total} aria-label={label} style={`--row-h:${rowHeight}px`}>
+  {((filters && chips.length > 1) || counter) && (
+    <div class="toolbar" data-js-only>
+      {(filters && chips.length > 1) ? (
+        <div class="filters" role="group" aria-label="Filter by sport">
+          <button type="button" class="chip" aria-pressed="true" data-filter="all">All <span class="num">{total}</span></button>
+          {chips.map(([sport, n]) => (
+            <button type="button" class="chip" aria-pressed="false" data-filter={sport}>{SPORT_LABEL[sport]} <span class="num">{n}</span></button>
+          ))}
+        </div>
+      ) : <span></span>}
+      {counter && (
+        <p class="counter num" aria-hidden="true">
+          <span class="lbl">Frame</span> <span data-counter-n>001</span><span class="of"> / {frameNo(total)}</span>
+        </p>
+      )}
+    </div>
+  )}
+  <ol class="grid" role="list">
+    {items.map(({ p, i, id, href }) => {
+      const ar = p.width / p.height;
+      return (
+        <li class="item" id={id} style={`--ar:${ar.toFixed(4)}`} data-sport={p.sport ?? ''} data-index={i}>
+          <a class="link" href={href} aria-describedby={`${id}-n`}>
+            <Photo photo={p} widths={[360, 640, 960, 1280]} sizes={`(max-width: 760px) ${Math.round(ar * 150)}px, ${Math.round(ar * rowHeight)}px`} />
+          </a>
+          <span class="n num" id={`${id}-n`}><span class="visually-hidden">Frame </span>{frameNo(i + 1)}</span>
+        </li>
+      );
+    })}
+  </ol>
+  <span class="finder" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <script type="application/json" data-gallery-data set:html={JSON.stringify(data)} />
+</section>
+
+<style>
+  .sheet { position: relative; background: var(--sheet); color: var(--sheet-fg); padding: clamp(10px, 1.6vw, 22px); }
+  .grid { display: flex; flex-wrap: wrap; gap: 26px clamp(8px, 1vw, 14px); list-style: none; padding: 0; margin: 0; }
+  .grid::after { content: ''; flex-grow: 260; } /* last row stretches a little, never into giant tiles */
+  .item { position: relative; flex-grow: calc(var(--ar) * 100); flex-basis: calc(var(--ar) * var(--row-h)); max-width: 100%; }
+  .item[hidden] { display: none; }
+  .link { display: block; color: inherit; }
+  .link :global(.ph) { width: 100%; }
+  .link:focus-visible { outline-color: var(--sheet-fg); outline-offset: 4px; }
+  .n { position: absolute; left: 0; top: calc(100% + 5px); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--sheet-fg-2); }
+  .toolbar {
+    position: sticky; top: var(--header-h); z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    margin: calc(clamp(10px, 1.6vw, 22px) * -1) calc(clamp(10px, 1.6vw, 22px) * -1) 16px; padding: 10px clamp(10px, 1.6vw, 22px);
+    background: var(--sheet);
+  }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px;
+    font-weight: 700; font-size: 0.92rem; box-shadow: inset 0 0 0 1.5px currentColor; color: var(--sheet-fg);
+  }
+  .chip .num { font-size: 0.85rem; color: var(--sheet-fg-2); }
+  .chip[aria-pressed='true'] { background: var(--sheet-fg); color: var(--sheet); }
+  .chip[aria-pressed='true'] .num { color: inherit; }
+  .counter { margin: 0 0 0 auto; font-size: 1.1rem; line-height: 1; white-space: nowrap; }
+  .counter [data-counter-n] { font-size: 2rem; color: var(--accent); }
+  .counter .lbl { font-family: var(--font-text); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .counter .of { color: var(--sheet-fg-2); }
+  .finder { position: absolute; z-index: 4; left: 0; top: 0; width: 0; height: 0; pointer-events: none; opacity: 0; color: var(--sheet-fg); transition: opacity 200ms; }
+  .finder i { position: absolute; width: 18px; height: 18px; border: 0 solid currentColor; }
+  .finder i:nth-child(1) { top: -8px; left: -8px; border-top-width: 2px; border-left-width: 2px; }
+  .finder i:nth-child(2) { top: -8px; right: -8px; border-top-width: 2px; border-right-width: 2px; }
+  .finder i:nth-child(3) { bottom: -8px; left: -8px; border-bottom-width: 2px; border-left-width: 2px; }
+  .finder i:nth-child(4) { bottom: -8px; right: -8px; border-bottom-width: 2px; border-right-width: 2px; }
+  .finder.on { opacity: 1; }
+  @media (max-width: 760px) {
+    .sheet { --row-h: 150px !important; padding: 8px; margin-inline: calc(var(--gutter) * -1); }
+    .grid { gap: 24px 6px; }
+    .toolbar { margin: -8px -8px 12px; padding: 8px; }
+    .filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: 4px; }
+    .chip { flex: none; }
+    .counter { font-size: 0.95rem; }
+    .counter [data-counter-n] { font-size: 1.5rem; }
+  }
+  @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) { .finder { display: none; } }
+</style>
+
+<script>
+  import { initSheet } from '@/scripts/sheet';
+  document.querySelectorAll<HTMLElement>('[data-gallery]').forEach(initSheet);
+</script>

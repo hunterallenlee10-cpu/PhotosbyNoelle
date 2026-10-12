@@ -1,0 +1,1185 @@
+[
+ {
+  "id": "noelle-portrait",
+  "alt": "Noelle smiling in tortoiseshell glasses and a rust cardigan, holding a Canon camera on a set of wooden stairs.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "portrait",
+   "camera",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": "camera",
+  "keepScore": 5,
+  "note": "Confirmed Noelle; ideal hero/portrait."
+ },
+ {
+  "id": "a001",
+  "alt": "A wedding party in front of a red brick church, women in matching green dresses holding orange and white bouquets around the bride and groom.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "wedding",
+   "church",
+   "group"
+  ],
+  "noelleLikely": true,
+  "funFact": "wedding",
+  "keepScore": 4,
+  "note": "Likely her own wedding (groom matches the man in a007/a032/a047); bride not confirmed. wedding party photo by a different photographer; credit may be 'Robin Skievaski Photography', confirm which file."
+ },
+ {
+  "id": "a002",
+  "alt": "Noelle takes a selfie on a pro baseball field in a red staff polo with her camera, beside two smiling coworkers.",
+  "focal": [
+   35,
+   50
+  ],
+  "tags": [
+   "baseball",
+   "camera",
+   "selfie",
+   "work"
+  ],
+  "noelleLikely": true,
+  "funFact": "camera",
+  "keepScore": 5,
+  "note": "Clear Noelle at work with camera; great story photo."
+ },
+ {
+  "id": "a003",
+  "alt": "Four young women in matching white shirts decorated with bees and the words BIG and LIL pose in front of a glass door.",
+  "focal": [
+   45,
+   45
+  ],
+  "tags": [
+   "friends",
+   "group"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Woman second from left in glasses is probably Noelle; sorority big/little style event."
+ },
+ {
+  "id": "a004",
+  "alt": "A woman in a green swimsuit and mask swims through deep blue water toward a shark under a boat.",
+  "focal": [
+   40,
+   50
+  ],
+  "tags": [
+   "ocean",
+   "shark",
+   "swimming",
+   "underwater"
+  ],
+  "noelleLikely": true,
+  "funFact": "ocean",
+  "keepScore": 5,
+  "note": "Perfect for the swims-with-sharks fact; face not visible, so likely but not confirmable."
+ },
+ {
+  "id": "a005",
+  "alt": "Three young women stand together on an artificial turf field under a bright blue sky on a sunny fall day.",
+  "focal": [
+   48,
+   48
+  ],
+  "tags": [
+   "friends",
+   "field"
+  ],
+  "noelleLikely": false,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "Small figures; Noelle not identifiable."
+ },
+ {
+  "id": "a006",
+  "alt": "Noelle and a friend smile through a yellow Randolph-Macon College photo frame in a leafy backyard.",
+  "focal": [
+   58,
+   62
+  ],
+  "tags": [
+   "rmc",
+   "college",
+   "friends"
+  ],
+  "noelleLikely": true,
+  "funFact": "rmc",
+  "keepScore": 5,
+  "note": "Clear Noelle in glasses with RMC branding."
+ },
+ {
+  "id": "a007",
+  "alt": "Noelle and a young man in knit beanies smile for a selfie in front of a tree covered in green and blue lights.",
+  "focal": [
+   55,
+   55
+  ],
+  "tags": [
+   "christmas",
+   "couple",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 4,
+  "note": "Clear Noelle in glasses; man recurs across couple photos (do not name)."
+ },
+ {
+  "id": "a008",
+  "alt": "Five young women hold hands overhead on a turf football field in front of the Randolph-Macon College stadium building.",
+  "focal": [
+   50,
+   65
+  ],
+  "tags": [
+   "rmc",
+   "college",
+   "friends",
+   "field"
+  ],
+  "noelleLikely": false,
+  "funFact": "rmc",
+  "keepScore": 4,
+  "note": "Strong RMC signage; faces small, Noelle not identifiable. Taken 2026-05-16, likely senior/graduation shoot."
+ },
+ {
+  "id": "a009",
+  "alt": "Two young women take a sunny selfie on a gravel trail, one in sunglasses and a coral t-shirt.",
+  "focal": [
+   35,
+   45
+  ],
+  "tags": [
+   "friends",
+   "trail",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "Selfie-taker may be Noelle in sunglasses; not confirmable."
+ },
+ {
+  "id": "a010",
+  "alt": "A flash snapshot of three friends at night, a young woman in glasses and a cap wearing a Randolph-Macon shirt in the middle.",
+  "focal": [
+   52,
+   45
+  ],
+  "tags": [
+   "rmc",
+   "friends",
+   "film"
+  ],
+  "noelleLikely": true,
+  "funFact": "rmc",
+  "keepScore": 3,
+  "note": "Woman in glasses probably Noelle; goofy faces, film look."
+ },
+ {
+  "id": "a011",
+  "alt": "A brown and black dog with a red collar lies upside down on carpet, tongue out, looking at the camera.",
+  "focal": [
+   50,
+   55
+  ],
+  "tags": [
+   "dog",
+   "pet"
+  ],
+  "noelleLikely": false,
+  "funFact": "ruby",
+  "keepScore": 5,
+  "note": "Charming dog shot; confirm it is Ruby."
+ },
+ {
+  "id": "a012",
+  "alt": "Three young women take a selfie at sunset in a parking lot, one wearing a cap and tinted glasses.",
+  "focal": [
+   50,
+   50
+  ],
+  "tags": [
+   "friends",
+   "sunset",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Woman in cap and glasses may be Noelle; lenses tinted, not certain."
+ },
+ {
+  "id": "a013",
+  "alt": "A three-panel collage of a young woman in a yellow skirt embracing an airman in blue uniform at a military graduation.",
+  "focal": [
+   50,
+   50
+  ],
+  "tags": [
+   "military",
+   "family",
+   "collage"
+  ],
+  "noelleLikely": false,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "Faces hidden; collage format and another person's military ceremony. Ask before using."
+ },
+ {
+  "id": "a014",
+  "alt": "Two young women take a selfie on a shaded paved trail, one sticking her tongue out with sunglasses on her head.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "friends",
+   "walk",
+   "selfie",
+   "trail"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Selfie-taker resembles Noelle without glasses; confirm. Fits the walking theme."
+ },
+ {
+  "id": "a015",
+  "alt": "Two young women in sunglasses pose on the warning track of a minor league baseball field on a sunny day.",
+  "focal": [
+   47,
+   48
+  ],
+  "tags": [
+   "baseball",
+   "friends",
+   "stadium"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Woman in red with credential lanyard may be Noelle; sunglasses, not certain."
+ },
+ {
+  "id": "a016",
+  "alt": "Four friends in winter coats stand on a snowy field at night, a woman in glasses wearing a Yellow Jackets baseball sweatshirt.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "snow",
+   "friends",
+   "baseball",
+   "college"
+  ],
+  "noelleLikely": true,
+  "funFact": "rmc",
+  "keepScore": 4,
+  "note": "Woman in glasses probably Noelle; yellow jacket logo is RMC Baseball style, no full name visible."
+ },
+ {
+  "id": "a017",
+  "alt": "A young couple sits by a backyard fire pit at night roasting marshmallows, the man kissing the woman's head.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "couple",
+   "campfire",
+   "night"
+  ],
+  "noelleLikely": false,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Woman does not clearly match Noelle; confirm who this is."
+ },
+ {
+  "id": "a018",
+  "alt": "Noelle grins in a gray sweatshirt for a sidewalk selfie while a laughing friend poses behind her near railroad tracks.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "friends",
+   "walk",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 4,
+  "note": "Clear Noelle in glasses; fun energy."
+ },
+ {
+  "id": "a019",
+  "alt": "A bride and groom kiss in a dip as guests hold sparklers in front of a brick church with a white steeple at dusk.",
+  "focal": [
+   50,
+   60
+  ],
+  "tags": [
+   "wedding",
+   "church",
+   "sparklers"
+  ],
+  "noelleLikely": true,
+  "funFact": "wedding",
+  "keepScore": 4,
+  "note": "Beautiful send-off; likely her wedding, bride not confirmed. wedding party photo by a different photographer; credit may be 'Robin Skievaski Photography', confirm which file."
+ },
+ {
+  "id": "a020",
+  "alt": "A brown dog rests its chin on a knee in a cozy living room with a lit Christmas tree behind it.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "dog",
+   "pet",
+   "christmas"
+  ],
+  "noelleLikely": false,
+  "funFact": "ruby",
+  "keepScore": 5,
+  "note": "Sweet dog photo; confirm it is Ruby."
+ },
+ {
+  "id": "a021",
+  "alt": "A smiling graduate in cap and gown holds a Randolph-Macon College diploma cover between an older woman and a man in red plaid.",
+  "focal": [
+   50,
+   40
+  ],
+  "tags": [
+   "graduation",
+   "rmc",
+   "family"
+  ],
+  "noelleLikely": true,
+  "funFact": "graduation",
+  "keepScore": 4,
+  "note": "Graduate likely Noelle without glasses (same graduate as a042/a054/a059); confirm. Do not label the adults."
+ },
+ {
+  "id": "a022",
+  "alt": "Two young women press their cheeks together for a close, smiling selfie outside a brick building.",
+  "focal": [
+   45,
+   50
+  ],
+  "tags": [
+   "friends",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "Brunette resembles Noelle; tight crop, not certain."
+ },
+ {
+  "id": "a023",
+  "alt": "A young couple in knit beanies smiles in front of a giant lit Christmas tree surrounded by city skyscrapers at night.",
+  "focal": [
+   50,
+   60
+  ],
+  "tags": [
+   "christmas",
+   "city",
+   "couple",
+   "travel"
+  ],
+  "noelleLikely": true,
+  "funFact": "travel",
+  "keepScore": 4,
+  "note": "Same couple as a007; woman matches Noelle without glasses. Do not claim the city."
+ },
+ {
+  "id": "a024",
+  "alt": "Two young women hug in front of a polka dot birthday banner, a beer bottle in the foreground.",
+  "focal": [
+   45,
+   45
+  ],
+  "tags": [
+   "party",
+   "friends"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 1,
+  "note": "PRIVATE? Banner shows other people's names; beer bottle in frame. Woman in glasses may be Noelle."
+ },
+ {
+  "id": "a025",
+  "alt": "A young woman with long hair holds a camera overhead in the middle of a college baseball team huddle in black and gold uniforms.",
+  "focal": [
+   50,
+   40
+  ],
+  "tags": [
+   "baseball",
+   "camera",
+   "work",
+   "team"
+  ],
+  "noelleLikely": true,
+  "funFact": "camera",
+  "keepScore": 5,
+  "note": "Shows her RMC Baseball media role; back of head only, so likely but unconfirmed."
+ },
+ {
+  "id": "a026",
+  "alt": "A young woman in headphones and sunglasses takes a selfie on a sunny paved path lined with grass and trees.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "walk",
+   "podcast",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 4,
+  "note": "Illustrates her podcast walks; resembles Noelle, sunglasses so not confirmed."
+ },
+ {
+  "id": "a027",
+  "alt": "Noelle holds a Canon camera with two fellow staff at a ballpark, one in a FredNats Baseball shirt, fans in the stands behind.",
+  "focal": [
+   40,
+   40
+  ],
+  "tags": [
+   "baseball",
+   "camera",
+   "work",
+   "stadium"
+  ],
+  "noelleLikely": true,
+  "funFact": "camera",
+  "keepScore": 5,
+  "note": "Clear Noelle with camera at a game."
+ },
+ {
+  "id": "a028",
+  "alt": "A brown dog sits on carpet wearing an oversized blue Miller Lite USAF cap pulled over its eyes.",
+  "focal": [
+   55,
+   55
+  ],
+  "tags": [
+   "dog",
+   "pet",
+   "funny"
+  ],
+  "noelleLikely": false,
+  "funFact": "ruby",
+  "keepScore": 4,
+  "note": "Funny; beer logo on cap. Confirm it is Ruby."
+ },
+ {
+  "id": "a029",
+  "alt": "Three friends take a selfie on a paved bike path, one holding a holiday coffee cup and another in sunglasses.",
+  "focal": [
+   50,
+   40
+  ],
+  "tags": [
+   "friends",
+   "walk",
+   "selfie"
+  ],
+  "noelleLikely": false,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "Noelle not clearly identifiable."
+ },
+ {
+  "id": "a030",
+  "alt": "Two young women raise their arms on a rocky coastal trail high above a wide blue ocean.",
+  "focal": [
+   50,
+   70
+  ],
+  "tags": [
+   "ocean",
+   "hike",
+   "coast",
+   "friends"
+  ],
+  "noelleLikely": false,
+  "funFact": "hawaii",
+  "keepScore": 4,
+  "note": "Great island-scenery shot; figures too small to identify."
+ },
+ {
+  "id": "a031",
+  "alt": "Two young women make playful poses, one in glasses wearing a pink Bride to be sash.",
+  "focal": [
+   60,
+   45
+  ],
+  "tags": [
+   "bachelorette",
+   "friends",
+   "wedding"
+  ],
+  "noelleLikely": true,
+  "funFact": "wedding",
+  "keepScore": 3,
+  "note": "Woman in glasses with sash probably Noelle (pre-wedding); flash snapshot."
+ },
+ {
+  "id": "a032",
+  "alt": "Noelle in glasses and a Jackets cap takes a beach selfie with a young man at sunset beneath green cliffs.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "beach",
+   "couple",
+   "sunset",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": "hawaii",
+  "keepScore": 5,
+  "note": "Clear Noelle; gorgeous island beach setting."
+ },
+ {
+  "id": "a033",
+  "alt": "Noelle sits on a sunny turf field giving a thumbs up, brick campus buildings behind her.",
+  "focal": [
+   65,
+   40
+  ],
+  "tags": [
+   "campus",
+   "field",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 4,
+  "note": "Clear Noelle; campus likely RMC but no visible signage."
+ },
+ {
+  "id": "a034",
+  "alt": "Two young women take a car selfie, one in sunglasses and the other holding a basket of yellow flowers and a card.",
+  "focal": [
+   50,
+   40
+  ],
+  "tags": [
+   "friends",
+   "car",
+   "flowers"
+  ],
+  "noelleLikely": true,
+  "funFact": "rmc",
+  "keepScore": 3,
+  "note": "Sweatshirt shows partial Randolph-Macon lettering; selfie-taker may be Noelle in sunglasses."
+ },
+ {
+  "id": "a035",
+  "alt": "Women in matching green dresses raise orange bouquets in the air beside the bride in front of a brick church.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "wedding",
+   "church",
+   "group"
+  ],
+  "noelleLikely": true,
+  "funFact": "wedding",
+  "keepScore": 4,
+  "note": "Same wedding as a001; bride likely Noelle, unconfirmed. wedding party photo by a different photographer; credit may be 'Robin Skievaski Photography', confirm which file."
+ },
+ {
+  "id": "a036",
+  "alt": "A smiling young man bends to pet a black and tan dog on a sunny wooden backyard deck.",
+  "focal": [
+   45,
+   55
+  ],
+  "tags": [
+   "dog",
+   "pet",
+   "backyard"
+  ],
+  "noelleLikely": false,
+  "funFact": "ruby",
+  "keepScore": 4,
+  "note": "Black and tan dog fits the pit/rottweiler mix; confirm it is Ruby. Do not name the man."
+ },
+ {
+  "id": "a037",
+  "alt": "Two young women hug at night, one holding a gray French bulldog against her shoulder.",
+  "focal": [
+   50,
+   50
+  ],
+  "tags": [
+   "friends",
+   "dog",
+   "night"
+  ],
+  "noelleLikely": false,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "Not Ruby (French bulldog); flash snapshot."
+ },
+ {
+  "id": "a038",
+  "alt": "Noelle in glasses and rust pants poses with a friend beside a campus fountain under shady trees.",
+  "focal": [
+   45,
+   30
+  ],
+  "tags": [
+   "friends",
+   "campus",
+   "fountain"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 4,
+  "note": "Clear Noelle; bright, cheerful."
+ },
+ {
+  "id": "a039",
+  "alt": "Three young women pose together at an outdoor sporting event, fans and netting behind them.",
+  "focal": [
+   50,
+   40
+  ],
+  "tags": [
+   "friends",
+   "game"
+  ],
+  "noelleLikely": false,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "Noelle not clearly identifiable."
+ },
+ {
+  "id": "a040",
+  "alt": "A large group of college students poses together in a yellow-walled meeting room in front of a projector screen.",
+  "focal": [
+   50,
+   60
+  ],
+  "tags": [
+   "group",
+   "college"
+  ],
+  "noelleLikely": false,
+  "funFact": null,
+  "keepScore": 1,
+  "note": "Big group; she isn't identifiable."
+ },
+ {
+  "id": "a041",
+  "alt": "A young woman in a white cap and American flag tank top takes a bathroom mirror selfie with a smiling young man.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "couple",
+   "mirror",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Woman resembles Noelle without glasses (same man as couple photos). Bathroom setting feels casual."
+ },
+ {
+  "id": "a042",
+  "alt": "A graduate in cap and gown holding a diploma cover stands with five friends in sundresses outside a brick building.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "graduation",
+   "friends"
+  ],
+  "noelleLikely": true,
+  "funFact": "graduation",
+  "keepScore": 3,
+  "note": "Same graduate as a021; likely Noelle, confirm."
+ },
+ {
+  "id": "a043",
+  "alt": "Three young women pose barefoot in front of a twenty first birthday banner, one in glasses and a red sweatshirt.",
+  "focal": [
+   40,
+   40
+  ],
+  "tags": [
+   "party",
+   "friends"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "PRIVATE? Banner shows other people's names. Woman in glasses may be Noelle."
+ },
+ {
+  "id": "a044",
+  "alt": "A young couple smiles cheek to cheek in a selfie while standing in clear turquoise ocean water.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "ocean",
+   "couple",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": "ocean",
+  "keepScore": 4,
+  "note": "Woman matches Noelle without glasses; man shirtless."
+ },
+ {
+  "id": "a045",
+  "alt": "A young man in a Jackets cap hugs a laughing young woman from behind for a selfie on a sandy beach.",
+  "focal": [
+   40,
+   40
+  ],
+  "tags": [
+   "beach",
+   "couple",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": "hawaii",
+  "keepScore": 4,
+  "note": "Woman matches Noelle without glasses; joyful."
+ },
+ {
+  "id": "a046",
+  "alt": "A young woman in a yellow sweatshirt and an older woman in a blue bucket hat smile for a car selfie.",
+  "focal": [
+   45,
+   50
+  ],
+  "tags": [
+   "family",
+   "car",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Young woman resembles Noelle; do not label the older woman's relationship."
+ },
+ {
+  "id": "a047",
+  "alt": "A young woman in a red striped sweater and a young man in a hoodie smile on a beach at sunrise.",
+  "focal": [
+   50,
+   55
+  ],
+  "tags": [
+   "beach",
+   "couple",
+   "sunrise",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": "hawaii",
+  "keepScore": 5,
+  "note": "Woman matches Noelle without glasses; lovely island beach backdrop."
+ },
+ {
+  "id": "a048",
+  "alt": "A smiling young woman holds a takeout bag and drink beside a uniformed restaurant employee behind the counter.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "food",
+   "fun"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "Resembles Noelle; restaurant worker is a third party. Ask about the story."
+ },
+ {
+  "id": "a049",
+  "alt": "Three young women in sundresses hug in a grassy backyard, the one in the middle wearing a brown floral dress.",
+  "focal": [
+   50,
+   40
+  ],
+  "tags": [
+   "friends",
+   "backyard"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Woman in brown floral dress recurs (a052/a055/a060); possibly Noelle, confirm."
+ },
+ {
+  "id": "a050",
+  "alt": "Three young women smile together on a couch in a cozy dorm room in a film snapshot.",
+  "focal": [
+   52,
+   45
+  ],
+  "tags": [
+   "friends",
+   "dorm",
+   "film"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "Center woman in peach shirt resembles Noelle; cluttered room."
+ },
+ {
+  "id": "a051",
+  "alt": "A young woman, an older man and a woman smile for a selfie in a restaurant decorated with whiskey barrel lids.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "family",
+   "restaurant",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Young woman resembles Noelle; whiskey signage. Do not label relationships."
+ },
+ {
+  "id": "a052",
+  "alt": "Two young women embrace in a backyard, one in a brown floral dress and one in a white sundress.",
+  "focal": [
+   50,
+   35
+  ],
+  "tags": [
+   "friends",
+   "backyard"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Woman in brown floral dress possibly Noelle; confirm."
+ },
+ {
+  "id": "a053",
+  "alt": "A bride in a lace-edged veil laughs while dancing with a man in a gray suit at a wedding reception.",
+  "focal": [
+   45,
+   35
+  ],
+  "tags": [
+   "wedding",
+   "dance",
+   "reception"
+  ],
+  "noelleLikely": true,
+  "funFact": "wedding",
+  "keepScore": 4,
+  "note": "Warm moment; bride likely Noelle, unconfirmed. Do not name the man. wedding party photo by a different photographer; credit may be 'Robin Skievaski Photography', confirm which file."
+ },
+ {
+  "id": "a054",
+  "alt": "A graduate in a black cap and honor cords makes a playful pose with her hands framing her eyes in a crowded gym.",
+  "focal": [
+   50,
+   40
+  ],
+  "tags": [
+   "graduation",
+   "selfie"
+  ],
+  "noelleLikely": true,
+  "funFact": "graduation",
+  "keepScore": 5,
+  "note": "Fun personality shot; likely Noelle (2026 grad, taken 2026-05-24), confirm."
+ },
+ {
+  "id": "a055",
+  "alt": "Three young women stand together in front of tall green shrubs on an overcast summer day.",
+  "focal": [
+   50,
+   55
+  ],
+  "tags": [
+   "friends"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "Middle woman in brown floral dress possibly Noelle; plain composition."
+ },
+ {
+  "id": "a056",
+  "alt": "A group of teens and adults, including a young child, stand in a line on a sandy lakeshore in front of wooded hills.",
+  "focal": [
+   50,
+   50
+  ],
+  "tags": [
+   "group",
+   "lake"
+  ],
+  "noelleLikely": false,
+  "funFact": null,
+  "keepScore": 1,
+  "note": "PRIVATE? Includes a young child and other teens; she isn't identifiable. Possibly same day as a058."
+ },
+ {
+  "id": "a057",
+  "alt": "Two smiling graduates in caps, gowns and honor cords stand in a shallow fountain as the crowd gathers behind them.",
+  "focal": [
+   45,
+   35
+  ],
+  "tags": [
+   "graduation",
+   "friends",
+   "fountain"
+  ],
+  "noelleLikely": true,
+  "funFact": "graduation",
+  "keepScore": 4,
+  "note": "Fun tradition shot; one graduate may be Noelle, confirm."
+ },
+ {
+  "id": "a058",
+  "alt": "A young man in a camp t-shirt lowers a young woman back into a calm lake during a baptism.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "faith",
+   "baptism",
+   "lake"
+  ],
+  "noelleLikely": false,
+  "funFact": "church",
+  "keepScore": 4,
+  "note": "Meaningful faith moment; woman's face mostly covered. Ask before publishing."
+ },
+ {
+  "id": "a059",
+  "alt": "A smiling graduate in a yellow dress and colorful honor cords tips her black cap in front of a brick building.",
+  "focal": [
+   50,
+   30
+  ],
+  "tags": [
+   "graduation",
+   "portrait"
+  ],
+  "noelleLikely": true,
+  "funFact": "graduation",
+  "keepScore": 5,
+  "note": "Polished portrait; same graduate as a054, likely Noelle, confirm."
+ },
+ {
+  "id": "a060",
+  "alt": "A young woman in a brown floral dress hugs a smiling woman beside an older man in a blue shirt in a backyard.",
+  "focal": [
+   45,
+   30
+  ],
+  "tags": [
+   "family",
+   "backyard"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Woman in brown dress possibly Noelle; do not label relationships."
+ },
+ {
+  "id": "a061",
+  "alt": "A bride and groom laugh while serving a slice from a tall, ornate white wedding cake in front of red curtains.",
+  "focal": [
+   60,
+   25
+  ],
+  "tags": [
+   "wedding",
+   "cake",
+   "reception"
+  ],
+  "noelleLikely": true,
+  "funFact": "wedding",
+  "keepScore": 4,
+  "note": "Groom matches man in couple photos; bride likely Noelle, unconfirmed. wedding party photo by a different photographer; credit may be 'Robin Skievaski Photography', confirm which file."
+ },
+ {
+  "id": "a062",
+  "alt": "A smiling young woman in a blue t-shirt poses with a young man carrying a guitar case under an arched doorway.",
+  "focal": [
+   45,
+   40
+  ],
+  "tags": [
+   "friends"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "Resembles Noelle; third party is the main subject."
+ },
+ {
+  "id": "a063",
+  "alt": "A young woman in a tiara shows off an engagement ring while a friend in an olive hoodie points at it, balloons behind.",
+  "focal": [
+   45,
+   35
+  ],
+  "tags": [
+   "party",
+   "friends",
+   "engagement"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Left woman resembles Noelle; it is someone else's engagement moment."
+ },
+ {
+  "id": "a064",
+  "alt": "A flash snapshot of two young women, one smiling and the other with eyes closed sticking out her tongue.",
+  "focal": [
+   55,
+   45
+  ],
+  "tags": [
+   "friends",
+   "film",
+   "funny"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 2,
+  "note": "Right woman resembles Noelle; tight crop."
+ },
+ {
+  "id": "a065",
+  "alt": "Palm trees silhouette against a pink and gold sunset over a quiet sandy beach and gentle waves.",
+  "focal": [
+   60,
+   50
+  ],
+  "tags": [
+   "beach",
+   "sunset",
+   "palms",
+   "scenery"
+  ],
+  "noelleLikely": false,
+  "funFact": "hawaii",
+  "keepScore": 5,
+  "note": "Beautiful island scenery."
+ },
+ {
+  "id": "a066",
+  "alt": "Three friends hug on a riverside path at sunrise, golden light glowing over the water behind them.",
+  "focal": [
+   50,
+   45
+  ],
+  "tags": [
+   "friends",
+   "walk",
+   "sunrise",
+   "river"
+  ],
+  "noelleLikely": true,
+  "funFact": null,
+  "keepScore": 3,
+  "note": "Middle woman in glasses may be Noelle; small faces. Fits the walking theme."
+ },
+ {
+  "id": "a067",
+  "alt": "A flash snapshot of three friends at night, a young woman in glasses and a cap wearing a Randolph-Macon shirt in the middle.",
+  "focal": [
+   40,
+   45
+  ],
+  "tags": [
+   "rmc",
+   "friends",
+   "film"
+  ],
+  "noelleLikely": true,
+  "funFact": "rmc",
+  "keepScore": 3,
+  "note": "Same night as a010; woman in glasses probably Noelle."
+ },
+ {
+  "id": "a068",
+  "alt": "A bride poses with a curly-haired young man in a gray sweater at a reception while a guest takes a phone photo.",
+  "focal": [
+   40,
+   35
+  ],
+  "tags": [
+   "wedding",
+   "reception"
+  ],
+  "noelleLikely": true,
+  "funFact": "wedding",
+  "keepScore": 3,
+  "note": "Bride likely Noelle, unconfirmed; phone in corner. wedding party photo by a different photographer; credit may be 'Robin Skievaski Photography', confirm which file."
+ },
+ {
+  "id": "a069",
+  "alt": "A faint rainbow arcs over green mountains and a shoreline, seen from the deep blue ocean.",
+  "focal": [
+   55,
+   55
+  ],
+  "tags": [
+   "ocean",
+   "rainbow",
+   "mountains",
+   "scenery"
+  ],
+  "noelleLikely": false,
+  "funFact": "hawaii",
+  "keepScore": 5,
+  "note": "Gorgeous island scenery from the water."
+ }
+]

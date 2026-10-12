@@ -1,0 +1,33 @@
+---
+import Base from '@/layouts/Base.astro';
+import Scripture from '@/components/Scripture.astro';
+import StoryBlock from '@/components/StoryBlock.astro';
+import ContactSheet from '@/components/ContactSheet.astro';
+import { category, page, photos } from '@/lib/content';
+
+const { data } = await page('sports');
+const all = await category('sports');
+const stories = await Promise.all(
+  data.stories!.map(async (s) => ({ ...s, photos: await photos(s.photos) })),
+);
+---
+<Base title={data.title} description={data.description} og="sports" mode={data.mode} current="sports">
+  <h1 class="visually-hidden">Sports photography by Noelle Lanham</h1>
+  <Scripture text={data.verse!.text} reference={data.verse!.ref} intro={data.opener} />
+
+  {stories.map((s, i) => <StoryBlock id={s.id} heading={s.heading} body={s.body} photos={s.photos} flip={i % 2 === 1} />)}
+
+  <section class="wrap gallery" aria-labelledby="every-frame">
+    <div class="head">
+      <h2 class="display d-m" id="every-frame">{data.galleryHeading}</h2>
+      <p class="num count">{all.length} frames</p>
+    </div>
+    <ContactSheet photos={all} gallery="sports" primary filters counter label="Sports gallery" />
+  </section>
+</Base>
+
+<style>
+  .gallery { padding-block: var(--s-8); }
+  .head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: var(--s-5); flex-wrap: wrap; }
+  .count { font-size: 1.4rem; color: var(--fg-2); }
+</style>

@@ -15,6 +15,12 @@ for (const w of widths.split(',').map(Number)) {
   for (const t of targets) {
     const url = /^https?:/.test(t) ? t : 'file://' + path.resolve(t);
     await page.goto(url, { waitUntil: 'networkidle' });
+    if (process.env.FULL) {
+      // Walk the page so lazy images load, then return to the top.
+      const h = await page.evaluate(() => document.documentElement.scrollHeight);
+      for (let y = 0; y < h; y += 600) { await page.evaluate((yy) => window.scrollTo(0, yy), y); await page.waitForTimeout(120); }
+      await page.evaluate(() => window.scrollTo(0, 0));
+    }
     await page.waitForTimeout(Number(process.env.WAIT || 600));
     const name = (process.env.PREFIX || '') + (/^https?:/.test(t) ? (new URL(t).pathname.replace(/\/$/, '').replace(/\//g, '_') || 'home') : path.basename(t, '.html'));
     const file = path.join(out, `${name}-${w}.png`);

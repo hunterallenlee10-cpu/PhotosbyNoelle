@@ -1,0 +1,113 @@
+---
+import Base from '@/layouts/Base.astro';
+import BurstHero from '@/components/BurstHero.astro';
+import TwoWorlds from '@/components/TwoWorlds.astro';
+import ContactSheet from '@/components/ContactSheet.astro';
+import KindWords from '@/components/KindWords.astro';
+import Photo from '@/components/Photo.astro';
+import CropMarks from '@/components/CropMarks.astro';
+import Confirm from '@/components/Confirm.astro';
+import Icon from '@/components/Icon.astro';
+import { category, page, photo, photos, settings, testimonials } from '@/lib/content';
+import { render } from 'astro:content';
+
+const entry = await page('home');
+const d = { ...entry.data, hero: entry.data.hero!, worlds: entry.data.worlds!, selected: entry.data.selected!, intro: entry.data.intro!, kindWords: entry.data.kindWords!, instagram: entry.data.instagram!, closing: entry.data.closing! };
+const { Content } = await render(entry);
+const s = await settings();
+const sportsAll = await category('sports');
+const lifestyleAll = await category('lifestyle');
+const burst = await photos(d.hero.burst);
+const featured = [...sportsAll, ...lifestyleAll].filter((p) => p.featured);
+// Keep the curated interleaved order from the manifest merge script.
+const order = ['s036', 'l015', 's054', 'l043', 's068', 'l002', 's047', 'l006', 's074', 'l028', 's035', 'l046', 's056', 'l038', 's075'];
+featured.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+const portrait = await photo(d.intro.photo);
+const allKind = await testimonials();
+const kind = await Promise.all(
+  d.kindWords.ids.map(async (id) => {
+    const t = allKind.find((k) => k.id === id)!;
+    return { ...t, image: await photo(t.photo) };
+  }),
+);
+---
+<Base title={d.title} description={d.description} og="home" mode={d.mode} overlayHeader>
+  <BurstHero frames={burst} sub={d.hero.sub} total={sportsAll.length} />
+
+  <TwoWorlds
+    sports={{ photo: await photo(d.worlds.sports.photo), line: d.worlds.sports.line, count: sportsAll.length }}
+    lifestyle={{ photo: await photo(d.worlds.lifestyle.photo), line: d.worlds.lifestyle.line, count: lifestyleAll.length }}
+    cities={s.cities}
+  />
+
+  <section class="selected wrap" aria-labelledby="selected-h">
+    <div class="sel-head">
+      <h2 class="display d-l" id="selected-h">{d.selected.heading}</h2>
+      <p class="aside">{d.selected.aside}</p>
+    </div>
+    <ContactSheet photos={featured} gallery="selected" label="Selected frames" rowHeight={280} />
+    <p class="sel-links">
+      <a href="/sports" class="link-arrow"><span>All sports frames</span><Icon name="arrow-right" /></a>
+      <a href="/lifestyle" class="link-arrow"><span>All lifestyle frames</span><Icon name="arrow-right" /></a>
+    </p>
+  </section>
+
+  <section class="intro wrap" aria-labelledby="intro-h">
+    <figure class="portrait crop-frame" data-reveal>
+      <Photo photo={portrait} sizes="(max-width: 760px) 80vw, 30vw" widths={[480, 720, 960, 1200]} ratio="4 / 5" />
+      <CropMarks inset="-12px" size="24px" color="var(--accent)" />
+    </figure>
+    <div class="intro-text" data-reveal>
+      <h2 class="display d-m" id="intro-h">{d.intro.heading}</h2>
+      <div class="prose lead-prose"><Content /></div>
+      <p class="since num"><Confirm note={s.since.confirm ?? ''}>{s.since.label}</Confirm></p>
+      <a href="/about" class="link-arrow"><span>{d.intro.link}</span><Icon name="arrow-right" /></a>
+    </div>
+  </section>
+
+  <KindWords items={kind} heading={d.kindWords.heading} />
+
+  <section class="ig wrap" aria-labelledby="ig-h">
+    <h2 class="label muted" id="ig-h">{d.instagram.heading}</h2>
+    <a href={s.instagram.url} class="display ig-link" rel="me noopener" target="_blank">
+      <Icon name="instagram-logo" />{s.instagram.handle}<span class="visually-hidden"> on Instagram (opens in a new tab)</span>
+    </a>
+  </section>
+
+  <section class="closing" aria-labelledby="close-h">
+    <div class="wrap closing-inner">
+      <h2 class="display d-l" id="close-h">{d.closing.heading}</h2>
+      <a href="/inquire" class="btn btn-primary big">{d.closing.button}<Icon name="arrow-right" /></a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .selected { padding-block: var(--s-9) var(--s-8); }
+  .sel-head { display: flex; align-items: end; gap: clamp(12px, 3vw, 40px); flex-wrap: wrap; margin-bottom: var(--s-6); }
+  .aside { font-family: var(--font-display); font-style: italic; font-stretch: 112%; font-weight: 500; color: var(--accent-text); font-size: clamp(1.1rem, 2vw, 1.5rem); transform: rotate(-3deg); transform-origin: left bottom; padding-bottom: 0.4em; }
+  .sel-links { display: flex; gap: var(--s-6); flex-wrap: wrap; margin-top: var(--s-5); }
+
+  .intro { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: clamp(32px, 7vw, 120px); align-items: center; padding-block: var(--s-8); }
+  .portrait { position: relative; max-width: 460px; }
+  .intro-text { display: grid; gap: var(--s-5); justify-items: start; }
+  .lead-prose { font-size: var(--fs-lg); }
+  .since { font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--fg-2); }
+
+  .ig { padding-block: var(--s-7); border-top: 2px solid var(--line); display: grid; gap: var(--s-3); }
+  .ig-link { display: inline-flex; align-items: center; gap: 0.25em; font-size: calc(clamp(2.2rem, 7.5vw, 6.6rem) * var(--d-scale)); text-decoration: none; width: fit-content; max-width: 100%; overflow-wrap: anywhere; }
+  .ig-link :global(.icon) { width: 0.8em; height: 0.8em; color: var(--accent); flex: none; }
+  .ig-link:hover { color: var(--accent-text); }
+
+  .closing { background: var(--accent); color: var(--on-accent); }
+  .closing-inner { padding-block: var(--s-8); display: grid; gap: var(--s-6); justify-items: start; }
+  .closing h2 { max-width: 16ch; }
+  .closing .btn { --btn-bg: var(--on-accent); --btn-fg: var(--accent); }
+  .closing .btn:hover { --btn-bg: var(--fg); --btn-fg: var(--bg); }
+  .big { min-height: 60px; padding: 0 2em; font-size: 1.1rem; }
+
+  @media (max-width: 760px) {
+    .intro { grid-template-columns: 1fr; }
+    .portrait { max-width: 78%; }
+  }
+</style>

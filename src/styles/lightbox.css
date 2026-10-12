@@ -1,0 +1,41 @@
+/* Lightbox (built by src/scripts/lightbox.ts). Always on stadium ink so every photo
+   sits on a neutral dark field, whichever lighting state the page is in. */
+.lightbox {
+  --lb-bg: 1;
+  position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none;
+  margin: 0; padding: 0; border: 0;
+  background: rgb(8 12 20 / calc(0.97 * var(--lb-bg)));
+  color: #eef2f6;
+  display: grid; grid-template-rows: auto 1fr auto;
+  overscroll-behavior: contain;
+}
+.lightbox:not([open]) { display: none; }
+.lightbox::backdrop { background: transparent; }
+:root.lb-open { overflow: hidden; }
+.lb-top { display: flex; align-items: center; justify-content: space-between; padding: max(10px, env(safe-area-inset-top)) clamp(12px, 3vw, 32px) 0; }
+.lb-count { font-size: 1.05rem; color: #9fabbd; }
+.lb-n { font-size: 2.2rem; color: #ff4b3a; line-height: 1; }
+.lb-btn {
+  display: grid; place-items: center; width: 52px; height: 52px; color: #eef2f6;
+  background: rgb(20 28 44 / 0.6); transition: background-color 200ms;
+}
+.lb-btn:hover { background: #eef2f6; color: #0b111d; }
+.lb-btn svg { width: 24px; height: 24px; }
+.lb-btn:focus-visible { outline: 3px solid #ff4b3a; outline-offset: 2px; }
+.lb-stage { position: relative; display: grid; place-items: center; min-height: 0; padding: 12px clamp(12px, 6vw, 96px); overflow: hidden; touch-action: none; }
+.lb-frame { position: relative; display: block; max-width: 100%; max-height: 100%; }
+.lb-frame img { width: 100%; height: 100%; object-fit: contain; user-select: none; -webkit-user-drag: none; transform-origin: 50% 50%; cursor: zoom-in; }
+.is-zoomed .lb-frame img { cursor: grab; }
+.lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); }
+.lb-prev { left: clamp(8px, 2vw, 28px); }
+.lb-next { right: clamp(8px, 2vw, 28px); }
+.lb-cap { padding: 10px clamp(16px, 3vw, 32px) max(18px, env(safe-area-inset-bottom)); display: grid; gap: 4px; justify-items: center; text-align: center; min-height: 84px; }
+.lb-text { max-width: 70ch; font-size: 0.98rem; color: #eef2f6; }
+.lb-exif { font-size: 0.78rem; color: #9fabbd; letter-spacing: 0.06em; white-space: pre; }
+@media (max-width: 760px) {
+  .lb-stage { padding: 6px 0; }
+  .lb-prev, .lb-next { top: auto; bottom: 8px; transform: none; width: 48px; height: 48px; }
+  .lb-stage { padding-bottom: 64px; }
+  .lb-text { font-size: 0.92rem; }
+  .lb-exif { white-space: normal; }
+}

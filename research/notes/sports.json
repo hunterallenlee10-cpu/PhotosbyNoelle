@@ -1,0 +1,1264 @@
+[
+  {
+    "id": "s001",
+    "alt": "Volleyball player in a black number 12 jersey roars with clenched fists after a point as fans watch from the bleachers.",
+    "focal": [
+      70,
+      28
+    ],
+    "tags": [
+      "celebration",
+      "emotion"
+    ],
+    "sport": "volleyball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "raw emotion, slightly busy crowd"
+  },
+  {
+    "id": "s002",
+    "alt": "Dylan Crews, Washington Nationals right fielder, flashes a wide grin behind mirrored sunglasses with glove and ball in hand at his Minor League debut.",
+    "focal": [
+      53,
+      22
+    ],
+    "tags": [
+      "portrait"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "named pro, warm portrait"
+  },
+  {
+    "id": "s003",
+    "alt": "Lacrosse player flips upside down with legs in the air after a hard collision, helmet planted on the turf beside his stick.",
+    "focal": [
+      40,
+      72
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "lacrosse",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "dramatic, unusual body shape"
+  },
+  {
+    "id": "s004",
+    "alt": "Baseball pitcher in a black and gold jersey leaps off the mound screaming with his glove at his chest after a big out.",
+    "focal": [
+      45,
+      15
+    ],
+    "tags": [
+      "celebration",
+      "emotion"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "huge emotion, cluttered background"
+  },
+  {
+    "id": "s005",
+    "alt": "Tattooed fan in a tank top and star-spangled hat throws his head back and cheers, can in hand, amid a packed grandstand.",
+    "focal": [
+      52,
+      25
+    ],
+    "tags": [
+      "crowd"
+    ],
+    "sport": "other",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "fun crowd character, busy"
+  },
+  {
+    "id": "s006",
+    "alt": "Baseball player in a black and gold jersey smiles broadly while holding his batting helmet out at his side.",
+    "focal": [
+      69,
+      32
+    ],
+    "tags": [
+      "portrait"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "pleasant candid, plain moment"
+  },
+  {
+    "id": "s007",
+    "alt": "Soccer goalkeeper in pink gloves beams while hugging a teammate wearing a captain armband after the game.",
+    "focal": [
+      53,
+      25
+    ],
+    "tags": [
+      "celebration",
+      "emotion"
+    ],
+    "sport": "soccer",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "genuine joy, clean background"
+  },
+  {
+    "id": "s008",
+    "alt": "Baseball players in red caps lean on the dugout rail as one in mirrored sunglasses blows a bubble gum bubble.",
+    "focal": [
+      46,
+      18
+    ],
+    "tags": [
+      "dugout",
+      "team"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "playful dugout character"
+  },
+  {
+    "id": "s009",
+    "alt": "Baseball infielder in a blue practice shirt crouches low with his glove ready, shuffling into fielding position on red turf.",
+    "focal": [
+      52,
+      18
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 2,
+    "featureReason": "practice drill, low drama"
+  },
+  {
+    "id": "s010",
+    "alt": "Field hockey player wraps the goalkeeper in a yellow jersey and blue cap in a joyful hug under the night lights.",
+    "focal": [
+      45,
+      25
+    ],
+    "tags": [
+      "celebration",
+      "emotion"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "warm embrace, busy edges"
+  },
+  {
+    "id": "s011",
+    "alt": "Field hockey players in white jerseys rush together shouting in celebration after a goal, sticks still in hand.",
+    "focal": [
+      48,
+      18
+    ],
+    "tags": [
+      "celebration",
+      "team"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "clear goal celebration"
+  },
+  {
+    "id": "s012",
+    "alt": "Baseball fielder in an orange jersey cocks the ball to throw against a glowing backdrop of autumn trees.",
+    "focal": [
+      64,
+      22
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "lovely fall color, routine throw"
+  },
+  {
+    "id": "s013",
+    "alt": "Lacrosse player in goggles and a white number 18 jersey sprints upfield cradling a yellow ball in her stick.",
+    "focal": [
+      60,
+      17
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "lacrosse",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "sharp, ball visible"
+  },
+  {
+    "id": "s014",
+    "alt": "Baseball player in a flag headband bites a cigar while pouring cans over his head during a soaking clubhouse celebration.",
+    "focal": [
+      52,
+      40
+    ],
+    "tags": [
+      "celebration",
+      "emotion"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "great energy, s081 is cleaner"
+  },
+  {
+    "id": "s015",
+    "alt": "Field hockey teammates in black jerseys stand arm in arm, all grinning in warm afternoon light.",
+    "focal": [
+      52,
+      28
+    ],
+    "tags": [
+      "team",
+      "emotion"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "warm light, real smiles"
+  },
+  {
+    "id": "s016",
+    "alt": "Field hockey player in a black number 25 jersey runs with her stick low, mouthguard in, tracking the play.",
+    "focal": [
+      54,
+      15
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "clean but no ball"
+  },
+  {
+    "id": "s017",
+    "alt": "Close view of a baseball player's hands cradling three scuffed baseballs against a soft blue sky.",
+    "focal": [
+      55,
+      45
+    ],
+    "tags": [
+      "detail"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "quiet detail shot"
+  },
+  {
+    "id": "s018",
+    "alt": "Field hockey players leap into a hug as smiling teammates swarm around them in a postgame celebration.",
+    "focal": [
+      50,
+      18
+    ],
+    "tags": [
+      "celebration",
+      "team"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "jubilant team moment"
+  },
+  {
+    "id": "s019",
+    "alt": "Baseball pitcher in a gold cap and black jersey strides off the mound with the ball cocked behind his head.",
+    "focal": [
+      60,
+      22
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "strong delivery pose"
+  },
+  {
+    "id": "s020",
+    "alt": "Baseball player in a red cap smiles and flashes a peace sign during pregame on the field.",
+    "focal": [
+      50,
+      23
+    ],
+    "tags": [
+      "portrait"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "friendly but posed"
+  },
+  {
+    "id": "s021",
+    "alt": "Field hockey player in a white jersey bends low to drive the ball, framed by autumn trees.",
+    "focal": [
+      40,
+      26
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "stick on ball, fall backdrop"
+  },
+  {
+    "id": "s022",
+    "alt": "Baseball player with eye black laughs while carrying his batting helmet back toward the dugout.",
+    "focal": [
+      55,
+      17
+    ],
+    "tags": [
+      "portrait",
+      "emotion"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "nice smile, plain moment"
+  },
+  {
+    "id": "s023",
+    "alt": "Baseball fielder in a cream practice shirt releases a throw, the ball hanging in the air beside him.",
+    "focal": [
+      68,
+      20
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "ball frozen, practice setting"
+  },
+  {
+    "id": "s024",
+    "alt": "Baseball infielder in a gold cap and sunglasses plants his feet and fires a throw across the diamond.",
+    "focal": [
+      58,
+      32
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "solid action, flat light"
+  },
+  {
+    "id": "s025",
+    "alt": "Baseball teammates leap for high fives at home plate under stadium lights as the crowd looks on.",
+    "focal": [
+      47,
+      40
+    ],
+    "tags": [
+      "celebration",
+      "team"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "great night energy, crowded frame"
+  },
+  {
+    "id": "s026",
+    "alt": "Soccer player in a gold and white striped jersey winds up to strike the ball while pointing upfield.",
+    "focal": [
+      38,
+      50
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "soccer",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "foot about to meet ball"
+  },
+  {
+    "id": "s027",
+    "alt": "Baseball fan in a red shirt holds his cap high overhead while a packed sunny grandstand cheers around him.",
+    "focal": [
+      46,
+      30
+    ],
+    "tags": [
+      "crowd"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "good crowd energy, busy"
+  },
+  {
+    "id": "s028",
+    "alt": "Baseball runner in a pinstriped number 1 jersey kicks up a leg and raises his hand while rounding the bases.",
+    "focal": [
+      40,
+      18
+    ],
+    "tags": [
+      "celebration",
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "expressive trot, clean dirt background"
+  },
+  {
+    "id": "s029",
+    "alt": "Soccer players in white jerseys laugh and jog toward each other to celebrate, one wearing a captain armband.",
+    "focal": [
+      72,
+      18
+    ],
+    "tags": [
+      "celebration",
+      "emotion"
+    ],
+    "sport": "soccer",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "big laugh, busy background"
+  },
+  {
+    "id": "s030",
+    "alt": "Baseball player in orange-lensed sunglasses forms a heart with his hands toward the stands.",
+    "focal": [
+      40,
+      38
+    ],
+    "tags": [
+      "portrait",
+      "emotion"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "sweet gesture, soft focus"
+  },
+  {
+    "id": "s031",
+    "alt": "Lacrosse player in a gold-trimmed helmet cuts across the turf with his stick ready, brick wall behind him.",
+    "focal": [
+      76,
+      17
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "lacrosse",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "sharp, routine movement"
+  },
+  {
+    "id": "s032",
+    "alt": "Soccer player in maroon outraces an opponent in white to the ball in front of empty bleachers.",
+    "focal": [
+      52,
+      45
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "soccer",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "clear duel, empty stands"
+  },
+  {
+    "id": "s033",
+    "alt": "Soccer player in a pink pinnie shouts encouragement from the bench with her arms spread wide.",
+    "focal": [
+      57,
+      30
+    ],
+    "tags": [
+      "emotion"
+    ],
+    "sport": "soccer",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "strong expression, sideline story"
+  },
+  {
+    "id": "s034",
+    "alt": "Baseball player in a blue practice shirt fires a throw, the ball already airborne above his head.",
+    "focal": [
+      60,
+      24
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "ball in frame, practice"
+  },
+  {
+    "id": "s035",
+    "alt": "Baseball pitcher in a pinstriped number 9 jersey and gold cap screams with fists clenched after a key out.",
+    "focal": [
+      49,
+      20
+    ],
+    "tags": [
+      "emotion",
+      "celebration"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 5,
+    "featureReason": "peak emotion, head-on and sharp"
+  },
+  {
+    "id": "s036",
+    "alt": "Baseball team erupts as a player hoists a championship trophy under the night lights amid raised arms.",
+    "focal": [
+      49,
+      22
+    ],
+    "tags": [
+      "celebration",
+      "team"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 5,
+    "featureReason": "trophy moment, pure joy"
+  },
+  {
+    "id": "s037",
+    "alt": "Field hockey player in black controls the ball as a defender in white lunges in to challenge.",
+    "focal": [
+      30,
+      45
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "clear duel, flat moment"
+  },
+  {
+    "id": "s038",
+    "alt": "Field hockey goalkeeper in a yellow number 54 jersey and full pads is wrapped in a smiling teammate's hug at night.",
+    "focal": [
+      38,
+      10
+    ],
+    "tags": [
+      "celebration",
+      "emotion"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "tender moment, goalie gear"
+  },
+  {
+    "id": "s039",
+    "alt": "Baseball first baseman leaps off the bag, glove stretched high, as the throw sails in.",
+    "focal": [
+      60,
+      18
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "ball in frame, busy fence"
+  },
+  {
+    "id": "s040",
+    "alt": "Baseball catcher in a black mask and chest protector stares intently through the cage of the batting net.",
+    "focal": [
+      48,
+      42
+    ],
+    "tags": [
+      "portrait"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "intense eyes, layered netting"
+  },
+  {
+    "id": "s041",
+    "alt": "Baseball pitcher in pinstripes puffs his cheeks on the follow-through, back leg swinging high.",
+    "focal": [
+      33,
+      23
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "full extension, clean background"
+  },
+  {
+    "id": "s042",
+    "alt": "Field hockey player in black dives low to reach the ball as an opponent in white closes in.",
+    "focal": [
+      28,
+      45
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "committed lunge, ball visible"
+  },
+  {
+    "id": "s043",
+    "alt": "Lacrosse players in white and maroon reach high with crossed sticks battling for a loose ball.",
+    "focal": [
+      52,
+      30
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "lacrosse",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "intense contest, good faces"
+  },
+  {
+    "id": "s044",
+    "alt": "Field hockey player in a yellow headband bends low to control the ball, lit against a dark night background.",
+    "focal": [
+      45,
+      30
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "clean dark background, sharp"
+  },
+  {
+    "id": "s045",
+    "alt": "Baseball runner in a red helmet laughs while slapping hands with his coach at first base.",
+    "focal": [
+      30,
+      12
+    ],
+    "tags": [
+      "emotion",
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "genuine laugh, clean frame"
+  },
+  {
+    "id": "s046",
+    "alt": "Baseball players laugh and shout as champagne pours over a teammate's head in a drenched clubhouse celebration.",
+    "focal": [
+      52,
+      40
+    ],
+    "tags": [
+      "celebration",
+      "team"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "joyful, camera in foreground"
+  },
+  {
+    "id": "s047",
+    "alt": "Baseball batter jerks away as an inside pitch zips toward his shoulder, bat still in hand.",
+    "focal": [
+      55,
+      45
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 5,
+    "featureReason": "decisive split second, ball visible"
+  },
+  {
+    "id": "s048",
+    "alt": "Close view of a gradient batting glove as a player tightens the strap against an overcast sky.",
+    "focal": [
+      55,
+      55
+    ],
+    "tags": [
+      "detail"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "bold detail, simple"
+  },
+  {
+    "id": "s049",
+    "alt": "Baseball batter in a camouflage jersey and red helmet waits in the box with the bat cocked high.",
+    "focal": [
+      38,
+      40
+    ],
+    "tags": [
+      "portrait",
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "focused look, busy stands"
+  },
+  {
+    "id": "s050",
+    "alt": "Field hockey player in a black number 24 jersey stretches her stick toward an orange ball.",
+    "focal": [
+      55,
+      20
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 2,
+    "featureReason": "distracting truck behind"
+  },
+  {
+    "id": "s051",
+    "alt": "Baseball pitcher in a camouflage jersey lifts his front leg high in his windup, glove raised.",
+    "focal": [
+      68,
+      20
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "crisp windup, signage behind"
+  },
+  {
+    "id": "s052",
+    "alt": "Elijah Green, 2022 fifth overall draft pick, shouts with joy in the dugout after a Low-A home run as teammates greet him.",
+    "focal": [
+      51,
+      36
+    ],
+    "tags": [
+      "celebration",
+      "dugout"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 5,
+    "featureReason": "named star, explosive joy"
+  },
+  {
+    "id": "s053",
+    "alt": "Baseball runner in a camouflage jersey and red helmet rounds third base at full speed.",
+    "focal": [
+      74,
+      15
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "clean, routine moment"
+  },
+  {
+    "id": "s054",
+    "alt": "Joey Gallo, Washington Nationals first baseman, follows through on a home run swing at the Fredericksburg Nationals stadium as the ball leaves the bat.",
+    "focal": [
+      45,
+      30
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 5,
+    "featureReason": "named star, ball off the bat"
+  },
+  {
+    "id": "s055",
+    "alt": "Field hockey teammates in white jerseys laugh and point toward the sideline while celebrating under the lights.",
+    "focal": [
+      44,
+      18
+    ],
+    "tags": [
+      "celebration",
+      "emotion"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "bright smiles, dark background"
+  },
+  {
+    "id": "s056",
+    "alt": "Volleyball player in a black number 12 jersey screams in triumph as a grinning teammate grabs him and fans cheer.",
+    "focal": [
+      32,
+      18
+    ],
+    "tags": [
+      "celebration",
+      "emotion"
+    ],
+    "sport": "volleyball",
+    "nearDuplicateOf": null,
+    "featureScore": 5,
+    "featureReason": "explosive emotion, two faces"
+  },
+  {
+    "id": "s057",
+    "alt": "Baseball infielder in a light blue jersey with red script throws across the diamond, ball cocked overhead.",
+    "focal": [
+      55,
+      17
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "clean but routine throw"
+  },
+  {
+    "id": "s058",
+    "alt": "Maddie Anderson, Class of 2025, in maroon steers the ball along the sideline past a defender at the VHSL Field Hockey State Championship.",
+    "focal": [
+      68,
+      25
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "named athlete, state final"
+  },
+  {
+    "id": "s059",
+    "alt": "Dylan Crews, Washington Nationals right fielder, grins in the dugout at the Fredericksburg Nationals stadium holding a cup with an insect perched on it.",
+    "focal": [
+      50,
+      30
+    ],
+    "tags": [
+      "dugout",
+      "portrait"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "named pro, charming story"
+  },
+  {
+    "id": "s060",
+    "alt": "Field hockey player in a black number 10 jersey waves with a big smile as teammates celebrate around her.",
+    "focal": [
+      60,
+      22
+    ],
+    "tags": [
+      "celebration",
+      "team"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "happy team, good light"
+  },
+  {
+    "id": "s061",
+    "alt": "Field hockey player in a white number 11 jersey with long braids smiles while jogging with teammates.",
+    "focal": [
+      46,
+      30
+    ],
+    "tags": [
+      "portrait",
+      "emotion"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "sweet smile, cluttered edges"
+  },
+  {
+    "id": "s062",
+    "alt": "Baseball players in camouflage jerseys celebrate on the field, one grinning and gesturing toward the camera.",
+    "focal": [
+      51,
+      26
+    ],
+    "tags": [
+      "celebration",
+      "team"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "lively postgame scene"
+  },
+  {
+    "id": "s063",
+    "alt": "Soccer goalkeeper in orange gloves catches a ball above her head during warmups behind a fence.",
+    "focal": [
+      50,
+      22
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "soccer",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "clean catch, fence in front"
+  },
+  {
+    "id": "s064",
+    "alt": "Close view of gloved hands gripping a worn wooden bat resting on a player's shoulder.",
+    "focal": [
+      48,
+      40
+    ],
+    "tags": [
+      "detail"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "textured detail"
+  },
+  {
+    "id": "s065",
+    "alt": "Basketball guard in a gold number 11 jersey drives baseline while a defender in blue slides to cut him off.",
+    "focal": [
+      45,
+      25
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "basketball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "clean one on one"
+  },
+  {
+    "id": "s066",
+    "alt": "Volleyball player in a white number 2 jersey stretches over the net to block the ball at its peak.",
+    "focal": [
+      40,
+      25
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "volleyball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "contact at the net"
+  },
+  {
+    "id": "s067",
+    "alt": "Soccer player in a white jersey and knee brace swings her leg back to strike the ball.",
+    "focal": [
+      40,
+      50
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "soccer",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "good form, parking lot behind"
+  },
+  {
+    "id": "s068",
+    "alt": "Soccer teammates in maroon leap into each other's arms, one laughing, in a joyful goal celebration.",
+    "focal": [
+      48,
+      30
+    ],
+    "tags": [
+      "celebration",
+      "emotion"
+    ],
+    "sport": "soccer",
+    "nearDuplicateOf": null,
+    "featureScore": 5,
+    "featureReason": "airborne hug, pure joy"
+  },
+  {
+    "id": "s069",
+    "alt": "Soccer players in light blue and white jostle for the ball in a tight night battle.",
+    "focal": [
+      42,
+      45
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "soccer",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "good duel, dim background"
+  },
+  {
+    "id": "s070",
+    "alt": "Baseball infielder throws while airborne, the ball just released and hanging beside him.",
+    "focal": [
+      45,
+      22
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "ball frozen, clean background"
+  },
+  {
+    "id": "s071",
+    "alt": "Field hockey captain in maroon sets in a low ready stance with an intense stare, orange ball at her stick.",
+    "focal": [
+      52,
+      25
+    ],
+    "tags": [
+      "action",
+      "portrait"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "intense focus, sharp"
+  },
+  {
+    "id": "s072",
+    "alt": "Baseball player sprints straight toward the camera with puffed cheeks during a timed run on misty turf.",
+    "focal": [
+      49,
+      22
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "nice mist, small subject"
+  },
+  {
+    "id": "s073",
+    "alt": "Soccer teammates in light blue jerseys smile and reach for a high five while jogging back after a goal.",
+    "focal": [
+      56,
+      28
+    ],
+    "tags": [
+      "celebration"
+    ],
+    "sport": "soccer",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "pleasant, low intensity"
+  },
+  {
+    "id": "s074",
+    "alt": "Field hockey player in a white number 18 jersey shrieks with joy while celebrating with a teammate.",
+    "focal": [
+      62,
+      15
+    ],
+    "tags": [
+      "celebration",
+      "emotion"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 5,
+    "featureReason": "huge joy, clean and sharp"
+  },
+  {
+    "id": "s075",
+    "alt": "Soccer player in a green number 13 jersey lines up a kick beneath a blazing purple and orange sunset.",
+    "focal": [
+      50,
+      55
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "soccer",
+    "nearDuplicateOf": null,
+    "featureScore": 5,
+    "featureReason": "dramatic sunset sky"
+  },
+  {
+    "id": "s076",
+    "alt": "Field hockey team in white jerseys huddles on the sideline beneath a vivid pink and purple evening sky.",
+    "focal": [
+      50,
+      60
+    ],
+    "tags": [
+      "team"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "stunning sky, small faces"
+  },
+  {
+    "id": "s077",
+    "alt": "Field hockey players in black and white collide while battling for the ball as rain falls.",
+    "focal": [
+      40,
+      46
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "physical duel, rain texture"
+  },
+  {
+    "id": "s078",
+    "alt": "Maddie Anderson, Class of 2025, smiles as she lifts the ball into the air at the VHSL Field Hockey State Championship.",
+    "focal": [
+      55,
+      50
+    ],
+    "tags": [
+      "action"
+    ],
+    "sport": "field-hockey",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "named athlete, ball airborne"
+  },
+  {
+    "id": "s079",
+    "alt": "Baseball teammates mob a player under the lights, one shouting as a splash of water hits his head.",
+    "focal": [
+      58,
+      28
+    ],
+    "tags": [
+      "celebration",
+      "team"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "great energy, back to camera"
+  },
+  {
+    "id": "s080",
+    "alt": "Baseball player in sunglasses blows a big bubble gum bubble while leaning on the dugout rail.",
+    "focal": [
+      62,
+      30
+    ],
+    "tags": [
+      "dugout"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 4,
+    "featureReason": "fun, clean bokeh"
+  },
+  {
+    "id": "s081",
+    "alt": "Baseball player in mirrored sunglasses shouts as he pours cans over his head in a soaking clubhouse celebration.",
+    "focal": [
+      50,
+      52
+    ],
+    "tags": [
+      "celebration",
+      "emotion"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 5,
+    "featureReason": "frozen splash, peak joy"
+  },
+  {
+    "id": "s082",
+    "alt": "Elijah Green, 2022 fifth overall draft pick, rests a bat on his shoulder in a red helmet during batting practice at the Fredericksburg Nationals stadium.",
+    "focal": [
+      46,
+      22
+    ],
+    "tags": [
+      "portrait"
+    ],
+    "sport": "baseball",
+    "nearDuplicateOf": null,
+    "featureScore": 3,
+    "featureReason": "named player, calm portrait"
+  }
+]

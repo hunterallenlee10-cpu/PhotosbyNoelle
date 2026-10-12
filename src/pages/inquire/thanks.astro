@@ -1,0 +1,21 @@
+---
+// Where a no-JavaScript form submission lands after it sends.
+import Base from '@/layouts/Base.astro';
+import Icon from '@/components/Icon.astro';
+import { page, settings } from '@/lib/content';
+const { data } = await page('inquire');
+const d = { ...data, success: data.success!, heading: data.heading!, lead: data.lead! };
+const s = await settings();
+---
+<Base title={`Thank you | Photos by Noelle`} description={d.success.body} og="inquire" mode={d.mode} current="inquire" noindex>
+  <section class="wrap done">
+    <p class="num check" aria-hidden="true">001 / 001</p>
+    <h1 class="display d-l">{d.success.heading}</h1>
+    <p class="lead">{d.success.body}</p>
+    <a href={s.instagram.url} class="btn btn-ghost" rel="me noopener" target="_blank"><Icon name="instagram-logo" />{d.success.instagram}<span class="visually-hidden"> (opens in a new tab)</span></a>
+  </section>
+</Base>
+<style>
+  .done { min-height: calc(100svh - var(--header-h)); display: grid; align-content: center; justify-items: start; gap: var(--s-5); padding-block: var(--s-8); }
+  .check { font-size: 1.4rem; color: var(--accent-text); }
+</style>

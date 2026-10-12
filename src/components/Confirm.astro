@@ -1,0 +1,7 @@
+---
+// Marks a fact still waiting on Noelle. Shows a visible tag on the private preview only.
+import { launched } from '@/lib/content';
+interface Props { note: string }
+const { note } = Astro.props;
+---
+{launched ? <slot /> : <span class="confirm" title={`{{CONFIRM: ${note}}}`}><slot /><span class="confirm-tag">{`{{CONFIRM: ${note}}}`}</span></span>}

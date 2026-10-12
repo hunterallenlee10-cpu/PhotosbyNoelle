@@ -1,0 +1,12 @@
+---
+// Phosphor (bold) icons, inlined at build time. Decorative unless a label is given.
+interface Props { name: string; label?: string; class?: string }
+const { name, label, class: cls } = Astro.props;
+const icons = import.meta.glob<string>('/node_modules/@phosphor-icons/core/assets/bold/*-bold.svg', { query: '?raw', import: 'default', eager: true });
+const raw = icons[`/node_modules/@phosphor-icons/core/assets/bold/${name}-bold.svg`];
+if (!raw) throw new Error(`Unknown icon ${name}`);
+const svg = raw
+  .replace('<svg ', `<svg class="icon ${cls ?? ''}" fill="currentColor" ${label ? `role="img" aria-label="${label}"` : 'aria-hidden="true" focusable="false"'} `)
+  .replace(/ width="\d+"| height="\d+"/g, '');
+---
+<Fragment set:html={svg} />

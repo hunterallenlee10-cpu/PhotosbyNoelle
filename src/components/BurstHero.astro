@@ -1,0 +1,165 @@
+---
+// Home hero. Burst mode: a rapid run of real frames from the same celebration, then a
+// freeze on the decisive one with a shutter flash. The final frame is in the HTML from
+// the start (it's the LCP image); the burst plays over it once per visit, under 2.5s,
+// is skippable, and never runs under reduced motion or without JS.
+import { getImage } from 'astro:assets';
+import Photo from './Photo.astro';
+import CropMarks from './CropMarks.astro';
+import { exifLine, frameNo, type Photo as PhotoData } from '@/lib/content';
+
+interface Props { frames: PhotoData[]; sub: string; total: number }
+const { frames, sub, total } = Astro.props;
+const keeper = frames[frames.length - 1];
+const run = frames.slice(0, -1);
+const burst = await Promise.all(
+  run.map(async (p) => {
+    const [sm, lg] = await Promise.all([
+      getImage({ src: p.file, width: 900, format: 'webp', quality: 62 }),
+      getImage({ src: p.file, width: 1600, format: 'webp', quality: 62 }),
+    ]);
+    return { srcset: `${sm.src} 900w, ${lg.src} 1600w`, n: frameNo(p.order), pos: `${p.focal[0]}% ${p.focal[1]}%` };
+  }),
+);
+---
+<section class="hero" data-burst={JSON.stringify(burst)} data-keeper-n={frameNo(keeper.order)} aria-labelledby="hero-name">
+  <div class="shot crop-frame">
+    <Photo photo={keeper} priority sizes="100vw" widths={[640, 960, 1280, 1600, 2000, 2400]} class="keeper" quality={74} />
+    <div class="burst-layer" aria-hidden="true">
+      <img alt="" class="burst-img" decoding="async" />
+      <span class="thirds"></span>
+    </div>
+    <CropMarks inset="calc(var(--header-h) + 14px) var(--gutter) var(--gutter)" size="clamp(22px, 3vw, 40px)" color="#eef2f6" />
+    <p class="counter num" aria-hidden="true">
+      <span class="n" data-burst-n>{frameNo(keeper.order)}</span><span class="of"> / {frameNo(total)}</span>
+      <span class="ticks">{frames.map((_, i) => <i class:list={{ on: i === frames.length - 1 }}></i>)}</span>
+    </p>
+  </div>
+  <div class="copy wrap">
+    <h1 class="display name" id="hero-name" data-hero-name>
+      <span class="line">Noelle</span><span class="line">Lanham</span>
+    </h1>
+    <p class="sub">{sub}</p>
+    <p class="ctas">
+      <a href="/inquire" class="btn btn-primary">Inquire</a>
+      <a href="#worlds" class="btn btn-ghost">See the work</a>
+    </p>
+    {keeper.exif && <p class="exif num"><span class="visually-hidden">Shot on </span>{exifLine(keeper)}</p>}
+  </div>
+</section>
+
+<style>
+  .hero { position: relative; min-height: 100svh; display: grid; isolation: isolate; color: var(--fg); }
+  .shot { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+  .shot :global(.keeper) { position: absolute; inset: 0; width: 100%; height: 100% !important; aspect-ratio: auto !important; }
+  /* Scrim only where the type sits: bottom-left, never over the athlete's face. */
+  .shot::after {
+    content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      linear-gradient(90deg, rgb(var(--scrim) / 0.86) 0%, rgb(var(--scrim) / 0.55) 24%, rgb(var(--scrim) / 0) 46%),
+      linear-gradient(0deg, rgb(var(--scrim) / 0.55) 0%, rgb(var(--scrim) / 0) 32%);
+  }
+  .burst-layer { position: absolute; inset: 0; z-index: 1; opacity: 0; pointer-events: none; }
+  .burst-img { width: 100%; height: 100%; object-fit: cover; }
+  .thirds { position: absolute; inset: 0; background:
+    linear-gradient(90deg, transparent calc(33.33% - 0.5px), rgb(238 242 246 / 0.45) calc(33.33% - 0.5px) calc(33.33% + 0.5px), transparent calc(33.33% + 0.5px) calc(66.66% - 0.5px), rgb(238 242 246 / 0.45) calc(66.66% - 0.5px) calc(66.66% + 0.5px), transparent calc(66.66% + 0.5px)),
+    linear-gradient(0deg, transparent calc(33.33% - 0.5px), rgb(238 242 246 / 0.45) calc(33.33% - 0.5px) calc(33.33% + 0.5px), transparent calc(33.33% + 0.5px) calc(66.66% - 0.5px), rgb(238 242 246 / 0.45) calc(66.66% - 0.5px) calc(66.66% + 0.5px), transparent calc(66.66% + 0.5px)); }
+  .counter {
+    position: absolute; z-index: 2; right: calc(var(--gutter) + 22px); top: calc(var(--header-h) + 36px);
+    display: grid; justify-items: end; padding: 12px 14px 10px; background: rgb(11 17 29 / 0.72); color: #eef2f6; line-height: 1;
+  }
+  .counter .n { font-size: clamp(2.6rem, 4.6vw, 4.4rem); letter-spacing: -0.01em; }
+  .counter .of { font-size: 1rem; color: #b9c3d0; margin-top: 4px; }
+  .ticks { display: flex; gap: 4px; margin-top: 10px; }
+  .ticks i { width: 14px; height: 4px; background: rgb(238 242 246 / 0.35); }
+  .ticks i.on { background: #ff4b3a; }
+  .copy { align-self: end; display: grid; justify-items: start; gap: var(--s-4); padding-bottom: clamp(32px, 6vh, 72px); padding-top: calc(var(--header-h) + 40px); }
+  .name { font-size: calc(var(--fs-d-xl) * var(--d-scale)); max-width: 100%; }
+  .name .line { display: block; }
+  .sub { font-size: var(--fs-lg); max-width: 30ch; font-weight: 500; }
+  .ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: var(--s-2); }
+  .exif { margin-top: var(--s-4); font-size: 0.76rem; letter-spacing: 0.08em; color: var(--fg-2); white-space: pre; }
+  :global(.js) .hero[data-playing] .copy > * { opacity: 0; }
+
+  @media (max-width: 760px) {
+    .hero { min-height: 0; grid-template-rows: auto auto; }
+    .shot { position: relative; inset: auto; height: 64svh; min-height: 380px; }
+    .shot::after { background: linear-gradient(0deg, var(--bg) 0%, rgb(var(--scrim) / 0) 26%), linear-gradient(180deg, rgb(var(--scrim) / 0.55) 0%, rgb(var(--scrim) / 0) 22%); }
+    .counter { top: calc(var(--header-h) + 10px); right: 16px; padding: 8px 10px; }
+    .counter .n { font-size: 2rem; }
+    .copy { margin-top: -54px; padding-top: 0; padding-bottom: var(--s-6); position: relative; z-index: 2; }
+    .name { font-size: calc(clamp(4rem, 24vw, 7rem) * var(--d-scale)); }
+    :global([data-mode='goldenhour']) .name { font-size: clamp(2.6rem, 15vw, 4.6rem); }
+    .exif { white-space: normal; }
+  }
+</style>
+
+<script>
+  const hero = document.querySelector<HTMLElement>('[data-burst]');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let seen = false;
+  try {
+    seen = sessionStorage.getItem('pbn-burst') === '1';
+  } catch {}
+  if (hero && !reduced && !seen) play(hero);
+
+  async function play(hero: HTMLElement) {
+    const frames: { srcset: string; n: string; pos: string }[] = JSON.parse(hero.dataset.burst || '[]');
+    const layer = hero.querySelector<HTMLElement>('.burst-layer')!;
+    const img = layer.querySelector<HTMLImageElement>('.burst-img')!;
+    const thirds = layer.querySelector<HTMLElement>('.thirds')!;
+    const counter = hero.querySelector<HTMLElement>('[data-burst-n]')!;
+    const ticks = [...hero.querySelectorAll<HTMLElement>('.ticks i')];
+    const flash = document.querySelector<HTMLElement>('.shutter-flash');
+    const name = hero.querySelector<HTMLElement>('[data-hero-name]')!;
+
+    // Decode every burst frame first; if the network is slow, skip the burst entirely.
+    const decoded = await Promise.race([
+      Promise.all(
+        frames.map((f) => {
+          const i = new Image();
+          i.sizes = '100vw';
+          i.srcset = f.srcset;
+          return i.decode().then(() => i.currentSrc);
+        }),
+      ),
+      new Promise<null>((r) => setTimeout(() => r(null), 1400)),
+    ]).catch(() => null);
+    if (!decoded || window.scrollY > 40) return;
+
+    const { gsap } = await import('gsap');
+    try {
+      sessionStorage.setItem('pbn-burst', '1');
+    } catch {}
+    hero.setAttribute('data-playing', '');
+    const tl = gsap.timeline({ onComplete: finish });
+    const set = (i: number) => () => {
+      img.src = decoded[i];
+      img.style.objectPosition = frames[i].pos;
+      counter.textContent = frames[i].n;
+      ticks.forEach((t, k) => t.classList.toggle('on', k === i));
+    };
+    tl.set(layer, { opacity: 1 }).set(thirds, { opacity: 1 });
+    frames.forEach((_, i) => {
+      tl.call(set(i)).fromTo(flash, { opacity: 0.22 }, { opacity: 0, duration: 0.11, ease: 'power2.out' }).to({}, { duration: 0.09 });
+    });
+    // Freeze: the keeper frame, a real shutter flash, then her name.
+    tl.call(() => {
+      layer.style.opacity = '0';
+      counter.textContent = hero.dataset.keeperN!;
+      ticks.forEach((t, k) => t.classList.toggle('on', k === ticks.length - 1));
+    })
+      .fromTo(flash, { opacity: 0.85 }, { opacity: 0, duration: 0.45, ease: 'expo.out' })
+      .call(() => hero.removeAttribute('data-playing'), [], '<0.05')
+      .from(name.querySelectorAll('.line'), { yPercent: 40, opacity: 0, duration: 0.8, ease: 'expo.out', stagger: 0.08 }, '<')
+      .from(hero.querySelectorAll('.copy > :not(h1)'), { y: 16, opacity: 0, duration: 0.6, ease: 'expo.out', stagger: 0.06 }, '<0.15');
+
+    const skip = () => tl.progress(1);
+    function finish() {
+      hero.removeAttribute('data-playing');
+      layer.style.opacity = '0';
+      ['keydown', 'pointerdown', 'wheel', 'touchstart'].forEach((ev) => window.removeEventListener(ev, skip));
+    }
+    ['keydown', 'pointerdown', 'wheel', 'touchstart'].forEach((ev) => window.addEventListener(ev, skip, { once: true, passive: true }));
+  }
+</script>

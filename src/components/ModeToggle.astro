@@ -1,0 +1,27 @@
+---
+// Game Day / Golden Hour lighting switch. Needs JS, so it's hidden without it
+// (no-JS visitors still get the page's own lighting and their system setting).
+interface Props { class?: string; id?: string }
+const { class: cls, id } = Astro.props;
+---
+<button type="button" role="switch" aria-checked="false" class:list={['mode-toggle', cls]} data-mode-toggle data-js-only id={id}>
+  <span class="visually-hidden">Golden Hour lighting</span>
+  <span class="opt opt-gd" aria-hidden="true">Game Day</span>
+  <span class="opt opt-gh" aria-hidden="true">Golden Hour</span>
+</button>
+<style>
+  .mode-toggle {
+    position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; align-items: stretch;
+    min-height: 40px; border: 1.5px solid var(--fg); font: 700 0.74rem/1 var(--font-text);
+    letter-spacing: 0.07em; text-transform: uppercase; isolation: isolate;
+  }
+  .opt { display: grid; place-items: center; padding: 0 0.9em; transition: color 300ms var(--ease-out); }
+  .mode-toggle::before {
+    content: ''; position: absolute; z-index: -1; inset: 0 auto 0 0; width: var(--knob-w, 50%);
+    background: var(--fg); transition: transform 450ms var(--ease-out), width 450ms var(--ease-out);
+  }
+  .mode-toggle[aria-checked='false'] .opt-gd, .mode-toggle[aria-checked='true'] .opt-gh { color: var(--bg); }
+  .mode-toggle[aria-checked='true']::before { transform: translateX(var(--knob-x, 100%)); }
+  .mode-toggle:hover { box-shadow: 0 0 0 1.5px var(--fg); }
+  @media (prefers-reduced-motion: reduce) { .mode-toggle::before, .opt { transition: none; } }
+</style>

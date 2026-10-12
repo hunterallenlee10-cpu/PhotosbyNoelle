@@ -1,0 +1,256 @@
+---
+import Base from '@/layouts/Base.astro';
+import Photo from '@/components/Photo.astro';
+import CropMarks from '@/components/CropMarks.astro';
+import Icon from '@/components/Icon.astro';
+import { page, photo, settings } from '@/lib/content';
+import { LOOKING_FOR, WHERE } from '@/lib/inquiry';
+
+const { data } = await page('inquire');
+const d = { ...data, success: data.success!, heading: data.heading!, lead: data.lead! };
+const s = await settings();
+const side = await photo(d.ogPhoto);
+---
+<Base title={d.title} description={d.description} og="inquire" mode={d.mode} current="inquire">
+  <section class="inq wrap">
+    <div class="intro">
+      <h1 class="display d-l">{d.heading}</h1>
+      <p class="lead">{d.lead}</p>
+      <figure class="side crop-frame">
+        <Photo photo={side} sizes="(max-width: 900px) 60vw, 30vw" widths={[480, 800, 1200]} ratio="4 / 5" />
+        <CropMarks inset="-10px" size="22px" color="var(--accent)" />
+      </figure>
+    </div>
+
+    <div class="panel">
+      <form class="form" action="/api/inquire" method="post" novalidate data-inquiry>
+        <p class="req-note muted"><span aria-hidden="true">*</span> Required</p>
+
+        <div class="field">
+          <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120" aria-describedby="e-name" />
+          <p class="err" id="e-name" data-err="name"></p>
+        </div>
+
+        <div class="two">
+          <div class="field">
+            <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200" aria-describedby="e-email" />
+            <p class="err" id="e-email" data-err="email"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone <span class="opt">(optional)</span></label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" aria-describedby="e-phone" />
+            <p class="err" id="e-phone" data-err="phone"></p>
+          </div>
+        </div>
+
+        <fieldset class="field">
+          <legend id="l-lookingFor">What are you looking for? <span class="req" aria-hidden="true">*</span></legend>
+          <div class="chips" role="radiogroup" aria-labelledby="l-lookingFor" aria-describedby="e-lookingFor" aria-required="true">
+            {LOOKING_FOR.map((o, i) => (
+              <label class="chip"><input type="radio" name="lookingFor" value={o} required={i === 0} /><span>{o}</span></label>
+            ))}
+          </div>
+          <p class="err" id="e-lookingFor" data-err="lookingFor"></p>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend id="l-where">Where? <span class="opt">(optional)</span></legend>
+          <div class="chips" role="radiogroup" aria-labelledby="l-where" aria-describedby="e-where">
+            {WHERE.map((o) => (
+              <label class="chip"><input type="radio" name="where" value={o} /><span>{o}</span></label>
+            ))}
+          </div>
+          <p class="err" id="e-where" data-err="where"></p>
+        </fieldset>
+
+        <div class="field">
+          <label for="f-when">Date or season <span class="opt">(optional)</span></label>
+          <input id="f-when" name="when" type="text" maxlength="120" aria-describedby="h-when" />
+          <p class="hint muted" id="h-when">A game date, a season, or "flexible" all work.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-message">Message <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="f-message" name="message" rows="6" required minlength="10" maxlength="4000" aria-describedby="h-message e-message"></textarea>
+          <p class="hint muted" id="h-message">Who, what, and anything I should know.</p>
+          <p class="err" id="e-message" data-err="message"></p>
+        </div>
+
+        <div class="field">
+          <label for="f-heard">How did you hear about me? <span class="opt">(optional)</span></label>
+          <input id="f-heard" name="heard" type="text" maxlength="160" />
+        </div>
+
+        <!-- Spam trap: people never see or fill this. -->
+        <div class="trap" aria-hidden="true">
+          <label for="f-company">Company</label>
+          <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+        <input type="hidden" name="t" value="" data-started />
+
+        <div class="submit-row">
+          <button type="submit" class="btn btn-primary send"><span class="send-label">Send inquiry</span><Icon name="arrow-right" /></button>
+          <p class="status" role="status" aria-live="polite" data-status></p>
+        </div>
+      </form>
+
+      <div class="success" hidden tabindex="-1" data-success>
+        <p class="num check" aria-hidden="true">001 / 001</p>
+        <h2 class="display d-m">{d.success.heading}</h2>
+        <p class="lead">{d.success.body}</p>
+        <a href={s.instagram.url} class="btn btn-ghost" rel="me noopener" target="_blank"><Icon name="instagram-logo" />{d.success.instagram}<span class="visually-hidden"> (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .inq { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); padding-block: var(--s-8); align-items: start; }
+  .intro { display: grid; gap: var(--s-5); position: sticky; top: calc(var(--header-h) + 24px); }
+  .side { position: relative; max-width: 340px; margin-top: var(--s-4); }
+  .panel { background: var(--bg-2); padding: clamp(20px, 4vw, 48px); }
+  .form { display: grid; gap: var(--s-5); }
+  .req-note { font-size: var(--fs-sm); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-5); }
+  .field { display: grid; gap: 8px; border: 0; padding: 0; min-width: 0; }
+  label, legend { font-weight: 700; font-size: 0.98rem; padding: 0; }
+  .req { color: var(--accent-text); }
+  .opt { font-weight: 400; color: var(--fg-2); }
+  input[type='text'], input[type='email'], input[type='tel'], textarea {
+    width: 100%; min-height: 50px; padding: 12px 14px; border: 0; border-radius: 0;
+    background: var(--bg); color: var(--fg); box-shadow: inset 0 0 0 1.5px var(--line-strong);
+    font-size: 1rem; line-height: 1.4; transition: box-shadow 200ms;
+  }
+  textarea { resize: vertical; min-height: 150px; }
+  input:hover, textarea:hover { box-shadow: inset 0 0 0 1.5px var(--fg); }
+  input:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; box-shadow: inset 0 0 0 1.5px var(--fg); }
+  input[aria-invalid='true'], textarea[aria-invalid='true'] { box-shadow: inset 0 0 0 2px var(--accent) !important; }
+  [role='radiogroup'][aria-invalid='true'] .chip span { box-shadow: inset 0 0 0 2px var(--accent); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .chip { position: relative; font-weight: 600; }
+  .chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+  .chip span { display: inline-flex; align-items: center; min-height: 46px; padding: 0 16px; box-shadow: inset 0 0 0 1.5px var(--line-strong); background: var(--bg); transition: background-color 150ms, color 150ms; }
+  .chip:hover span { box-shadow: inset 0 0 0 1.5px var(--fg); }
+  .chip input:checked + span { background: var(--fg); color: var(--bg); box-shadow: none; }
+  .chip input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .hint { font-size: var(--fs-sm); }
+  .err { color: var(--accent-text); font-weight: 700; font-size: var(--fs-sm); }
+  .err:empty { display: none; }
+  .trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  .submit-row { display: flex; align-items: center; gap: var(--s-5); flex-wrap: wrap; }
+  .send { min-height: 56px; font-size: 1.05rem; }
+  .send[aria-busy='true'] { opacity: 0.7; pointer-events: none; }
+  .status { font-weight: 700; }
+  .status.is-error { color: var(--accent-text); }
+  .success { display: grid; gap: var(--s-5); justify-items: start; }
+  .success[hidden], .form[hidden] { display: none; }
+  .success:focus { outline: none; }
+  .check { font-size: 1.4rem; color: var(--accent-text); }
+  @media (max-width: 900px) {
+    .inq { grid-template-columns: 1fr; }
+    .intro { position: static; }
+    .side { display: none; }
+    .panel { margin-inline: calc(var(--gutter) * -1); }
+  }
+  @media (max-width: 560px) { .two { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-inquiry]');
+  if (form) {
+    const status = form.querySelector<HTMLElement>('[data-status]')!;
+    const send = form.querySelector<HTMLButtonElement>('.send')!;
+    const success = document.querySelector<HTMLElement>('[data-success]')!;
+    form.querySelector<HTMLInputElement>('[data-started]')!.value = String(Date.now());
+
+    const messages: Record<string, (el: HTMLInputElement | HTMLTextAreaElement) => string> = {
+      name: (el) => (el.value.trim() ? '' : 'Please add your name.'),
+      email: (el) => (!el.value.trim() ? 'Please add your email so I can reply.' : /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value.trim()) ? '' : 'That email looks off. Check for a typo?'),
+      phone: (el) => (!el.value.trim() || /^[0-9+().\-\s]{7,}$/.test(el.value.trim()) ? '' : 'Use digits, spaces, or + ( ) - only.'),
+      message: (el) => (el.value.trim().length >= 10 ? '' : 'Tell me a little more (at least a sentence).'),
+    };
+    const setError = (name: string, msg: string) => {
+      const err = form.querySelector<HTMLElement>(`[data-err="${name}"]`);
+      if (err) err.textContent = msg;
+      form.querySelectorAll<HTMLElement>(`[name="${name}"]`).forEach((el) => {
+        if (el.getAttribute('type') === 'radio') el.closest('[role="radiogroup"]')?.setAttribute('aria-invalid', String(!!msg));
+        else el.setAttribute('aria-invalid', String(!!msg));
+      });
+    };
+    const check = (name: string) => {
+      if (name === 'lookingFor') {
+        const ok = !!form.querySelector('[name="lookingFor"]:checked');
+        setError(name, ok ? '' : 'Pick what you’re looking for.');
+        return ok;
+      }
+      const el = form.elements.namedItem(name) as HTMLInputElement | null;
+      if (!el || !messages[name]) return true;
+      const msg = messages[name](el);
+      setError(name, msg);
+      return !msg;
+    };
+    // Validate a field once someone leaves it; then live as they fix it.
+    form.addEventListener('focusout', (e) => {
+      const n = (e.target as HTMLInputElement).name;
+      if (n && messages[n]) check(n);
+    });
+    form.addEventListener('input', (e) => {
+      const el = e.target as HTMLInputElement;
+      if (el.getAttribute('aria-invalid') === 'true' || el.type === 'radio') check(el.name);
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const order = ['name', 'email', 'phone', 'lookingFor', 'message'];
+      const bad = order.filter((n) => !check(n));
+      if (bad.length) {
+        status.textContent = `Please fix ${bad.length === 1 ? 'the highlighted field' : `${bad.length} highlighted fields`}.`;
+        status.classList.add('is-error');
+        const first = bad[0] === 'lookingFor' ? form.querySelector<HTMLElement>('[name="lookingFor"]') : (form.elements.namedItem(bad[0]) as HTMLElement);
+        first?.focus();
+        return;
+      }
+      send.setAttribute('aria-busy', 'true');
+      status.classList.remove('is-error');
+      status.textContent = 'Sending…';
+      try {
+        const r = await fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
+        const body = await r.json().catch(() => ({}));
+        if (r.ok && body.ok) return celebrate();
+        if (body.errors) {
+          for (const [k, v] of Object.entries(body.errors)) setError(k, String(v));
+          status.textContent = 'Please fix the highlighted fields.';
+        } else if (r.status === 429) {
+          status.textContent = 'That’s a lot of messages in a row. Try again in a few minutes, or DM me on Instagram.';
+        } else {
+          status.textContent = 'Something went wrong sending that. Please try again, or DM me on Instagram @noelle.lanham.';
+        }
+        status.classList.add('is-error');
+      } catch {
+        status.textContent = 'You seem to be offline. Your message is still here; try again when you’re connected.';
+        status.classList.add('is-error');
+      } finally {
+        send.removeAttribute('aria-busy');
+      }
+    });
+
+    async function celebrate() {
+      const flash = document.querySelector<HTMLElement>('.shutter-flash');
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const swap = () => {
+        form!.hidden = true;
+        success.hidden = false;
+        success.focus();
+      };
+      if (reduced || !flash) return swap();
+      const { gsap } = await import('gsap');
+      gsap.timeline()
+        .fromTo(flash, { opacity: 0 }, { opacity: 0.9, duration: 0.08, ease: 'power2.in' })
+        .call(swap)
+        .to(flash, { opacity: 0, duration: 0.6, ease: 'expo.out' })
+        .from(success.children, { y: 18, opacity: 0, stagger: 0.07, duration: 0.6, ease: 'expo.out' }, '<0.05');
+    }
+  }
+</script>
