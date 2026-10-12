@@ -1,0 +1,3 @@
+# Private preview: not for search engines yet (set PUBLIC_LAUNCH=true to launch).
+User-agent: *
+Disallow: /
