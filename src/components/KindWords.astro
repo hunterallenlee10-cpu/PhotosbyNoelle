@@ -1,4 +1,5 @@
 ---
+import { u } from '@/lib/url';
 // A few testimonials, one at a time. Visitors control it (prev / next / pause); it only
 // advances by itself when motion is allowed, and pauses on hover or focus.
 // Without JS every quote is listed.
@@ -30,7 +31,7 @@ const { items, heading } = Astro.props;
       </li>
     ))}
   </ul>
-  <a href="/kind-words" class="link-arrow more"><span>Read all kind words</span><Icon name="arrow-right" /></a>
+  <a href={u('/kind-words')} class="link-arrow more"><span>Read all kind words</span><Icon name="arrow-right" /></a>
 </section>
 
 <style>

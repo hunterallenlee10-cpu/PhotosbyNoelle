@@ -1,4 +1,5 @@
 ---
+import { u } from '@/lib/url';
 import Wordmark from './Wordmark.astro';
 import ModeToggle from './ModeToggle.astro';
 import Icon from './Icon.astro';
@@ -8,7 +9,7 @@ const { current, overlay = false } = Astro.props;
 ---
 <header class:list={['site-header', { overlay }]} data-header>
   <div class="bar wrap">
-    <a href="/" class="brand" aria-label="Photos by Noelle, home"><Wordmark /></a>
+    <a href={u('/')} class="brand" aria-label="Photos by Noelle, home"><Wordmark /></a>
     <nav class="primary" aria-label="Main">
       <ul>
         {NAV.map((item) => (
@@ -17,7 +18,7 @@ const { current, overlay = false } = Astro.props;
       </ul>
     </nav>
     <ModeToggle class="header-toggle" />
-    <a href="/inquire" class="btn btn-primary inquire" aria-current={current === 'inquire' ? 'page' : undefined}>Inquire</a>
+    <a href={u('/inquire')} class="btn btn-primary inquire" aria-current={current === 'inquire' ? 'page' : undefined}>Inquire</a>
     <button type="button" class="menu-btn" data-menu-open data-js-only aria-haspopup="dialog" aria-controls="menu">
       <Icon name="list" /><span>Menu</span>
     </button>

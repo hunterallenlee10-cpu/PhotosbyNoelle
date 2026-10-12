@@ -4,7 +4,13 @@ Branch: `claude/intelligent-pasteur-n6a1ks` on `hunterallenlee10-cpu/PhotosbyNoe
 Run instructions, photo/copy editing and launch steps are in `README.md`; scores are in
 `qa/REPORT.md`.
 
-## Deploy the preview (not done: blocked by permissions)
+## Live demo
+
+**https://hunterallenlee10-cpu.github.io/PhotosbyNoelle/**: a static build on GitHub Pages,
+rebuilt automatically on every push to `main`. Add `?confirm` to any URL to see the open
+questions. The inquiry form shows a "not connected yet" message there.
+
+## Deploy the real site to Vercel (needs you: blocked by permissions)
 
 The Vercel connector in this session could see the **leu** team but got
 `403 forbidden` creating a project there, and no Vercel CLI token was available. To

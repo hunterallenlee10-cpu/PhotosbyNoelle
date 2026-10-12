@@ -1,4 +1,5 @@
 ---
+import { u } from '@/lib/url';
 import Base from '@/layouts/Base.astro';
 import Photo from '@/components/Photo.astro';
 import CropMarks from '@/components/CropMarks.astro';
@@ -19,9 +20,9 @@ const p = await photo(d.ogPhoto);
       <h1 class="display d-l">{d.heading}</h1>
       <p class="lead">{d.lead}</p>
       <ul class="links" role="list">
-        <li><a href="/sports" class="link-arrow"><span>Sports</span><Icon name="arrow-right" /></a></li>
-        <li><a href="/lifestyle" class="link-arrow"><span>Lifestyle</span><Icon name="arrow-right" /></a></li>
-        <li><a href="/" class="link-arrow"><span>Home</span><Icon name="arrow-right" /></a></li>
+        <li><a href={u('/sports')} class="link-arrow"><span>Sports</span><Icon name="arrow-right" /></a></li>
+        <li><a href={u('/lifestyle')} class="link-arrow"><span>Lifestyle</span><Icon name="arrow-right" /></a></li>
+        <li><a href={u('/')} class="link-arrow"><span>Home</span><Icon name="arrow-right" /></a></li>
       </ul>
     </div>
   </section>

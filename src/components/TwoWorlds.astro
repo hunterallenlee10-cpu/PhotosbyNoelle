@@ -1,4 +1,5 @@
 ---
+import { u } from '@/lib/url';
 // "Two shores": Sports and Lifestyle side by side, each half lit in its own state
 // (Game Day / Golden Hour) whatever the page is set to. The live dual clock sits on the seam.
 import Photo from './Photo.astro';
@@ -8,8 +9,8 @@ interface World { photo: PhotoData; line: string; count: number }
 interface Props { sports: World; lifestyle: World; cities: Settings['cities'] }
 const { sports, lifestyle, cities } = Astro.props;
 const halves = [
-  { key: 'gameday', title: 'Game Day', what: 'Sports', href: '/sports', ...sports },
-  { key: 'goldenhour', title: 'Golden Hour', what: 'Lifestyle', href: '/lifestyle', ...lifestyle },
+  { key: 'gameday', title: 'Game Day', what: 'Sports', href: u('/sports'), ...sports },
+  { key: 'goldenhour', title: 'Golden Hour', what: 'Lifestyle', href: u('/lifestyle'), ...lifestyle },
 ];
 ---
 <section class="worlds" id="worlds" aria-label="Two worlds: sports and lifestyle">

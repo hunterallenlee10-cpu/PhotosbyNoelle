@@ -1,4 +1,5 @@
 ---
+import { u } from '@/lib/url';
 import '@/styles/global.css';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
@@ -23,7 +24,8 @@ const { title, description, og, current = '', mode, overlayHeader = false, noind
 const s = await settings();
 const site = Astro.site ?? new URL('https://photosbynoelle.vercel.app');
 const canonical = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/'), site).href;
-const ogImage = new URL(`/og/${og}.jpg`, site).href;
+const ogImage = new URL(u(`/og/${og}.jpg`), site).href;
+const home = new URL(u('/'), site).href;
 const robots = !launched || noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
 
 const jsonLd = {
@@ -31,24 +33,24 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Person',
-      '@id': `${site.href}#noelle`,
+      '@id': `${home}#noelle`,
       name: s.photographer,
       jobTitle: s.jobTitle,
-      url: site.href,
-      image: new URL('/og/about.jpg', site).href,
+      url: home,
+      image: new URL(u('/og/about.jpg'), site).href,
       sameAs: [s.instagram.url],
-      worksFor: { '@id': `${site.href}#business` },
+      worksFor: { '@id': `${home}#business` },
       alumniOf: { '@type': 'CollegeOrUniversity', name: 'Randolph-Macon College' },
     },
     {
       '@type': 'ProfessionalService',
-      '@id': `${site.href}#business`,
+      '@id': `${home}#business`,
       name: s.name,
       description: 'Sports and lifestyle photography: game-day action, team and athlete coverage, senior, graduation, couples and portrait sessions.',
-      url: site.href,
-      image: new URL('/og/home.jpg', site).href,
-      logo: new URL('/apple-touch-icon.png', site).href,
-      founder: { '@id': `${site.href}#noelle` },
+      url: home,
+      image: new URL(u('/og/home.jpg'), site).href,
+      logo: new URL(u('/apple-touch-icon.png'), site).href,
+      founder: { '@id': `${home}#noelle` },
       sameAs: [s.instagram.url],
       areaServed: s.cities.map((c) => ({
         '@type': 'City',
@@ -89,10 +91,10 @@ const jsonLd = {
       l.href = document.documentElement.getAttribute('data-mode') === 'gameday' ? upright : italic;
       document.head.appendChild(l);
     </script>
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" href={u('/favicon.svg')} type="image/svg+xml" />
+    <link rel="icon" href={u('/favicon-32.png')} sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href={u('/apple-touch-icon.png')} />
+    <link rel="manifest" href={u('/site.webmanifest')} />
     <meta name="theme-color" content="#f7dcb0" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0b111d" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="website" />

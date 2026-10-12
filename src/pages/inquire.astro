@@ -1,4 +1,5 @@
 ---
+import { u } from '@/lib/url';
 import Base from '@/layouts/Base.astro';
 import Photo from '@/components/Photo.astro';
 import CropMarks from '@/components/CropMarks.astro';
@@ -23,7 +24,7 @@ const side = await photo(d.ogPhoto);
     </div>
 
     <div class="panel">
-      <form class="form" action="/api/inquire" method="post" novalidate data-inquiry>
+      <form class="form" action={u('/api/inquire')} method="post" novalidate data-inquiry>
         <p class="req-note muted"><span aria-hidden="true">*</span> Required</p>
 
         <div class="field">
@@ -225,12 +226,19 @@ const side = await photo(d.ogPhoto);
         first?.focus();
         return;
       }
+      if (sending) return;
+      sending = true;
+      send.disabled = true;
       send.setAttribute('aria-busy', 'true');
+      label.textContent = 'Sending…';
       status.classList.remove('is-error');
       status.textContent = 'Sending…';
       try {
         const r = await fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
-        const body = await r.json().catch(() => ({}));
+        // The inquiry function always answers in JSON; anything else means no function is
+        // behind this URL yet (static preview hosting).
+        const connected = (r.headers.get('content-type') ?? '').includes('application/json');
+        const body = connected ? await r.json().catch(() => ({})) : {};
         if (r.ok && body.ok) {
           sent = true;
           return celebrate();
@@ -238,7 +246,7 @@ const side = await photo(d.ogPhoto);
         if (body.errors) {
           for (const [k, v] of Object.entries(body.errors)) setError(k, String(v));
           status.textContent = 'Please fix the highlighted fields.';
-        } else if (r.status === 503 || r.status === 404 || r.status === 405) {
+        } else if (!connected || r.status === 503) {
           // Preview build: the inquiry function isn't connected to an inbox yet.
           status.textContent = 'This is a preview and the form isn\u2019t connected yet, so nothing was sent. For now, DM me on Instagram @noelle.lanham!';
         } else if (r.status === 429) {
