@@ -1,4 +1,5 @@
 ---
+import { u } from '@/lib/url';
 // Home hero. Burst mode: a rapid run of real frames from the same celebration, then a
 // freeze on the decisive one with a shutter flash. The final frame is in the HTML from
 // the start (it's the LCP image); the burst plays over it once per visit, under 2.5s,
@@ -40,7 +41,7 @@ const burst = await Promise.all(
     </h1>
     <p class="sub">{sub}</p>
     <p class="ctas">
-      <a href="/inquire" class="btn btn-primary">Inquire</a>
+      <a href={u('/inquire')} class="btn btn-primary">Inquire</a>
       <a href="#worlds" class="btn btn-ghost">See the work</a>
     </p>
     {keeper.exif && <p class="exif num"><span class="visually-hidden">Shot on </span>{exifLine(keeper)}</p>}

@@ -34,6 +34,19 @@ only process new or changed photos.
 
 ---
 
+## Live demo (GitHub Pages)
+
+Every push to `main` runs `.github/workflows/pages.yml`, which builds a fully static version
+(`DEPLOY_TARGET=pages`, served under `/PhotosbyNoelle`) and publishes it to the `gh-pages`
+branch: **https://hunterallenlee10-cpu.github.io/PhotosbyNoelle/**
+
+GitHub Pages can't run the inquiry function, so on the demo the form validates and then
+says it isn't connected yet. For launch, deploy to Vercel (below) where `/api/inquire` runs.
+
+```bash
+DEPLOY_TARGET=pages npm run build   # same build locally, output in dist/
+```
+
 ## Environment variables
 
 Copy `.env.example` to `.env` for local work; set the same keys in Vercel

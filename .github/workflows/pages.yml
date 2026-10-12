@@ -1,0 +1,46 @@
+# Builds the static demo (DEPLOY_TARGET=pages) and publishes it to the gh-pages branch,
+# which GitHub Pages serves at https://hunterallenlee10-cpu.github.io/PhotosbyNoelle/
+name: Deploy demo to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+      # ~3,300 image variants: keep Astro's image cache between runs so only changed photos re-encode.
+      - uses: actions/cache@v4
+        with:
+          path: node_modules/.astro
+          key: astro-images-${{ hashFiles('src/assets/photos/**', 'src/content/photos.json') }}
+          restore-keys: astro-images-
+      - run: npm run build
+        env:
+          DEPLOY_TARGET: pages
+      - run: touch dist/.nojekyll
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true
+          commit_message: Deploy demo build from ${{ github.sha }}

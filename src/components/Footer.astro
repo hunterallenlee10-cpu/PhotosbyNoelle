@@ -1,4 +1,5 @@
 ---
+import { u } from '@/lib/url';
 import Wordmark from './Wordmark.astro';
 import Icon from './Icon.astro';
 import Confirm from './Confirm.astro';
@@ -19,14 +20,14 @@ const year = new Date().getFullYear();
           <span class="zone label muted">{c.zone}</span>
         </div>
       ))}
-      <a href="/" class="mark" aria-label="Photos by Noelle, home"><Wordmark /></a>
+      <a href={u('/')} class="mark" aria-label="Photos by Noelle, home"><Wordmark /></a>
     </div>
 
     <div class="cols">
       <nav aria-label="Footer" id="footer-nav">
         <ul>
           {NAV.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
-          <li><a href="/inquire" class="accent">Inquire</a></li>
+          <li><a href={u('/inquire')} class="accent">Inquire</a></li>
         </ul>
       </nav>
       <ul class="links">
