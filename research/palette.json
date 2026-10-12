@@ -1,0 +1,1397 @@
+{
+  "generatedAt": "2026-10-12T15:51:14.427Z",
+  "method": "node-vibrant 4 on 400px downsamples, swatches weighted by population",
+  "categories": {
+    "sports": {
+      "images": 82,
+      "swatches": {
+        "Vibrant": {
+          "weightedAverage": "#b77f53",
+          "mostPopulous": [
+            "#acc45f",
+            "#fa8d6a",
+            "#acbc5c",
+            "#68b242",
+            "#b4c464",
+            "#f5ab57"
+          ],
+          "samples": 82
+        },
+        "DarkVibrant": {
+          "weightedAverage": "#4e413b",
+          "mostPopulous": [
+            "#4a8935",
+            "#782c42",
+            "#4f2530",
+            "#294977",
+            "#3d5a16",
+            "#66122e"
+          ],
+          "samples": 82
+        },
+        "LightVibrant": {
+          "weightedAverage": "#e6c0a0",
+          "mostPopulous": [
+            "#fcdcc3",
+            "#fccb8c",
+            "#e2d291",
+            "#faaf97",
+            "#d1be9b",
+            "#f4828e"
+          ],
+          "samples": 82
+        },
+        "Muted": {
+          "weightedAverage": "#908e6f",
+          "mostPopulous": [
+            "#7cb877",
+            "#958076",
+            "#9ca97c",
+            "#679d5a",
+            "#ada452",
+            "#9fa168"
+          ],
+          "samples": 82
+        },
+        "DarkMuted": {
+          "weightedAverage": "#49443f",
+          "mostPopulous": [
+            "#2f3d4e",
+            "#64523a",
+            "#391e35",
+            "#614149",
+            "#4a5c33",
+            "#3c3b46"
+          ],
+          "samples": 82
+        },
+        "LightMuted": {
+          "weightedAverage": "#c1c3b0",
+          "mostPopulous": [
+            "#e2bdbf",
+            "#b8d19a",
+            "#aebb9d",
+            "#e7e1d7",
+            "#babe8d",
+            "#e3d9cd"
+          ],
+          "samples": 82
+        }
+      },
+      "perImage": [
+        {
+          "file": "000-rKdlOm.jpg",
+          "Vibrant": "#5464e6",
+          "DarkVibrant": "#0c0414",
+          "LightVibrant": "#dab897",
+          "Muted": "#937b65",
+          "DarkMuted": "#343449",
+          "LightMuted": "#b8bfd9"
+        },
+        {
+          "file": "001-zlOlYY.jpg",
+          "Vibrant": "#2657e4",
+          "DarkVibrant": "#123099",
+          "LightVibrant": "#e7c993",
+          "Muted": "#809d59",
+          "DarkMuted": "#2f3b67",
+          "LightMuted": "#9faac9"
+        },
+        {
+          "file": "002-Z0qyea.jpg",
+          "Vibrant": "#e99967",
+          "DarkVibrant": "#733610",
+          "LightVibrant": "#eab08c",
+          "Muted": "#a08a63",
+          "DarkMuted": "#5e4639",
+          "LightMuted": "#d7bbad"
+        },
+        {
+          "file": "003-AAvX7R.jpg",
+          "Vibrant": "#f1bb28",
+          "DarkVibrant": "#7c5d08",
+          "LightVibrant": "#fac48c",
+          "Muted": "#998b63",
+          "DarkMuted": "#40483c",
+          "LightMuted": "#b7bcc1"
+        },
+        {
+          "file": "004-3dLAzq.jpg",
+          "Vibrant": "#f31e46",
+          "DarkVibrant": "#1cb58d",
+          "LightVibrant": "#fccc8c",
+          "Muted": "#876151",
+          "DarkMuted": "#503e3c",
+          "LightMuted": "#b0d4d0"
+        },
+        {
+          "file": "005-6rLA53.jpg",
+          "Vibrant": "#f48444",
+          "DarkVibrant": "#766427",
+          "LightVibrant": "#fbc17d",
+          "Muted": "#988162",
+          "DarkMuted": "#594028",
+          "LightMuted": "#c4cc94"
+        },
+        {
+          "file": "006-0RedAv.jpg",
+          "Vibrant": "#de1685",
+          "DarkVibrant": "#4f2530",
+          "LightVibrant": "#fc86d6",
+          "Muted": "#9aab54",
+          "DarkMuted": "#7f8b3f",
+          "LightMuted": "#babe8d"
+        },
+        {
+          "file": "007-l9G4w3.jpg",
+          "Vibrant": "#f00727",
+          "DarkVibrant": "#076e93",
+          "LightVibrant": "#ed5d6f",
+          "Muted": "#7198a7",
+          "DarkMuted": "#67352d",
+          "LightMuted": "#b9ceca"
+        },
+        {
+          "file": "008-Jrdjzj.jpg",
+          "Vibrant": "#f59061",
+          "DarkVibrant": "#294977",
+          "LightVibrant": "#f69e77",
+          "Muted": "#6192a6",
+          "DarkMuted": "#7d5346",
+          "LightMuted": "#cec99f"
+        },
+        {
+          "file": "009-QrQzYp.jpg",
+          "Vibrant": "#1142c4",
+          "DarkVibrant": "#142c8c",
+          "LightVibrant": "#f9f99b",
+          "Muted": "#9e7461",
+          "DarkMuted": "#2f3d4e",
+          "LightMuted": "#c9b5a8"
+        },
+        {
+          "file": "010-yek4VZ.jpg",
+          "Vibrant": "#dd9269",
+          "DarkVibrant": "#6c3618",
+          "LightVibrant": "#f2c498",
+          "Muted": "#709f5f",
+          "DarkMuted": "#384039",
+          "LightMuted": "#ced7b1"
+        },
+        {
+          "file": "011-v4dJQ3.jpg",
+          "Vibrant": "#ef8210",
+          "DarkVibrant": "#74541c",
+          "LightVibrant": "#facf7b",
+          "Muted": "#927a4b",
+          "DarkMuted": "#695938",
+          "LightMuted": "#c5a58e"
+        },
+        {
+          "file": "012-3dLAzV.jpg",
+          "Vibrant": "#d7ad87",
+          "DarkVibrant": "#74641c",
+          "LightVibrant": "#f4e9e2",
+          "Muted": "#9e926b",
+          "DarkMuted": "#34502e",
+          "LightMuted": "#c3ceca"
+        },
+        {
+          "file": "013-0ReA1v.jpg",
+          "Vibrant": "#db1415",
+          "DarkVibrant": "#88271d",
+          "LightVibrant": "#f4cc8c",
+          "Muted": "#bc977c",
+          "DarkMuted": "#48281f",
+          "LightMuted": "#d1baaf"
+        },
+        {
+          "file": "014-WZ541a.jpg",
+          "Vibrant": "#cb9465",
+          "DarkVibrant": "#7f5d3c",
+          "LightVibrant": "#efbd9c",
+          "Muted": "#ad7e65",
+          "DarkMuted": "#30424c",
+          "LightMuted": "#d0b5af"
+        },
+        {
+          "file": "015-MrW9PW.jpg",
+          "Vibrant": "#acc45f",
+          "DarkVibrant": "#767027",
+          "LightVibrant": "#edb696",
+          "Muted": "#a09564",
+          "DarkMuted": "#52663c",
+          "LightMuted": "#e7e1d7"
+        },
+        {
+          "file": "016-6rLAJK.jpg",
+          "Vibrant": "#098cf5",
+          "DarkVibrant": "#05497f",
+          "LightVibrant": "#b4dcfc",
+          "Muted": "#a6865b",
+          "DarkMuted": "#54452a",
+          "LightMuted": "#b7c3d6"
+        },
+        {
+          "file": "017-8rzApy.jpg",
+          "Vibrant": "#c46444",
+          "DarkVibrant": "#a15e2f",
+          "LightVibrant": "#e4b590",
+          "Muted": "#98906f",
+          "DarkMuted": "#4a3b31",
+          "LightMuted": "#b4c6ca"
+        },
+        {
+          "file": "018-l9Gwke.jpg",
+          "Vibrant": "#f5ab57",
+          "DarkVibrant": "#665c24",
+          "LightVibrant": "#fac469",
+          "Muted": "#ada452",
+          "DarkMuted": "#594936",
+          "LightMuted": "#bdb475"
+        },
+        {
+          "file": "019-kLGV0x.jpg",
+          "Vibrant": "#f0232e",
+          "DarkVibrant": "#1a3d69",
+          "LightVibrant": "#e8bca3",
+          "Muted": "#8aa259",
+          "DarkMuted": "#28303e",
+          "LightMuted": "#a0b1d1"
+        },
+        {
+          "file": "020-v4dJMD.jpg",
+          "Vibrant": "#38a5c0",
+          "DarkVibrant": "#5f6d1b",
+          "LightVibrant": "#f3ddbd",
+          "Muted": "#a79e68",
+          "DarkMuted": "#435729",
+          "LightMuted": "#abd194"
+        },
+        {
+          "file": "021-0ReA1O.jpg",
+          "Vibrant": "#9eae52",
+          "DarkVibrant": "#5c7424",
+          "LightVibrant": "#f3c492",
+          "Muted": "#a8866e",
+          "DarkMuted": "#585c37",
+          "LightMuted": "#ccc49c"
+        },
+        {
+          "file": "022-yek4ve.jpg",
+          "Vibrant": "#68b741",
+          "DarkVibrant": "#337d2a",
+          "LightVibrant": "#d7b294",
+          "Muted": "#548ca8",
+          "DarkMuted": "#7a4f44",
+          "LightMuted": "#a7bad0"
+        },
+        {
+          "file": "023-PryO0G.jpg",
+          "Vibrant": "#d1a633",
+          "DarkVibrant": "#a47414",
+          "LightVibrant": "#fcebc0",
+          "Muted": "#909a51",
+          "DarkMuted": "#556032",
+          "LightMuted": "#ddcabd"
+        },
+        {
+          "file": "024-WZ54WM.jpg",
+          "Vibrant": "#db1a2c",
+          "DarkVibrant": "#781016",
+          "LightVibrant": "#6cfcfc",
+          "Muted": "#9b7e6b",
+          "DarkMuted": "#523c33",
+          "LightMuted": "#d9cbb5"
+        },
+        {
+          "file": "025-MrW9XX.jpg",
+          "Vibrant": "#e1a72a",
+          "DarkVibrant": "#349c9c",
+          "LightVibrant": "#f0c899",
+          "Muted": "#a6af56",
+          "DarkMuted": "#383d39",
+          "LightMuted": "#c5cbae"
+        },
+        {
+          "file": "026-6rLAXO.jpg",
+          "Vibrant": "#c71743",
+          "DarkVibrant": "#8a213b",
+          "LightVibrant": "#e48096",
+          "Muted": "#718299",
+          "DarkMuted": "#37536a",
+          "LightMuted": "#a1b7d1"
+        },
+        {
+          "file": "027-Z0qeKm.jpg",
+          "Vibrant": "#b47127",
+          "DarkVibrant": "#548c14",
+          "LightVibrant": "#fccb8c",
+          "Muted": "#b39e62",
+          "DarkMuted": "#6d4d2f",
+          "LightMuted": "#a7b879"
+        },
+        {
+          "file": "028-DrQPDW.jpg",
+          "Vibrant": "#4c84ac",
+          "DarkVibrant": "#183448",
+          "LightVibrant": "#f49ccc",
+          "Muted": "#8fad68",
+          "DarkMuted": "#425634",
+          "LightMuted": "#cac2a8"
+        },
+        {
+          "file": "029-eQEvL1.jpg",
+          "Vibrant": "#b74139",
+          "DarkVibrant": "#65231f",
+          "LightVibrant": "#eead84",
+          "Muted": "#a36f52",
+          "DarkMuted": "#343c4c",
+          "LightMuted": "#c9c79d"
+        },
+        {
+          "file": "030-nmpLq9.jpg",
+          "Vibrant": "#ec9b52",
+          "DarkVibrant": "#149c94",
+          "LightVibrant": "#f2b891",
+          "Muted": "#b28354",
+          "DarkMuted": "#4a5c33",
+          "LightMuted": "#e3d9cd"
+        },
+        {
+          "file": "031-bvDMbz.jpg",
+          "Vibrant": "#ce6b6a",
+          "DarkVibrant": "#632120",
+          "LightVibrant": "#ea9090",
+          "Muted": "#989966",
+          "DarkMuted": "#8f5055",
+          "LightMuted": "#d6cdad"
+        },
+        {
+          "file": "032-Jr6wR6.jpg",
+          "Vibrant": "#f10682",
+          "DarkVibrant": "#0dafc8",
+          "LightVibrant": "#f88ce1",
+          "Muted": "#b06069",
+          "DarkMuted": "#543330",
+          "LightMuted": "#d5c0a4"
+        },
+        {
+          "file": "033-KrMnRk.jpg",
+          "Vibrant": "#f47c14",
+          "DarkVibrant": "#765e31",
+          "LightVibrant": "#f46b3f",
+          "Muted": "#9a8856",
+          "DarkMuted": "#2e435c",
+          "LightMuted": "#96accd"
+        },
+        {
+          "file": "034-z5ekxZ.jpg",
+          "Vibrant": "#efa25e",
+          "DarkVibrant": "#948444",
+          "LightVibrant": "#dcb691",
+          "Muted": "#9fa168",
+          "DarkMuted": "#51402b",
+          "LightMuted": "#aebb9d"
+        },
+        {
+          "file": "035-l9Gwk3.jpg",
+          "Vibrant": "#c51827",
+          "DarkVibrant": "#7c0d19",
+          "LightVibrant": "#f1655c",
+          "Muted": "#b9785c",
+          "DarkMuted": "#58493f",
+          "LightMuted": "#cab5a1"
+        },
+        {
+          "file": "036-OrPm37.jpg",
+          "Vibrant": "#b4c464",
+          "DarkVibrant": "#566024",
+          "LightVibrant": "#ebbe9b",
+          "Muted": "#a08167",
+          "DarkMuted": "#646a34",
+          "LightMuted": "#b8c3d1"
+        },
+        {
+          "file": "037-kLGV8x.jpg",
+          "Vibrant": "#77b864",
+          "DarkVibrant": "#739227",
+          "LightVibrant": "#e2d291",
+          "Muted": "#679d5a",
+          "DarkMuted": "#2e3e4c",
+          "LightMuted": "#acc4cc"
+        },
+        {
+          "file": "038-kLGV4J.jpg",
+          "Vibrant": "#ce5034",
+          "DarkVibrant": "#933722",
+          "LightVibrant": "#d1e3f1",
+          "Muted": "#6ba85a",
+          "DarkMuted": "#415765",
+          "LightMuted": "#d4d0a6"
+        },
+        {
+          "file": "039-AAv717.jpg",
+          "Vibrant": "#a44c34",
+          "DarkVibrant": "#5c3e2a",
+          "LightVibrant": "#e4bba5",
+          "Muted": "#9d7c6f",
+          "DarkMuted": "#534643",
+          "LightMuted": "#b1c4d2"
+        },
+        {
+          "file": "040-Z0qeRy.jpg",
+          "Vibrant": "#dcc159",
+          "DarkVibrant": "#9c7135",
+          "LightVibrant": "#fac78c",
+          "Muted": "#acb982",
+          "DarkMuted": "#2c343c",
+          "LightMuted": "#c9ce9f"
+        },
+        {
+          "file": "041-DrQPbv.jpg",
+          "Vibrant": "#acbc5c",
+          "DarkVibrant": "#647034",
+          "LightVibrant": "#faaf97",
+          "Muted": "#9f785c",
+          "DarkMuted": "#6c4d3d",
+          "LightMuted": "#c1bf9e"
+        },
+        {
+          "file": "042-rKdOoL.jpg",
+          "Vibrant": "#c7125b",
+          "DarkVibrant": "#66122e",
+          "LightVibrant": "#e2a38d",
+          "Muted": "#a45a55",
+          "DarkMuted": "#60412b",
+          "LightMuted": "#bdaeb6"
+        },
+        {
+          "file": "043-wqr7ya.jpg",
+          "Vibrant": "#68b242",
+          "DarkVibrant": "#4a8935",
+          "LightVibrant": "#d1be9b",
+          "Muted": "#798995",
+          "DarkMuted": "#494132",
+          "LightMuted": "#99c793"
+        },
+        {
+          "file": "044-zlOAoL.jpg",
+          "Vibrant": "#4086bd",
+          "DarkVibrant": "#366097",
+          "LightVibrant": "#fcd4b1",
+          "Muted": "#73a3b7",
+          "DarkMuted": "#393b34",
+          "LightMuted": "#c0c588"
+        },
+        {
+          "file": "045-wQqdkX.jpg",
+          "Vibrant": "#e81515",
+          "DarkVibrant": "#b4080e",
+          "LightVibrant": "#f5a88a",
+          "Muted": "#bf756d",
+          "DarkMuted": "#5c4c3c",
+          "LightMuted": "#d9b5aa"
+        },
+        {
+          "file": "046-y0XAXa.jpg",
+          "Vibrant": "#c7614f",
+          "DarkVibrant": "#743c14",
+          "LightVibrant": "#e0a688",
+          "Muted": "#958076",
+          "DarkMuted": "#64523a",
+          "LightMuted": "#c9afaa"
+        },
+        {
+          "file": "047-nwRAny.jpg",
+          "Vibrant": "#175daa",
+          "DarkVibrant": "#597225",
+          "LightVibrant": "#e2ad55",
+          "Muted": "#a45c7c",
+          "DarkMuted": "#4c3524",
+          "LightMuted": "#b3bac5"
+        },
+        {
+          "file": "048-K7x7Jp.jpg",
+          "Vibrant": "#c53556",
+          "DarkVibrant": "#0d3a66",
+          "LightVibrant": "#839dd5",
+          "Muted": "#4e75a5",
+          "DarkMuted": "#2d3a4c",
+          "LightMuted": "#d0989c"
+        },
+        {
+          "file": "049-q9K9Jb.jpg",
+          "Vibrant": "#29a2d8",
+          "DarkVibrant": "#145370",
+          "LightVibrant": "#eac0a5",
+          "Muted": "#747f8a",
+          "DarkMuted": "#3e425d",
+          "LightMuted": "#b6cdaa"
+        },
+        {
+          "file": "050-onZn9J.jpg",
+          "Vibrant": "#0c5bba",
+          "DarkVibrant": "#044cb4",
+          "LightVibrant": "#e4ecfc",
+          "Muted": "#98745a",
+          "DarkMuted": "#435730",
+          "LightMuted": "#b3c6d4"
+        },
+        {
+          "file": "051-65JMdV.jpg",
+          "Vibrant": "#e8254c",
+          "DarkVibrant": "#782c42",
+          "LightVibrant": "#f4828e",
+          "Muted": "#b0589f",
+          "DarkMuted": "#391e35",
+          "LightMuted": "#e2bdbf"
+        },
+        {
+          "file": "052-G3L3w4.jpg",
+          "Vibrant": "#d72742",
+          "DarkVibrant": "#1a73bb",
+          "LightVibrant": "#fcdcc3",
+          "Muted": "#4c81b0",
+          "DarkMuted": "#4a5538",
+          "LightMuted": "#cfc19a"
+        },
+        {
+          "file": "053-PQRmLo.jpg",
+          "Vibrant": "#4c94ec",
+          "DarkVibrant": "#0c144e",
+          "LightVibrant": "#eaaa95",
+          "Muted": "#ae6b5e",
+          "DarkMuted": "#2f3a4a",
+          "LightMuted": "#ccb9ae"
+        },
+        {
+          "file": "054-xa41Or.jpg",
+          "Vibrant": "#c2d97c",
+          "DarkVibrant": "#3e642e",
+          "LightVibrant": "#e3dfa6",
+          "Muted": "#789152",
+          "DarkMuted": "#5a442f",
+          "LightMuted": "#b4b4ca"
+        },
+        {
+          "file": "055-Pz4jPD.jpg",
+          "Vibrant": "#dcc445",
+          "DarkVibrant": "#4c441c",
+          "LightVibrant": "#fadfc1",
+          "Muted": "#7e6e6d",
+          "DarkMuted": "#302f4c",
+          "LightMuted": "#d2aaa3"
+        },
+        {
+          "file": "056-DynjPG.jpg",
+          "Vibrant": "#3cacd4",
+          "DarkVibrant": "#04567c",
+          "LightVibrant": "#fcd3ba",
+          "Muted": "#6e8ea3",
+          "DarkMuted": "#3c4c58",
+          "LightMuted": "#b8d19a"
+        },
+        {
+          "file": "057-n39xYn.jpg",
+          "Vibrant": "#5486ae",
+          "DarkVibrant": "#042a55",
+          "LightVibrant": "#b0d89d",
+          "Muted": "#73a197",
+          "DarkMuted": "#763b48",
+          "LightMuted": "#b8d6c1"
+        },
+        {
+          "file": "058-Ykd0qp.jpg",
+          "Vibrant": "#dd182f",
+          "DarkVibrant": "#62080f",
+          "LightVibrant": "#a6e0f2",
+          "Muted": "#866e64",
+          "DarkMuted": "#523d3f",
+          "LightMuted": "#c9b5a4"
+        },
+        {
+          "file": "059-7rkAbW.jpg",
+          "Vibrant": "#1dac6e",
+          "DarkVibrant": "#1f7a51",
+          "LightVibrant": "#f3b286",
+          "Muted": "#a08f5e",
+          "DarkMuted": "#35593b",
+          "LightMuted": "#a0b9c8"
+        },
+        {
+          "file": "060-aVM87d.jpg",
+          "Vibrant": "#f5eb6e",
+          "DarkVibrant": "#7c7308",
+          "LightVibrant": "#fbf199",
+          "Muted": "#8d6861",
+          "DarkMuted": "#494544",
+          "LightMuted": "#b7c1bb"
+        },
+        {
+          "file": "061-jQ6Q1O.jpg",
+          "Vibrant": "#dc2033",
+          "DarkVibrant": "#64121c",
+          "LightVibrant": "#f05c5c",
+          "Muted": "#a9655c",
+          "DarkMuted": "#514f3c",
+          "LightMuted": "#b1c1d6"
+        },
+        {
+          "file": "062-W6XEY3.jpg",
+          "Vibrant": "#dd9669",
+          "DarkVibrant": "#142531",
+          "LightVibrant": "#e8c9a8",
+          "Muted": "#9c915f",
+          "DarkMuted": "#39464e",
+          "LightMuted": "#cbb98f"
+        },
+        {
+          "file": "063-jjoWwo.jpg",
+          "Vibrant": "#155cb8",
+          "DarkVibrant": "#50360a",
+          "LightVibrant": "#f6d1be",
+          "Muted": "#908875",
+          "DarkMuted": "#40492b",
+          "LightMuted": "#a5b8d6"
+        },
+        {
+          "file": "064-M1PEkd.jpg",
+          "Vibrant": "#f2c012",
+          "DarkVibrant": "#08075e",
+          "LightVibrant": "#e6a48e",
+          "Muted": "#a68956",
+          "DarkMuted": "#4f453e",
+          "LightMuted": "#ddcdb9"
+        },
+        {
+          "file": "065-85p16Q.jpg",
+          "Vibrant": "#947741",
+          "DarkVibrant": "#0c0416",
+          "LightVibrant": "#dac1a7",
+          "Muted": "#7e7281",
+          "DarkMuted": "#3f374a",
+          "LightMuted": "#cbb9c4"
+        },
+        {
+          "file": "066-OOQRjG.jpg",
+          "Vibrant": "#9ec24f",
+          "DarkVibrant": "#7a472f",
+          "LightVibrant": "#c8e494",
+          "Muted": "#a37f70",
+          "DarkMuted": "#303d3e",
+          "LightMuted": "#a6b9c9"
+        },
+        {
+          "file": "067-M1PEx1.jpg",
+          "Vibrant": "#c67c64",
+          "DarkVibrant": "#1c2404",
+          "LightVibrant": "#e6aa9b",
+          "Muted": "#a15f70",
+          "DarkMuted": "#532a32",
+          "LightMuted": "#b1bd9a"
+        },
+        {
+          "file": "068-EQlorq.jpg",
+          "Vibrant": "#acb347",
+          "DarkVibrant": "#6c7c1c",
+          "LightVibrant": "#e6bd8d",
+          "Muted": "#acb456",
+          "DarkMuted": "#53453a",
+          "LightMuted": "#a0aec9"
+        },
+        {
+          "file": "069-Gk8ELJ.jpg",
+          "Vibrant": "#fa8d6a",
+          "DarkVibrant": "#040d0b",
+          "LightVibrant": "#f79c78",
+          "Muted": "#508cac",
+          "DarkMuted": "#365934",
+          "LightMuted": "#bbdab8"
+        },
+        {
+          "file": "070-aVqrrx.jpg",
+          "Vibrant": "#2359bc",
+          "DarkVibrant": "#234e8a",
+          "LightVibrant": "#e5889b",
+          "Muted": "#7cb877",
+          "DarkMuted": "#614149",
+          "LightMuted": "#b1c9d1"
+        },
+        {
+          "file": "071-l095Ye.jpg",
+          "Vibrant": "#069409",
+          "DarkVibrant": "#048404",
+          "LightVibrant": "#9ad68e",
+          "Muted": "#59a65b",
+          "DarkMuted": "#3c505c",
+          "LightMuted": "#b8c1ac"
+        },
+        {
+          "file": "072-qM7Vjo.jpg",
+          "Vibrant": "#debc46",
+          "DarkVibrant": "#7c6c1c",
+          "LightVibrant": "#d8e3fa",
+          "Muted": "#9d8f61",
+          "DarkMuted": "#3c3b46",
+          "LightMuted": "#a7afcd"
+        },
+        {
+          "file": "073-15XOPm.jpg",
+          "Vibrant": "#83a245",
+          "DarkVibrant": "#688824",
+          "LightVibrant": "#dfb08e",
+          "Muted": "#8ea75f",
+          "DarkMuted": "#445c2c",
+          "LightMuted": "#a8afcc"
+        },
+        {
+          "file": "074-wQqdQo.jpg",
+          "Vibrant": "#cfc425",
+          "DarkVibrant": "#3d5a16",
+          "LightVibrant": "#d0e59f",
+          "Muted": "#8da85f",
+          "DarkMuted": "#5a282c",
+          "LightMuted": "#cac08f"
+        },
+        {
+          "file": "075-PzrDz3.jpg",
+          "Vibrant": "#acb44c",
+          "DarkVibrant": "#5c6b1e",
+          "LightVibrant": "#e57ca2",
+          "Muted": "#9a599a",
+          "DarkMuted": "#524925",
+          "LightMuted": "#a6a9cc"
+        },
+        {
+          "file": "076-QjrDjp.jpg",
+          "Vibrant": "#b86838",
+          "DarkVibrant": "#5c630a",
+          "LightVibrant": "#e8b2a1",
+          "Muted": "#8e9b61",
+          "DarkMuted": "#564d2b",
+          "LightMuted": "#b9d2ae"
+        },
+        {
+          "file": "077-xaGvRl.jpg",
+          "Vibrant": "#b5c03c",
+          "DarkVibrant": "#09395b",
+          "LightVibrant": "#c2ef99",
+          "Muted": "#768d7d",
+          "DarkMuted": "#70753b",
+          "LightMuted": "#bfcfa1"
+        },
+        {
+          "file": "078-XMlA3Z.jpg",
+          "Vibrant": "#d7342d",
+          "DarkVibrant": "#961f1a",
+          "LightVibrant": "#cb807c",
+          "Muted": "#9ca97c",
+          "DarkMuted": "#5d362a",
+          "LightMuted": "#c8afa8"
+        },
+        {
+          "file": "079-KLrmJy.jpg",
+          "Vibrant": "#d8805c",
+          "DarkVibrant": "#5f7134",
+          "LightVibrant": "#e1c5ae",
+          "Muted": "#ab6758",
+          "DarkMuted": "#483b30",
+          "LightMuted": "#cdaea7"
+        },
+        {
+          "file": "080-PzrKdz.jpg",
+          "Vibrant": "#dc0a0e",
+          "DarkVibrant": "#b71113",
+          "LightVibrant": "#f4c1a0",
+          "Muted": "#545c8c",
+          "DarkMuted": "#544451",
+          "LightMuted": "#ccb5a4"
+        },
+        {
+          "file": "081-vy4j87.jpg",
+          "Vibrant": "#fc9406",
+          "DarkVibrant": "#69301b",
+          "LightVibrant": "#d6879b",
+          "Muted": "#6884a6",
+          "DarkMuted": "#344a61",
+          "LightMuted": "#aeccd0"
+        }
+      ]
+    },
+    "lifestyle": {
+      "images": 55,
+      "swatches": {
+        "Vibrant": {
+          "weightedAverage": "#be7e52",
+          "mostPopulous": [
+            "#d49c5a",
+            "#bbbc50",
+            "#e3d450",
+            "#bb097f",
+            "#b13b62",
+            "#8b5c36"
+          ],
+          "samples": 55
+        },
+        "DarkVibrant": {
+          "weightedAverage": "#514436",
+          "mostPopulous": [
+            "#042a64",
+            "#623b27",
+            "#674121",
+            "#1c355f",
+            "#0e3475",
+            "#674913"
+          ],
+          "samples": 55
+        },
+        "LightVibrant": {
+          "weightedAverage": "#eece9c",
+          "mostPopulous": [
+            "#f2d0c0",
+            "#ebd37e",
+            "#f2d299",
+            "#e2997e",
+            "#eada7f",
+            "#ecd380"
+          ],
+          "samples": 55
+        },
+        "Muted": {
+          "weightedAverage": "#9d8868",
+          "mostPopulous": [
+            "#98876b",
+            "#a78b73",
+            "#a37f5e",
+            "#949d75",
+            "#94a05e",
+            "#a2957d"
+          ],
+          "samples": 55
+        },
+        "DarkMuted": {
+          "weightedAverage": "#504535",
+          "mostPopulous": [
+            "#4e352f",
+            "#4f3a2f",
+            "#4d392b",
+            "#3d3d40",
+            "#2c3c57",
+            "#655e33"
+          ],
+          "samples": 55
+        },
+        "LightMuted": {
+          "weightedAverage": "#cbbdae",
+          "mostPopulous": [
+            "#cccbc0",
+            "#d0cda4",
+            "#e1d3c4",
+            "#bbbebc",
+            "#d0b6ae",
+            "#ddc9c0"
+          ],
+          "samples": 55
+        }
+      },
+      "perImage": [
+        {
+          "file": "000-kL861A.jpg",
+          "Vibrant": "#b77955",
+          "DarkVibrant": "#6e3c1e",
+          "LightVibrant": "#f4a48c",
+          "Muted": "#4f74ac",
+          "DarkMuted": "#4d392b",
+          "LightMuted": "#d6bcae"
+        },
+        {
+          "file": "001-MrlAyj.jpg",
+          "Vibrant": "#dc8f2f",
+          "DarkVibrant": "#614012",
+          "LightVibrant": "#f4e48e",
+          "Muted": "#9d9654",
+          "DarkMuted": "#5c4a31",
+          "LightMuted": "#c09f8b"
+        },
+        {
+          "file": "002-3d83bK.jpg",
+          "Vibrant": "#c48e81",
+          "DarkVibrant": "#5a332a",
+          "LightVibrant": "#dc9ccc",
+          "Muted": "#8e8a83",
+          "DarkMuted": "#74564e",
+          "LightMuted": "#c3bab8"
+        },
+        {
+          "file": "003-8rvxeQ.jpg",
+          "Vibrant": "#8b5c36",
+          "DarkVibrant": "#4a3120",
+          "LightVibrant": "#fcfcec",
+          "Muted": "#5c78ac",
+          "DarkMuted": "#2c3c57",
+          "LightMuted": "#d7cebd"
+        },
+        {
+          "file": "004-ye8ba1.jpg",
+          "Vibrant": "#bc7434",
+          "DarkVibrant": "#462d1f",
+          "LightVibrant": "#f4b184",
+          "Muted": "#a57f68",
+          "DarkMuted": "#564032",
+          "LightMuted": "#a3bacd"
+        },
+        {
+          "file": "005-0R09jo.jpg",
+          "Vibrant": "#bbbc50",
+          "DarkVibrant": "#55310b",
+          "LightVibrant": "#f2d299",
+          "Muted": "#ae8d5c",
+          "DarkMuted": "#625e2e",
+          "LightMuted": "#ceb799"
+        },
+        {
+          "file": "006-l96MZj.jpg",
+          "Vibrant": "#bb894e",
+          "DarkVibrant": "#6f7820",
+          "LightVibrant": "#eba37b",
+          "Muted": "#b3987a",
+          "DarkMuted": "#505630",
+          "LightMuted": "#ccbba5"
+        },
+        {
+          "file": "007-WZQAmG.jpg",
+          "Vibrant": "#e3d450",
+          "DarkVibrant": "#771860",
+          "LightVibrant": "#eada7f",
+          "Muted": "#b1a44f",
+          "DarkMuted": "#484826",
+          "LightMuted": "#c9b2aa"
+        },
+        {
+          "file": "008-Pr6pYW.jpg",
+          "Vibrant": "#14549e",
+          "DarkVibrant": "#214377",
+          "LightVibrant": "#e5b49e",
+          "Muted": "#9d8162",
+          "DarkMuted": "#342c2b",
+          "LightMuted": "#cdbeb6"
+        },
+        {
+          "file": "009-l96MZG.jpg",
+          "Vibrant": "#f4b658",
+          "DarkVibrant": "#684418",
+          "LightVibrant": "#f7d777",
+          "Muted": "#968852",
+          "DarkMuted": "#534234",
+          "LightMuted": "#c5bd8a"
+        },
+        {
+          "file": "010-3d83b8.jpg",
+          "Vibrant": "#bb097f",
+          "DarkVibrant": "#68421b",
+          "LightVibrant": "#e2997e",
+          "Muted": "#ab6d4f",
+          "DarkMuted": "#43372e",
+          "LightMuted": "#baa399"
+        },
+        {
+          "file": "011-MrlAyd.jpg",
+          "Vibrant": "#c17547",
+          "DarkVibrant": "#7e583a",
+          "LightVibrant": "#f2d0c0",
+          "Muted": "#a78b73",
+          "DarkMuted": "#443625",
+          "LightMuted": "#cccbc0"
+        },
+        {
+          "file": "012-ye8ban.jpg",
+          "Vibrant": "#e5b060",
+          "DarkVibrant": "#714b12",
+          "LightVibrant": "#fcc881",
+          "Muted": "#ac7853",
+          "DarkMuted": "#835715",
+          "LightMuted": "#d3bdaa"
+        },
+        {
+          "file": "013-7rWYGV.jpg",
+          "Vibrant": "#d53368",
+          "DarkVibrant": "#6b4a2a",
+          "LightVibrant": "#dcec81",
+          "Muted": "#a76f58",
+          "DarkMuted": "#44351f",
+          "LightMuted": "#d0b6ae"
+        },
+        {
+          "file": "014-WZQAmb.jpg",
+          "Vibrant": "#d24268",
+          "DarkVibrant": "#6b192f",
+          "LightVibrant": "#ecb489",
+          "Muted": "#a8665e",
+          "DarkMuted": "#54442c",
+          "LightMuted": "#adc3d2"
+        },
+        {
+          "file": "015-v40KP9.jpg",
+          "Vibrant": "#e4c444",
+          "DarkVibrant": "#333111",
+          "LightVibrant": "#ddd3a7",
+          "Muted": "#7ea067",
+          "DarkMuted": "#655e33",
+          "LightMuted": "#b0b4d4"
+        },
+        {
+          "file": "016-Pr6pYn.jpg",
+          "Vibrant": "#cc6c34",
+          "DarkVibrant": "#442c1e",
+          "LightVibrant": "#f4a07a",
+          "Muted": "#647fa8",
+          "DarkMuted": "#2d344c",
+          "LightMuted": "#cdc3b8"
+        },
+        {
+          "file": "017-YrYbzk.jpg",
+          "Vibrant": "#bb8355",
+          "DarkVibrant": "#663e29",
+          "LightVibrant": "#fcdcac",
+          "Muted": "#946d5a",
+          "DarkMuted": "#564647",
+          "LightMuted": "#c7c7a7"
+        },
+        {
+          "file": "018-nm7Qlb.jpg",
+          "Vibrant": "#d49c5a",
+          "DarkVibrant": "#946414",
+          "LightVibrant": "#ebd37e",
+          "Muted": "#a47f5e",
+          "DarkMuted": "#564732",
+          "LightMuted": "#ccb49c"
+        },
+        {
+          "file": "019-Vryd1L.jpg",
+          "Vibrant": "#bf6f43",
+          "DarkVibrant": "#57341a",
+          "LightVibrant": "#fcdcac",
+          "Muted": "#a49c5c",
+          "DarkMuted": "#564a2f",
+          "LightMuted": "#d5ccbe"
+        },
+        {
+          "file": "020-Lr0APD.jpg",
+          "Vibrant": "#b8151e",
+          "DarkVibrant": "#042a64",
+          "LightVibrant": "#f3fcf9",
+          "Muted": "#646888",
+          "DarkMuted": "#283255",
+          "LightMuted": "#ceb8a4"
+        },
+        {
+          "file": "021-1Xl0KD.jpg",
+          "Vibrant": "#b68764",
+          "DarkVibrant": "#1c355f",
+          "LightVibrant": "#fcdbce",
+          "Muted": "#5c7cac",
+          "DarkMuted": "#202434",
+          "LightMuted": "#d4afa4"
+        },
+        {
+          "file": "022-m1MK0a.jpg",
+          "Vibrant": "#c45144",
+          "DarkVibrant": "#64261f",
+          "LightVibrant": "#f0ba96",
+          "Muted": "#b4855f",
+          "DarkMuted": "#6e594b",
+          "LightMuted": "#c9b299"
+        },
+        {
+          "file": "023-Or8naX.jpg",
+          "Vibrant": "#c4603a",
+          "DarkVibrant": "#7d3817",
+          "LightVibrant": "#f48c6c",
+          "Muted": "#9c6348",
+          "DarkMuted": "#38372f",
+          "LightMuted": "#abc5cb"
+        },
+        {
+          "file": "024-z56rYk.jpg",
+          "Vibrant": "#dd9456",
+          "DarkVibrant": "#6e3e16",
+          "LightVibrant": "#efe287",
+          "Muted": "#bfaf85",
+          "DarkMuted": "#767043",
+          "LightMuted": "#d2b8a3"
+        },
+        {
+          "file": "025-Jrd5WK.jpg",
+          "Vibrant": "#d8963b",
+          "DarkVibrant": "#674913",
+          "LightVibrant": "#f5d070",
+          "Muted": "#b3924f",
+          "DarkMuted": "#665238",
+          "LightMuted": "#dacab4"
+        },
+        {
+          "file": "026-bvzjev.jpg",
+          "Vibrant": "#7ebc3a",
+          "DarkVibrant": "#61a113",
+          "LightVibrant": "#d69a80",
+          "Muted": "#9a8c6d",
+          "DarkMuted": "#4a4536",
+          "LightMuted": "#c5b1a3"
+        },
+        {
+          "file": "027-pzvk8M.jpg",
+          "Vibrant": "#b46141",
+          "DarkVibrant": "#381c14",
+          "LightVibrant": "#f1c3a6",
+          "Muted": "#a7826d",
+          "DarkMuted": "#412d23",
+          "LightMuted": "#d0cda4"
+        },
+        {
+          "file": "028-oOkPWP.jpg",
+          "Vibrant": "#dd2c62",
+          "DarkVibrant": "#0f275a",
+          "LightVibrant": "#f0f3fc",
+          "Muted": "#a37f5e",
+          "DarkMuted": "#3d3d40",
+          "LightMuted": "#bbbebc"
+        },
+        {
+          "file": "029-qjPV6J.jpg",
+          "Vibrant": "#b13b62",
+          "DarkVibrant": "#858236",
+          "LightVibrant": "#ecc589",
+          "Muted": "#af9f5e",
+          "DarkMuted": "#42382b",
+          "LightMuted": "#c7b593"
+        },
+        {
+          "file": "030-5rM6mp.jpg",
+          "Vibrant": "#d0765a",
+          "DarkVibrant": "#672e1d",
+          "LightVibrant": "#f1bda9",
+          "Muted": "#ac6f53",
+          "DarkMuted": "#573f33",
+          "LightMuted": "#ddc9c0"
+        },
+        {
+          "file": "031-Grxv66.jpg",
+          "Vibrant": "#d7214e",
+          "DarkVibrant": "#0e3475",
+          "LightVibrant": "#dd854d",
+          "Muted": "#75828c",
+          "DarkMuted": "#344454",
+          "LightMuted": "#d6b7b1"
+        },
+        {
+          "file": "032-XraW6R.jpg",
+          "Vibrant": "#e4cc54",
+          "DarkVibrant": "#726212",
+          "LightVibrant": "#fcdc84",
+          "Muted": "#a17960",
+          "DarkMuted": "#68553b",
+          "LightMuted": "#c8b79b"
+        },
+        {
+          "file": "033-xG31JP.jpg",
+          "Vibrant": "#cd9343",
+          "DarkVibrant": "#84520a",
+          "LightVibrant": "#f0d3b2",
+          "Muted": "#50879c",
+          "DarkMuted": "#483427",
+          "LightMuted": "#cac9b6"
+        },
+        {
+          "file": "034-ErKoP7.jpg",
+          "Vibrant": "#ac8946",
+          "DarkVibrant": "#8f5728",
+          "LightVibrant": "#fac495",
+          "Muted": "#c0ae74",
+          "DarkMuted": "#403625",
+          "LightMuted": "#cfae97"
+        },
+        {
+          "file": "035-DrKwW1.jpg",
+          "Vibrant": "#bba05c",
+          "DarkVibrant": "#5d4e27",
+          "LightVibrant": "#f0cd95",
+          "Muted": "#ac9260",
+          "DarkMuted": "#6b5439",
+          "LightMuted": "#cab68c"
+        },
+        {
+          "file": "036-G1GV8y.jpg",
+          "Vibrant": "#aca430",
+          "DarkVibrant": "#67621c",
+          "LightVibrant": "#ece46c",
+          "Muted": "#9a6e51",
+          "DarkMuted": "#463c29",
+          "LightMuted": "#d4b7ac"
+        },
+        {
+          "file": "037-kL86A7.jpg",
+          "Vibrant": "#d4c420",
+          "DarkVibrant": "#623b27",
+          "LightVibrant": "#ecd380",
+          "Muted": "#9f7456",
+          "DarkMuted": "#674c33",
+          "LightMuted": "#cebec0"
+        },
+        {
+          "file": "038-ZoQlOW.jpg",
+          "Vibrant": "#8dab4c",
+          "DarkVibrant": "#4c6b1b",
+          "LightVibrant": "#f5bdad",
+          "Muted": "#977e52",
+          "DarkMuted": "#556d34",
+          "LightMuted": "#e1d3c4"
+        },
+        {
+          "file": "039-3d83n8.jpg",
+          "Vibrant": "#f3c627",
+          "DarkVibrant": "#78770d",
+          "LightVibrant": "#f2d567",
+          "Muted": "#ab8a64",
+          "DarkMuted": "#5d452c",
+          "LightMuted": "#ccb9a4"
+        },
+        {
+          "file": "040-8rvxbQ.jpg",
+          "Vibrant": "#d429a3",
+          "DarkVibrant": "#791449",
+          "LightVibrant": "#e6a88f",
+          "Muted": "#8e6d59",
+          "DarkMuted": "#4f3a2f",
+          "LightMuted": "#afc3ce"
+        },
+        {
+          "file": "041-rKywYZ.jpg",
+          "Vibrant": "#d47c2c",
+          "DarkVibrant": "#874723",
+          "LightVibrant": "#f8c787",
+          "Muted": "#9c9075",
+          "DarkMuted": "#4b4338",
+          "LightMuted": "#d8c5ae"
+        },
+        {
+          "file": "042-6r7Mzo.jpg",
+          "Vibrant": "#b06e40",
+          "DarkVibrant": "#583a24",
+          "LightVibrant": "#e4b47c",
+          "Muted": "#98876b",
+          "DarkMuted": "#6b4c34",
+          "LightMuted": "#c8b89f"
+        },
+        {
+          "file": "043-MrlAJd.jpg",
+          "Vibrant": "#c46c04",
+          "DarkVibrant": "#874c0c",
+          "LightVibrant": "#fad472",
+          "Muted": "#b08f54",
+          "DarkMuted": "#50482d",
+          "LightMuted": "#bcac7c"
+        },
+        {
+          "file": "044-7rWYKV.jpg",
+          "Vibrant": "#c2763c",
+          "DarkVibrant": "#645913",
+          "LightVibrant": "#e2ba99",
+          "Muted": "#949d75",
+          "DarkMuted": "#4e4027",
+          "LightMuted": "#d2cbb6"
+        },
+        {
+          "file": "045-WZQA3b.jpg",
+          "Vibrant": "#c07c59",
+          "DarkVibrant": "#674121",
+          "LightVibrant": "#d99e85",
+          "Muted": "#acb45c",
+          "DarkMuted": "#695846",
+          "LightMuted": "#cbc4ba"
+        },
+        {
+          "file": "046-v40KO9.jpg",
+          "Vibrant": "#264881",
+          "DarkVibrant": "#172d57",
+          "LightVibrant": "#eef3fc",
+          "Muted": "#607ca8",
+          "DarkMuted": "#484745",
+          "LightMuted": "#cab9b0"
+        },
+        {
+          "file": "047-ye8bpn.jpg",
+          "Vibrant": "#d69151",
+          "DarkVibrant": "#6b4019",
+          "LightVibrant": "#fcbc84",
+          "Muted": "#875e4c",
+          "DarkMuted": "#5f4436",
+          "LightMuted": "#d4d1b6"
+        },
+        {
+          "file": "048-QrM5xW.jpg",
+          "Vibrant": "#ba944b",
+          "DarkVibrant": "#a0793c",
+          "LightVibrant": "#f4c99e",
+          "Muted": "#a89060",
+          "DarkMuted": "#765940",
+          "LightMuted": "#d7c3be"
+        },
+        {
+          "file": "049-Vryd0L.jpg",
+          "Vibrant": "#eb6c4c",
+          "DarkVibrant": "#9c5c24",
+          "LightVibrant": "#fc8165",
+          "Muted": "#94a05e",
+          "DarkMuted": "#4e352f",
+          "LightMuted": "#d8bcb4"
+        },
+        {
+          "file": "050-nm7QMb.jpg",
+          "Vibrant": "#5c81b6",
+          "DarkVibrant": "#154d87",
+          "LightVibrant": "#a3b8d5",
+          "Muted": "#978b79",
+          "DarkMuted": "#534c38",
+          "LightMuted": "#dac7be"
+        },
+        {
+          "file": "051-wqlvjA.jpg",
+          "Vibrant": "#c77e3c",
+          "DarkVibrant": "#5f5e13",
+          "LightVibrant": "#eabf87",
+          "Muted": "#9e7a60",
+          "DarkMuted": "#5f4829",
+          "LightMuted": "#d2c2aa"
+        },
+        {
+          "file": "052-Lr0AjD.jpg",
+          "Vibrant": "#b4703f",
+          "DarkVibrant": "#654729",
+          "LightVibrant": "#edc3ab",
+          "Muted": "#a2957d",
+          "DarkMuted": "#4f462c",
+          "LightMuted": "#c3d5a9"
+        },
+        {
+          "file": "053-5lpoRJ.jpg",
+          "Vibrant": "#c99843",
+          "DarkVibrant": "#9c541c",
+          "LightVibrant": "#f7c27b",
+          "Muted": "#ae9059",
+          "DarkMuted": "#563c28",
+          "LightMuted": "#d1b8a3"
+        },
+        {
+          "file": "054-yqXdkJ.jpg",
+          "Vibrant": "#b9c557",
+          "DarkVibrant": "#7d8f37",
+          "LightVibrant": "#ecf48c",
+          "Muted": "#8c9858",
+          "DarkMuted": "#47582f",
+          "LightMuted": "#ba937f"
+        }
+      ]
+    }
+  }
+}

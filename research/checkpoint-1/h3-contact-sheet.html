@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>H3 Contact Sheet</title><link rel="stylesheet" href="sketch.css"><style>
+.h3 { min-height: 100dvh; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 56px; align-items: center; padding: 104px 56px 48px; }
+.h3 h1 { font-size: clamp(3.4rem, 6.4vw, 6rem); line-height: .9; text-transform: none; }
+.h3 .aside { font-family: 'Anybody'; font-style: italic; font-stretch: 110%; font-weight: 500; color: var(--accent-text); font-size: 1.3rem; margin-top: 10px; transform: rotate(-3deg); transform-origin: left; }
+.h3 .sub { margin-top: 26px; font-size: 1.15rem; max-width: 34ch; color: var(--fg-2); }
+.h3 .ctas { display: flex; gap: 12px; margin-top: 30px; }
+.h3 .sheet { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 12px; background: #073b45; padding: 18px 18px 8px; }
+.h3 figure { position: relative; }
+.h3 figure img { aspect-ratio: 3 / 2; object-fit: cover; width: 100%; filter: saturate(.9); }
+.h3 figcaption { color: #f7dcb0; font-size: .72rem; padding: 4px 0 4px; letter-spacing: .08em; }
+.h3 figcaption b { color: #ff8a6b; }
+.h3 .pick { z-index: 2; transform: scale(1.5) rotate(-1.5deg); transform-origin: 70% 30%; box-shadow: 0 18px 40px -12px rgb(7 59 69 / .55); background: #073b45; padding: 6px 6px 0; }
+.h3 .pick img { filter: none; }
+.h3 .grease { position: absolute; z-index: 3; inset: -10px -12px -8px -10px; width: calc(100% + 22px); height: calc(100% + 18px); transform: rotate(2.5deg); pointer-events: none; }
+@media (max-width: 700px) {
+  .h3 { grid-template-columns: 1fr; padding: 84px 16px 120px; gap: 32px; align-content: start; }
+  .h3 h1 { font-size: 15vw; }
+  .h3 .sheet { margin: 0 -16px; padding: 12px; grid-template-columns: repeat(3, 1fr); }
+  .h3 .pick { transform: scale(1.35) rotate(-1.5deg); transform-origin: 30% 40%; }
+  .h3 .ctas { display: none; }
+}</style></head><body data-mode="goldenhour">
+<header class="bar" >
+  <a class="wm" href="#" aria-label="Photos by Noelle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-391 -391 5119 2673" role="img" aria-hidden="true"><title id="t-$RAND">Photos by Noelle</title>
+<path fill="currentColor" transform="translate(0 324) scale(0.2400)" d="M128.9 0H463.1V-380.3H1080.4Q1379.6 -380.3 1518.5 -505.3Q1657.3 -630.2 1657.3 -866.6Q1657.3 -1101.8 1519 -1225.9Q1380.6 -1350 1080.4 -1350H128.9ZM463.1 -599.5V-1130.8H992Q1166.2 -1130.8 1246.4 -1066.2Q1326.7 -1001.5 1326.7 -864.8Q1326.7 -728.7 1247 -664.1Q1167.3 -599.5 992 -599.5ZM1985.9 0H2320.1V-561.8H3245.9V0H3580.2V-1350H3245.9V-781H2320.1V-1350H1985.9ZM4860.5 12.2Q5267.3 12.2 5517 -160.5Q5766.6 -333.2 5766.6 -674.8Q5766.6 -1018.1 5517 -1190.8Q5267.3 -1363.5 4860.5 -1363.5Q4453.8 -1363.5 4205 -1191.4Q3956.3 -1019.3 3956.3 -674.8Q3956.3 -333.2 4205.9 -160.5Q4455.5 12.2 4860.5 12.2ZM4860.5 -206.9Q4615.1 -206.9 4453 -316.4Q4290.9 -425.8 4290.9 -674.8Q4290.9 -926.3 4453 -1035.3Q4615.1 -1144.3 4860.5 -1144.3Q5107.7 -1144.3 5269.8 -1035.3Q5431.9 -926.3 5431.9 -674.8Q5431.9 -425.8 5269.8 -316.4Q5107.7 -206.9 4860.5 -206.9ZM6716.8 0H7051V-1130.8H7694.4V-1350H6071V-1130.8H6716.8ZM8891.5 12.2Q9298.3 12.2 9548 -160.5Q9797.6 -333.2 9797.6 -674.8Q9797.6 -1018.1 9548 -1190.8Q9298.3 -1363.5 8891.5 -1363.5Q8484.8 -1363.5 8236 -1191.4Q7987.3 -1019.3 7987.3 -674.8Q7987.3 -333.2 8236.9 -160.5Q8486.5 12.2 8891.5 12.2ZM8891.5 -206.9Q8646.1 -206.9 8484 -316.4Q8321.9 -425.8 8321.9 -674.8Q8321.9 -926.3 8484 -1035.3Q8646.1 -1144.3 8891.5 -1144.3Q9138.7 -1144.3 9300.8 -1035.3Q9462.9 -926.3 9462.9 -674.8Q9462.9 -425.8 9300.8 -316.4Q9138.7 -206.9 8891.5 -206.9ZM10917.7 6.4Q11307.5 6.4 11519.6 -96.6Q11731.7 -199.7 11731.7 -411.7Q11731.7 -586.9 11564.5 -658.6Q11397.4 -730.3 11013.7 -781.5Q10754.3 -819.1 10580 -855.5Q10405.6 -891.9 10405.6 -978.4Q10405.6 -1057.7 10542.2 -1101.6Q10678.8 -1145.5 10903.7 -1145.5Q11117.9 -1145.5 11257.2 -1087.2Q11396.4 -1028.9 11396.4 -879.5H11731.4Q11731.4 -1128.6 11516.6 -1246Q11301.8 -1363.5 10908.1 -1363.5Q10521.7 -1363.5 10304.6 -1263.2Q10087.6 -1162.8 10087.6 -959.8Q10087.6 -780.2 10258.4 -702.5Q10429.2 -624.8 10792.3 -577.2Q11061.8 -538 11234.4 -505.1Q11407 -472.2 11407 -382.1Q11407 -297.9 11270.8 -254.7Q11134.6 -211.6 10913.9 -211.6Q10691.4 -211.6 10555.9 -273.5Q10420.4 -335.5 10420.4 -486.2H10086.5Q10086.5 -228 10298.1 -110.8Q10509.6 6.4 10917.7 6.4ZM12940.9 0H14072.4Q14344.8 0 14450.3 -98.3Q14555.8 -196.7 14555.8 -375.4Q14555.8 -545.6 14439.9 -623Q14324.1 -700.4 14197.9 -706.6Q14318.1 -712.3 14411.7 -797Q14505.3 -881.8 14505.3 -1030.2Q14505.3 -1181 14399.1 -1265.5Q14292.9 -1350 14007.7 -1350H12940.9ZM13275.1 -219.2V-609.2H13955.5Q14104.3 -609.2 14162.6 -564.2Q14221 -519.2 14221 -419Q14221 -316.8 14172.1 -268Q14123.2 -219.2 14003.5 -219.2ZM13275.1 -792.1V-1131.1H13953.6Q14072 -1131.1 14119.1 -1091.8Q14166.3 -1052.4 14166.3 -972.8Q14166.3 -888.6 14111.3 -840.4Q14056.3 -792.1 13923.7 -792.1ZM15616.4 0H15949.6V-561.3L16711.8 -1350H16336.6L15784.6 -768.1H15783.9L15229.9 -1350H14854.7L15616.4 -563Z"/>
+<path fill="currentColor" transform="translate(0 1890)" d="M19.7 0H375.1V-1088.8H382.8L465.6 0H1030.3V-1350H673L665.5 -273.7H661.6L576.5 -1350H19.7ZM1491.5 8.5Q1854 8.5 1872.4 -178.7Q1890.8 -366 1890.8 -675.9Q1890.8 -987.7 1872.4 -1175.8Q1854 -1363.9 1491.5 -1363.9Q1129 -1363.9 1111.5 -1176.7Q1094.1 -989.6 1094.1 -675.9Q1094.1 -366 1112.5 -178.7Q1130.9 8.5 1491.5 8.5ZM1491.5 -252Q1469.1 -252 1460.3 -279.5Q1451.4 -307.1 1451.4 -675.9Q1451.4 -1056 1460.3 -1079.7Q1469.1 -1103.4 1491.5 -1103.4Q1515.7 -1103.4 1524.6 -1079.7Q1533.4 -1056 1533.4 -675.9Q1533.4 -307.1 1524.6 -279.5Q1515.7 -252 1491.5 -252ZM1948.5 0H2499V-260.5H2309.6V-553.1H2491.2V-808.3H2309.6V-1089.5H2499V-1350H1948.5ZM2560.7 0H3101V-256.7H2921.8V-1350H2560.7ZM3164.7 0H3705V-256.7H3525.8V-1350H3164.7ZM3767.5 0H4318V-260.5H4128.6V-553.1H4310.2V-808.3H4128.6V-1089.5H4318V-1350H3767.5Z"/>
+<path fill="none" stroke="var(--wm-accent, currentColor)" stroke-width="95" stroke-linecap="square" d="M-297 108V-297H108M4633 108V-297H4228M-297 1782V2187H108M4633 1782V2187H4228"/>
+</svg></a>
+  <nav class="desk-only"><a href="#">Sports</a><a href="#">Lifestyle</a><a href="#">About</a><a href="#">Kind Words</a></nav>
+  <span class="toggle desk-only"><span class="">Game Day</span><span class="on">Golden Hour</span></span>
+  <a class="btn btn-primary desk-only" href="#">Inquire</a>
+</header>
+<main class="h3">
+  <div class="copy">
+    <h1 class="display">Life through my lens.</h1>
+    <p class="aside">haha, get it?</p>
+    <p class="sub">Sports and lifestyle photographer in Honolulu, HI and Fredericksburg, VA. Bright, colorful, a little bit golden.</p>
+    <p class="ctas"><a class="btn btn-primary" href="#">Inquire</a><a class="btn btn-ghost" href="#">See the work</a></p>
+  </div>
+  <div class="sheet">
+    <figure class=""><img src="img/s002.jpg" alt=""><figcaption class="num">002</figcaption></figure><figure class=""><img src="img/l005.jpg" alt=""><figcaption class="num">005</figcaption></figure><figure class=""><img src="img/s051.jpg" alt=""><figcaption class="num">051</figcaption></figure><figure class="pick"><img src="img/l018.jpg" alt=""><figcaption class="num">018 <b>&#9733;</b></figcaption><svg class="grease" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 9 C 30 3, 70 5, 96 8 C 98 40, 97 70, 95 93 C 70 97, 30 96, 6 94 C 3 70, 2 40, 5 7" fill="none" stroke="#ff8a6b" stroke-width="2.4" vector-effect="non-scaling-stroke" stroke-linecap="round"/></svg></figure><figure class=""><img src="img/s012.jpg" alt=""><figcaption class="num">012</figcaption></figure><figure class=""><img src="img/l022.jpg" alt=""><figcaption class="num">022</figcaption></figure><figure class=""><img src="img/s027.jpg" alt=""><figcaption class="num">027</figcaption></figure><figure class=""><img src="img/l040.jpg" alt=""><figcaption class="num">040</figcaption></figure><figure class=""><img src="img/s007.jpg" alt=""><figcaption class="num">007</figcaption></figure>
+  </div>
+</main><div class="mbar"><a class="btn btn-primary" href="#">Inquire</a><a class="btn menu" href="#" aria-label="Menu">Menu</a></div></body></html>

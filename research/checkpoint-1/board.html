@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkpoint 1 Board</title>
+<link rel="stylesheet" href="sketch.css">
+<style>
+  body { background: #e9edf1; color: #0b111d; padding: 48px 56px 80px; font-size: 15px; }
+  h1, h2 { font-family: 'Anybody'; text-transform: uppercase; font-stretch: 60%; font-weight: 900; line-height: .9; }
+  h1 { font-size: 64px; }
+  h2 { font-size: 30px; margin: 56px 0 16px; border-top: 2px solid #0b111d; padding-top: 14px; }
+  p, li { max-width: 78ch; }
+  .read { font-size: 19px; margin-top: 18px; max-width: 90ch; }
+  .concept { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 8px; counter-reset: c; }
+  .concept p { background: #fff; padding: 16px; font-size: 14px; }
+  .modes { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .mode { padding: 28px; }
+  .mode h3 { font-family: 'Anybody'; font-size: 44px; text-transform: uppercase; line-height: .9; margin-bottom: 18px; }
+  .gd { background: #0b111d; color: #eef2f6; }
+  .gd h3 { font-stretch: 56%; font-weight: 900; }
+  .gh { background: #f7dcb0; color: #073b45; }
+  .gh h3 { font-stretch: 128%; font-weight: 640; font-style: italic; }
+  .sw { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .chip { height: 96px; padding: 10px; display: flex; flex-direction: column; justify-content: flex-end; font: 600 12px/1.35 'Atkinson'; }
+  .chip b { font-size: 13px; }
+  .src { font-size: 12px; margin-top: 14px; opacity: .85; }
+  .pairs { margin-top: 14px; font: 12px/1.6 'Atkinson'; }
+  .type { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; background: #fff; padding: 28px; }
+  .spec1 { font-family: 'Anybody'; font-size: 110px; line-height: .82; text-transform: uppercase; }
+  .spec1 .a { font-stretch: 52%; font-weight: 900; display: block; }
+  .spec1 .b { font-stretch: 140%; font-weight: 560; font-style: italic; display: block; font-size: 64px; color: #a3301a; }
+  .num-spec { font-family: 'Anybody'; font-stretch: 62%; font-weight: 800; font-size: 90px; font-variant-numeric: tabular-nums; line-height: 1; }
+  .body-spec { font-size: 18px; line-height: 1.6; }
+  .wmrow { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 16px; align-items: stretch; }
+  .wmrow > div { display: grid; place-items: center; padding: 28px; min-height: 200px; }
+  .wmrow .wm { height: 120px; }
+  .wmrow img { width: 110px; height: 110px; }
+  .heroes { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 24px; }
+  .hero { background: #fff; padding: 14px; }
+  .hero .shots { display: grid; grid-template-columns: 4.3fr 1fr; gap: 10px; align-items: start; }
+  .hero img { width: 100%; border: 1px solid #c9d0d8; }
+  .hero h3 { font: 800 17px/1.2 'Atkinson'; margin: 12px 0 4px; }
+  .hero p { font-size: 13.5px; }
+  .rec { background: #ff4b3a; color: #0b111d; font-weight: 800; padding: 2px 8px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; margin-left: 8px; }
+  .map { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+  .map div { background: #fff; padding: 14px; font-size: 13px; }
+  .map b { display: block; font-family: 'Anybody'; font-stretch: 70%; font-weight: 800; font-size: 20px; text-transform: uppercase; }
+  .map code { font-size: 12px; color: #a3301a; }
+  .confirm { background: #fff; padding: 18px 22px; columns: 2; gap: 40px; }
+  .confirm li { margin-bottom: 6px; font-size: 14px; }
+  code { font-family: ui-monospace, monospace; }
+</style>
+</head>
+<body>
+<h1>Photos by Noelle<br>Checkpoint 1</h1>
+<p class="read"><b>Design Read:</b> Reading this as: a photographer portfolio for athletes, sports parents, coaches, and portrait clients who arrive from Instagram on their phones, with a bright, kinetic, joyful language, leaning toward editorial sports typography, photo-led layouts, and restrained, camera-motivated motion. Dials: variance 8, motion 6, density 3.</p>
+<p style="margin-top:10px;max-width:90ch"><b>What research changed:</b> nothing in the read, two rules added. (1) Every photo stores a focal point so phone crops never cut the athlete or the ball (Adam Pretty's mobile crop lost the skater). (2) UI lives in a bottom band with a scrim only behind the text, never a dimmed photo (Ethan W, Nick Ho's numeral across a face). Also adopted: frame counts on gallery entries, sport filters on the Sports page, no gates or preloaders. Rejected: stat counters like "games shot" (we have no real numbers). 13 sites captured in <code>research/shots/</code>; amycurrell.com sits behind a bot check, so her notes come from markup only. Notes: <code>research/inspiration.md</code>.</p>
+
+<h2>Concept: Two Shores, One Lens</h2>
+<div class="concept">
+  <p>Noelle's work lives in two worlds and two homes, so the site has two lighting states: <b>Game Day</b> (stadium night: ink, floodlight white, dugout red) and <b>Golden Hour</b> (sunlit sand, ocean teal, coral), both pulled from her own frames.</p>
+  <p>One switch retunes the whole site in a single crossfade, and the type changes with the light: Anybody's width axis goes from condensed jersey caps under the lights to wide, breezy italics at sunset.</p>
+  <p>Sports opens in Game Day, Lifestyle in Golden Hour, everything else follows the visitor's system setting, and once someone flips the switch the site remembers it.</p>
+  <p>Camera language is the interaction vocabulary, used sparingly: a burst-mode hero that freezes on the decisive frame, viewfinder crop marks as the one framing system, frame counters in big numerals, and real EXIF read from her files (175 of 215 carry it; never faked).</p>
+  <p>A live Honolulu / Fredericksburg clock ties the two homes together. Everything else gets out of the way of the photographs.</p>
+</div>
+
+<h2>Palettes (extracted from her photos)</h2>
+<div class="modes">
+  <div class="mode gd">
+    <h3>Game Day</h3>
+    <div class="sw">
+      <div class="chip" style="background:#0b111d;color:#eef2f6;box-shadow:inset 0 0 0 1px #2a3446"><b>Stadium Ink</b>#0b111d · bg</div>
+      <div class="chip" style="background:#141c2c;color:#eef2f6"><b>Dugout Navy</b>#141c2c · surface</div>
+      <div class="chip" style="background:#eef2f6;color:#0b111d"><b>Floodlight</b>#eef2f6 · text 16.8:1</div>
+      <div class="chip" style="background:#9fabbd;color:#0b111d"><b>Night Sky</b>#9fabbd · 2nd text 8.1:1</div>
+      <div class="chip" style="background:#ff4b3a;color:#0b111d"><b>Dugout Red</b>#ff4b3a · accent 5.7:1</div>
+      <div class="chip" style="background:#0b111d;color:#ff4b3a;box-shadow:inset 0 0 0 1px #2a3446"><b>Red on Ink</b>link text 5.7:1 AA</div>
+    </div>
+    <p class="src">Ink from the dark-muted swatches of her night games (#1e2b30, #2d4057). Dugout Red from the water-bath celebration frames (vibrant #e81515, #dc0a0e), lifted for AA on ink.</p>
+  </div>
+  <div class="mode gh">
+    <h3>Golden Hour</h3>
+    <div class="sw">
+      <div class="chip" style="background:#f7dcb0;color:#073b45;box-shadow:inset 0 0 0 1px #e2c393"><b>Sunlit Sand</b>#f7dcb0 · bg</div>
+      <div class="chip" style="background:#fbe8c9;color:#073b45"><b>Bleached Sand</b>#fbe8c9 · surface</div>
+      <div class="chip" style="background:#073b45;color:#f7dcb0"><b>Deep Ocean Teal</b>#073b45 · text 9.2:1</div>
+      <div class="chip" style="background:#3d6068;color:#fbe8c9"><b>Shallows</b>#3d6068 · 2nd text 5.2:1</div>
+      <div class="chip" style="background:#c23a20;color:#fff6e8"><b>Coral</b>#c23a20 · button 5.0:1</div>
+      <div class="chip" style="background:#f7dcb0;color:#a3301a;box-shadow:inset 0 0 0 1px #e2c393"><b>Coral Ink</b>#a3301a · link 5.3:1</div>
+    </div>
+    <p class="src">Sand from the light-vibrant swatches of her sunset sessions (#f2d299, #eabf87). Teal from her Hawai'i ocean shots on the About page (#043c81, #104261), pulled toward green. Coral from sunset flare (#f16a3e, #e2997e), deepened for AA.</p>
+  </div>
+</div>
+<p class="pairs">Full extraction (node-vibrant on all 137 portfolio frames): <code>research/palette.json</code>. Every text/background pair above passes WCAG 2.2 AA; ratios are computed, not estimated.</p>
+
+<h2>Type pairing</h2>
+<div class="type">
+  <div>
+    <div class="spec1"><span class="a">Game Day</span><span class="b">Golden Hour</span></div>
+    <p style="margin-top:14px"><b>Display: Anybody</b> (Etcetera Type, OFL), one variable file with width 50 to 150% and weight 100 to 900. Condensed and heavy under the lights, wide and italic at sunset: the mode switch tweens the width axis, so the type itself changes with the light. Self-hosted, Latin subset, one woff2 (57 KB) preloaded.</p>
+  </div>
+  <div>
+    <div class="num-spec">080 / 137</div>
+    <p class="body-spec" style="margin-top:12px">I entered the professional photography world in the March of 2023 and since then, time has absolutely flown by.</p>
+    <p style="margin-top:12px"><b>Text: Atkinson Hyperlegible Next</b> (Braille Institute, OFL). Warm, open, and built for legibility, which matters for parents reading on a phone in a bright parking lot. Variable weight, 34 KB.</p>
+  </div>
+</div>
+
+<h2>Wordmark <span style="font:700 14px Atkinson;text-transform:none;color:#a3301a">{{CONFIRM: logo approval}}</span></h2>
+<div class="wmrow">
+  <div class="gd"><span class="wm" style="--wm-accent:#ff4b3a;color:#eef2f6"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-391 -391 5119 2673" role="img" aria-hidden="true"><title id="t">Photos by Noelle</title>
+<path fill="currentColor" transform="translate(0 324) scale(0.2400)" d="M128.9 0H463.1V-380.3H1080.4Q1379.6 -380.3 1518.5 -505.3Q1657.3 -630.2 1657.3 -866.6Q1657.3 -1101.8 1519 -1225.9Q1380.6 -1350 1080.4 -1350H128.9ZM463.1 -599.5V-1130.8H992Q1166.2 -1130.8 1246.4 -1066.2Q1326.7 -1001.5 1326.7 -864.8Q1326.7 -728.7 1247 -664.1Q1167.3 -599.5 992 -599.5ZM1985.9 0H2320.1V-561.8H3245.9V0H3580.2V-1350H3245.9V-781H2320.1V-1350H1985.9ZM4860.5 12.2Q5267.3 12.2 5517 -160.5Q5766.6 -333.2 5766.6 -674.8Q5766.6 -1018.1 5517 -1190.8Q5267.3 -1363.5 4860.5 -1363.5Q4453.8 -1363.5 4205 -1191.4Q3956.3 -1019.3 3956.3 -674.8Q3956.3 -333.2 4205.9 -160.5Q4455.5 12.2 4860.5 12.2ZM4860.5 -206.9Q4615.1 -206.9 4453 -316.4Q4290.9 -425.8 4290.9 -674.8Q4290.9 -926.3 4453 -1035.3Q4615.1 -1144.3 4860.5 -1144.3Q5107.7 -1144.3 5269.8 -1035.3Q5431.9 -926.3 5431.9 -674.8Q5431.9 -425.8 5269.8 -316.4Q5107.7 -206.9 4860.5 -206.9ZM6716.8 0H7051V-1130.8H7694.4V-1350H6071V-1130.8H6716.8ZM8891.5 12.2Q9298.3 12.2 9548 -160.5Q9797.6 -333.2 9797.6 -674.8Q9797.6 -1018.1 9548 -1190.8Q9298.3 -1363.5 8891.5 -1363.5Q8484.8 -1363.5 8236 -1191.4Q7987.3 -1019.3 7987.3 -674.8Q7987.3 -333.2 8236.9 -160.5Q8486.5 12.2 8891.5 12.2ZM8891.5 -206.9Q8646.1 -206.9 8484 -316.4Q8321.9 -425.8 8321.9 -674.8Q8321.9 -926.3 8484 -1035.3Q8646.1 -1144.3 8891.5 -1144.3Q9138.7 -1144.3 9300.8 -1035.3Q9462.9 -926.3 9462.9 -674.8Q9462.9 -425.8 9300.8 -316.4Q9138.7 -206.9 8891.5 -206.9ZM10917.7 6.4Q11307.5 6.4 11519.6 -96.6Q11731.7 -199.7 11731.7 -411.7Q11731.7 -586.9 11564.5 -658.6Q11397.4 -730.3 11013.7 -781.5Q10754.3 -819.1 10580 -855.5Q10405.6 -891.9 10405.6 -978.4Q10405.6 -1057.7 10542.2 -1101.6Q10678.8 -1145.5 10903.7 -1145.5Q11117.9 -1145.5 11257.2 -1087.2Q11396.4 -1028.9 11396.4 -879.5H11731.4Q11731.4 -1128.6 11516.6 -1246Q11301.8 -1363.5 10908.1 -1363.5Q10521.7 -1363.5 10304.6 -1263.2Q10087.6 -1162.8 10087.6 -959.8Q10087.6 -780.2 10258.4 -702.5Q10429.2 -624.8 10792.3 -577.2Q11061.8 -538 11234.4 -505.1Q11407 -472.2 11407 -382.1Q11407 -297.9 11270.8 -254.7Q11134.6 -211.6 10913.9 -211.6Q10691.4 -211.6 10555.9 -273.5Q10420.4 -335.5 10420.4 -486.2H10086.5Q10086.5 -228 10298.1 -110.8Q10509.6 6.4 10917.7 6.4ZM12940.9 0H14072.4Q14344.8 0 14450.3 -98.3Q14555.8 -196.7 14555.8 -375.4Q14555.8 -545.6 14439.9 -623Q14324.1 -700.4 14197.9 -706.6Q14318.1 -712.3 14411.7 -797Q14505.3 -881.8 14505.3 -1030.2Q14505.3 -1181 14399.1 -1265.5Q14292.9 -1350 14007.7 -1350H12940.9ZM13275.1 -219.2V-609.2H13955.5Q14104.3 -609.2 14162.6 -564.2Q14221 -519.2 14221 -419Q14221 -316.8 14172.1 -268Q14123.2 -219.2 14003.5 -219.2ZM13275.1 -792.1V-1131.1H13953.6Q14072 -1131.1 14119.1 -1091.8Q14166.3 -1052.4 14166.3 -972.8Q14166.3 -888.6 14111.3 -840.4Q14056.3 -792.1 13923.7 -792.1ZM15616.4 0H15949.6V-561.3L16711.8 -1350H16336.6L15784.6 -768.1H15783.9L15229.9 -1350H14854.7L15616.4 -563Z"/>
+<path fill="currentColor" transform="translate(0 1890)" d="M19.7 0H375.1V-1088.8H382.8L465.6 0H1030.3V-1350H673L665.5 -273.7H661.6L576.5 -1350H19.7ZM1491.5 8.5Q1854 8.5 1872.4 -178.7Q1890.8 -366 1890.8 -675.9Q1890.8 -987.7 1872.4 -1175.8Q1854 -1363.9 1491.5 -1363.9Q1129 -1363.9 1111.5 -1176.7Q1094.1 -989.6 1094.1 -675.9Q1094.1 -366 1112.5 -178.7Q1130.9 8.5 1491.5 8.5ZM1491.5 -252Q1469.1 -252 1460.3 -279.5Q1451.4 -307.1 1451.4 -675.9Q1451.4 -1056 1460.3 -1079.7Q1469.1 -1103.4 1491.5 -1103.4Q1515.7 -1103.4 1524.6 -1079.7Q1533.4 -1056 1533.4 -675.9Q1533.4 -307.1 1524.6 -279.5Q1515.7 -252 1491.5 -252ZM1948.5 0H2499V-260.5H2309.6V-553.1H2491.2V-808.3H2309.6V-1089.5H2499V-1350H1948.5ZM2560.7 0H3101V-256.7H2921.8V-1350H2560.7ZM3164.7 0H3705V-256.7H3525.8V-1350H3164.7ZM3767.5 0H4318V-260.5H4128.6V-553.1H4310.2V-808.3H4128.6V-1089.5H4318V-1350H3767.5Z"/>
+<path fill="none" stroke="var(--wm-accent, currentColor)" stroke-width="95" stroke-linecap="square" d="M-297 108V-297H108M4633 108V-297H4228M-297 1782V2187H108M4633 1782V2187H4228"/>
+</svg></span></div>
+  <div class="gh"><span class="wm" style="--wm-accent:#c23a20;color:#073b45;height:70px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-391 -391 5119 2673" role="img" aria-hidden="true"><title id="t2">Photos by Noelle</title>
+<path fill="currentColor" transform="translate(0 324) scale(0.2400)" d="M128.9 0H463.1V-380.3H1080.4Q1379.6 -380.3 1518.5 -505.3Q1657.3 -630.2 1657.3 -866.6Q1657.3 -1101.8 1519 -1225.9Q1380.6 -1350 1080.4 -1350H128.9ZM463.1 -599.5V-1130.8H992Q1166.2 -1130.8 1246.4 -1066.2Q1326.7 -1001.5 1326.7 -864.8Q1326.7 -728.7 1247 -664.1Q1167.3 -599.5 992 -599.5ZM1985.9 0H2320.1V-561.8H3245.9V0H3580.2V-1350H3245.9V-781H2320.1V-1350H1985.9ZM4860.5 12.2Q5267.3 12.2 5517 -160.5Q5766.6 -333.2 5766.6 -674.8Q5766.6 -1018.1 5517 -1190.8Q5267.3 -1363.5 4860.5 -1363.5Q4453.8 -1363.5 4205 -1191.4Q3956.3 -1019.3 3956.3 -674.8Q3956.3 -333.2 4205.9 -160.5Q4455.5 12.2 4860.5 12.2ZM4860.5 -206.9Q4615.1 -206.9 4453 -316.4Q4290.9 -425.8 4290.9 -674.8Q4290.9 -926.3 4453 -1035.3Q4615.1 -1144.3 4860.5 -1144.3Q5107.7 -1144.3 5269.8 -1035.3Q5431.9 -926.3 5431.9 -674.8Q5431.9 -425.8 5269.8 -316.4Q5107.7 -206.9 4860.5 -206.9ZM6716.8 0H7051V-1130.8H7694.4V-1350H6071V-1130.8H6716.8ZM8891.5 12.2Q9298.3 12.2 9548 -160.5Q9797.6 -333.2 9797.6 -674.8Q9797.6 -1018.1 9548 -1190.8Q9298.3 -1363.5 8891.5 -1363.5Q8484.8 -1363.5 8236 -1191.4Q7987.3 -1019.3 7987.3 -674.8Q7987.3 -333.2 8236.9 -160.5Q8486.5 12.2 8891.5 12.2ZM8891.5 -206.9Q8646.1 -206.9 8484 -316.4Q8321.9 -425.8 8321.9 -674.8Q8321.9 -926.3 8484 -1035.3Q8646.1 -1144.3 8891.5 -1144.3Q9138.7 -1144.3 9300.8 -1035.3Q9462.9 -926.3 9462.9 -674.8Q9462.9 -425.8 9300.8 -316.4Q9138.7 -206.9 8891.5 -206.9ZM10917.7 6.4Q11307.5 6.4 11519.6 -96.6Q11731.7 -199.7 11731.7 -411.7Q11731.7 -586.9 11564.5 -658.6Q11397.4 -730.3 11013.7 -781.5Q10754.3 -819.1 10580 -855.5Q10405.6 -891.9 10405.6 -978.4Q10405.6 -1057.7 10542.2 -1101.6Q10678.8 -1145.5 10903.7 -1145.5Q11117.9 -1145.5 11257.2 -1087.2Q11396.4 -1028.9 11396.4 -879.5H11731.4Q11731.4 -1128.6 11516.6 -1246Q11301.8 -1363.5 10908.1 -1363.5Q10521.7 -1363.5 10304.6 -1263.2Q10087.6 -1162.8 10087.6 -959.8Q10087.6 -780.2 10258.4 -702.5Q10429.2 -624.8 10792.3 -577.2Q11061.8 -538 11234.4 -505.1Q11407 -472.2 11407 -382.1Q11407 -297.9 11270.8 -254.7Q11134.6 -211.6 10913.9 -211.6Q10691.4 -211.6 10555.9 -273.5Q10420.4 -335.5 10420.4 -486.2H10086.5Q10086.5 -228 10298.1 -110.8Q10509.6 6.4 10917.7 6.4ZM12940.9 0H14072.4Q14344.8 0 14450.3 -98.3Q14555.8 -196.7 14555.8 -375.4Q14555.8 -545.6 14439.9 -623Q14324.1 -700.4 14197.9 -706.6Q14318.1 -712.3 14411.7 -797Q14505.3 -881.8 14505.3 -1030.2Q14505.3 -1181 14399.1 -1265.5Q14292.9 -1350 14007.7 -1350H12940.9ZM13275.1 -219.2V-609.2H13955.5Q14104.3 -609.2 14162.6 -564.2Q14221 -519.2 14221 -419Q14221 -316.8 14172.1 -268Q14123.2 -219.2 14003.5 -219.2ZM13275.1 -792.1V-1131.1H13953.6Q14072 -1131.1 14119.1 -1091.8Q14166.3 -1052.4 14166.3 -972.8Q14166.3 -888.6 14111.3 -840.4Q14056.3 -792.1 13923.7 -792.1ZM15616.4 0H15949.6V-561.3L16711.8 -1350H16336.6L15784.6 -768.1H15783.9L15229.9 -1350H14854.7L15616.4 -563Z"/>
+<path fill="currentColor" transform="translate(0 1890)" d="M19.7 0H375.1V-1088.8H382.8L465.6 0H1030.3V-1350H673L665.5 -273.7H661.6L576.5 -1350H19.7ZM1491.5 8.5Q1854 8.5 1872.4 -178.7Q1890.8 -366 1890.8 -675.9Q1890.8 -987.7 1872.4 -1175.8Q1854 -1363.9 1491.5 -1363.9Q1129 -1363.9 1111.5 -1176.7Q1094.1 -989.6 1094.1 -675.9Q1094.1 -366 1112.5 -178.7Q1130.9 8.5 1491.5 8.5ZM1491.5 -252Q1469.1 -252 1460.3 -279.5Q1451.4 -307.1 1451.4 -675.9Q1451.4 -1056 1460.3 -1079.7Q1469.1 -1103.4 1491.5 -1103.4Q1515.7 -1103.4 1524.6 -1079.7Q1533.4 -1056 1533.4 -675.9Q1533.4 -307.1 1524.6 -279.5Q1515.7 -252 1491.5 -252ZM1948.5 0H2499V-260.5H2309.6V-553.1H2491.2V-808.3H2309.6V-1089.5H2499V-1350H1948.5ZM2560.7 0H3101V-256.7H2921.8V-1350H2560.7ZM3164.7 0H3705V-256.7H3525.8V-1350H3164.7ZM3767.5 0H4318V-260.5H4128.6V-553.1H4310.2V-808.3H4128.6V-1089.5H4318V-1350H3767.5Z"/>
+<path fill="none" stroke="var(--wm-accent, currentColor)" stroke-width="95" stroke-linecap="square" d="M-297 108V-297H108M4633 108V-297H4228M-297 1782V2187H108M4633 1782V2187H4228"/>
+</svg></span></div>
+  <div style="background:#fff"><img src="img/mark-gameday.svg" alt="Compact mark, Game Day"></div>
+  <div style="background:#fff"><img src="img/mark-goldenhour.svg" alt="Compact mark, Golden Hour"></div>
+</div>
+<p style="margin-top:10px;font-size:14px">"NOELLE" in condensed Anybody Black, "PHOTOS BY" in wide Anybody, framed by viewfinder crop marks in the mode accent. The compact N mark is the favicon and Apple touch icon. All outlined to SVG paths, so they render without the font.</p>
+
+<h2>Hero sketches (desktop 1440 + mobile 390, real photos, real EXIF)</h2>
+<div class="heroes">
+  <div class="hero"><div class="shots"><img src="shots/h1-freeze-frame-1440.png" alt=""><img src="shots/h1-freeze-frame-390.png" alt=""></div>
+    <h3>H1 Freeze Frame <span class="rec">Recommended for Home</span></h3>
+    <p>Burst mode plays a rapid sequence of action frames, then freezes on one decisive moment with a shutter flash. Her name sits in the dark side of the frame; frame counter and the real EXIF line ride along. Mobile puts the photo first and the name below it, never over a face.</p></div>
+  <div class="hero"><div class="shots"><img src="shots/h2-two-shores-1440.png" alt=""><img src="shots/h2-two-shores-390.png" alt=""></div>
+    <h3>H2 Two Shores</h3>
+    <p>The concept stated literally: Game Day and Golden Hour side by side, the name stitched across the seam in both type settings, the dual clock under it. Recommended as the "two worlds" entry section right below the H1 hero.</p></div>
+  <div class="hero"><div class="shots"><img src="shots/h3-contact-sheet-1440.png" alt=""><img src="shots/h3-contact-sheet-390.png" alt=""></div>
+    <h3>H3 Contact Sheet</h3>
+    <p>Her own line as the headline. A proof sheet of mixed frames with one grease-pencil pick lifted out. Recommended as the gallery language (Sports and Lifestyle grids) and the Home "selected frames" section.</p></div>
+  <div class="hero"><div class="shots"><img src="shots/h4-scoreboard-1440.png" alt=""><img src="shots/h4-scoreboard-390.png" alt=""></div>
+    <h3>H4 Scoreboard</h3>
+    <p>An out-of-town scoreboard: Honolulu and Fredericksburg clocks flank her name over a wide action frame. Strong but clock-heavy for a hero; recommended as the footer treatment instead.</p></div>
+</div>
+
+<h2>Sitemap</h2>
+<div class="map">
+  <div><b>Home</b><code>/</code><br>Burst hero, two worlds, selected frames, intro, 3 kind words, Instagram, inquire</div>
+  <div><b>Sports</b><code>/sports</code><br>1 Cor 9:24, feature stories (FredNats, state title), contact sheet + lightbox. Game Day</div>
+  <div><b>Lifestyle</b><code>/lifestyle</code><br>Psalm 118:24, contact sheet + lightbox. Golden Hour</div>
+  <div><b>About</b><code>/about</code><br>Get to Know Me: story, faith, Hawai'i, fun-fact snapshots, 1 of 63 parks</div>
+  <div><b>Kind Words</b><code>/kind-words</code><br>All 8 testimonials, verbatim, each with its photo</div>
+  <div><b>Inquire</b><code>/inquire</code><br>The form, success state, Instagram while you wait</div>
+  <div><b>404</b><code>any</code><br>"Missed the shot", links home and to galleries</div>
+</div>
+<p style="margin-top:10px;font-size:14px">Plus <code>/api/inquire</code> (Vercel function: Resend, honeypot, rate limit; Formspree fallback). Nav: Sports, Lifestyle, About, Kind Words, <b>Inquire</b> (primary). Mobile: thumb bar with Inquire + menu after first scroll.</p>
+
+<h2>Open questions for Noelle (will ship as {{CONFIRM}} placeholders)</h2>
+<ul class="confirm">
+  <li>Inquiry email address (form delivery)</li>
+  <li>Phone number, if she wants one listed</li>
+  <li>Experience wording: home page says "four years", About says pro since March 2023. Site will say "shooting since 2023"</li>
+  <li>Logo approval (wordmark above)</li>
+  <li>Client Galleries link: keep Pixieset for delivery?</li>
+  <li>Pricing / packages: none shown unless she provides them</li>
+  <li>Service area beyond Oahu and Fredericksburg, VA</li>
+  <li>Booking calendar: none for now</li>
+  <li>About-page photo captions: who is who (I describe only what is visible)</li>
+</ul>
+</body>
+</html>
