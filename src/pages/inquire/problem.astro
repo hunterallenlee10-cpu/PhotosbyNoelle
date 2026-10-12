@@ -1,0 +1,21 @@
+---
+// Where a no-JavaScript form submission lands if it can't be sent.
+import Base from '@/layouts/Base.astro';
+import Icon from '@/components/Icon.astro';
+import { settings } from '@/lib/content';
+const s = await settings();
+---
+<Base title="That didn’t send | Photos by Noelle" description="Your inquiry didn't go through." og="inquire" mode="auto" current="inquire" noindex>
+  <section class="wrap done">
+    <h1 class="display d-l">That didn’t send.</h1>
+    <p class="lead">Something was missing or the form hiccuped. Go back and check the required fields, or send me a DM on Instagram.</p>
+    <p class="row">
+      <a href="/inquire" class="btn btn-primary">Back to the form</a>
+      <a href={s.instagram.url} class="btn btn-ghost" rel="me noopener" target="_blank"><Icon name="instagram-logo" />{s.instagram.handle}<span class="visually-hidden"> on Instagram (opens in a new tab)</span></a>
+    </p>
+  </section>
+</Base>
+<style>
+  .done { min-height: calc(100svh - var(--header-h)); display: grid; align-content: center; justify-items: start; gap: var(--s-5); padding-block: var(--s-8); }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+</style>

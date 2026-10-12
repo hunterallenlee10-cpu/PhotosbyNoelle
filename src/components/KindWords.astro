@@ -1,0 +1,108 @@
+---
+// A few testimonials, one at a time. Visitors control it (prev / next / pause); it only
+// advances by itself when motion is allowed, and pauses on hover or focus.
+// Without JS every quote is listed.
+import Photo from './Photo.astro';
+import Icon from './Icon.astro';
+import { smart, type Photo as PhotoData, type Testimonial } from '@/lib/content';
+interface Props { items: (Testimonial & { image: PhotoData })[]; heading: string }
+const { items, heading } = Astro.props;
+---
+<section class="kind wrap" aria-roledescription="carousel" aria-labelledby="kind-h" data-rotator>
+  <div class="head">
+    <h2 class="display d-m" id="kind-h">{heading}</h2>
+    <div class="controls" data-js-only>
+      <button type="button" class="ctl" data-prev><Icon name="arrow-left" label="Previous testimonial" /></button>
+      <button type="button" class="ctl" data-pause aria-pressed="false" aria-label="Pause rotation"><span class="p"><Icon name="pause" /></span><span class="r"><Icon name="play" /></span></button>
+      <button type="button" class="ctl" data-next><Icon name="arrow-right" label="Next testimonial" /></button>
+    </div>
+  </div>
+  <ul class="slides" role="list" aria-live="off">
+    {items.map((t, i) => (
+      <li class="slide" aria-roledescription="slide" aria-label={`${i + 1} of ${items.length}`} data-slide>
+        <figure>
+          <div class="pic crop-frame"><Photo photo={t.image} sizes="(max-width: 760px) 90vw, 34vw" widths={[480, 800, 1200]} ratio="4 / 5" /></div>
+          <blockquote>
+            <p class="q">{smart(t.quote)}</p>
+            <footer><cite><span class="who">{t.name}</span><span class="role">{t.role}</span></cite></footer>
+          </blockquote>
+        </figure>
+      </li>
+    ))}
+  </ul>
+  <a href="/kind-words" class="link-arrow more"><span>Read all kind words</span><Icon name="arrow-right" /></a>
+</section>
+
+<style>
+  .kind { padding-block: var(--s-8); }
+  .head { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: var(--s-6); }
+  .controls { display: flex; gap: 6px; }
+  .ctl { display: grid; place-items: center; width: 48px; height: 48px; box-shadow: inset 0 0 0 1.5px var(--line-strong); }
+  .ctl:hover { background: var(--fg); color: var(--bg); }
+  .ctl :global(.icon) { width: 20px; height: 20px; }
+  .ctl .r, .ctl[aria-pressed='true'] .p { display: none; }
+  .ctl[aria-pressed='true'] .r { display: block; }
+  .slides { list-style: none; padding: 0; display: grid; gap: var(--s-7); }
+  :global(.js) .slides { gap: 0; }
+  :global(.js) .slide { grid-area: 1 / 1; visibility: hidden; opacity: 0; transition: opacity 600ms var(--ease-out), visibility 0s 600ms; }
+  :global(.js) .slide.is-active { visibility: visible; opacity: 1; transition: opacity 600ms var(--ease-out); }
+  figure { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(24px, 5vw, 80px); align-items: center; }
+  .pic { max-width: 420px; }
+  .q { font-family: var(--font-display); font-stretch: 92%; font-weight: 500; font-size: clamp(1.4rem, 2.6vw, 2.3rem); line-height: 1.22; letter-spacing: -0.01em; max-width: 30ch; text-indent: -0.42em; }
+  .q::before { content: '\201C'; color: var(--accent); }
+  .q::after { content: '\201D'; color: var(--accent); }
+  cite { display: grid; gap: 2px; margin-top: var(--s-5); font-style: normal; }
+  .who { font-weight: 800; }
+  .role { color: var(--fg-2); font-size: var(--fs-sm); }
+  .more { margin-top: var(--s-6); }
+  @media (max-width: 760px) {
+    figure { grid-template-columns: 1fr; }
+    .pic { max-width: 70%; }
+    .head { align-items: center; }
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-rotator]');
+  if (root) {
+    const slides = [...root.querySelectorAll<HTMLElement>('[data-slide]')];
+    const pauseBtn = root.querySelector<HTMLButtonElement>('[data-pause]')!;
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let i = 0;
+    let timer = 0;
+    let paused = reduced;
+    let hovering = false;
+    const show = (n: number) => {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, k) => {
+        s.classList.toggle('is-active', k === i);
+        s.toggleAttribute('inert', k !== i);
+      });
+    };
+    const schedule = () => {
+      clearTimeout(timer);
+      if (!paused && !hovering) timer = window.setTimeout(() => (root.querySelector('.slides')!.setAttribute('aria-live', 'off'), show(i + 1), schedule()), 7000);
+    };
+    pauseBtn.setAttribute('aria-pressed', String(paused));
+    const list = root.querySelector<HTMLElement>('.slides')!;
+    // Announce slides the visitor changes; stay quiet during automatic rotation.
+    const manual = (d: number) => {
+      list.setAttribute('aria-live', 'polite');
+      show(i + d);
+      schedule();
+    };
+    root.querySelector('[data-prev]')!.addEventListener('click', () => manual(-1));
+    root.querySelector('[data-next]')!.addEventListener('click', () => manual(1));
+    pauseBtn.addEventListener('click', () => {
+      paused = !paused;
+      pauseBtn.setAttribute('aria-pressed', String(paused));
+      schedule();
+    });
+    root.addEventListener('pointerenter', () => ((hovering = true), clearTimeout(timer)));
+    root.addEventListener('pointerleave', () => ((hovering = false), schedule()));
+    root.addEventListener('focusin', () => ((hovering = true), clearTimeout(timer)));
+    root.addEventListener('focusout', () => ((hovering = false), schedule()));
+    show(0);
+    schedule();
+  }
+</script>

@@ -1,0 +1,69 @@
+---
+// "Two shores": Sports and Lifestyle side by side, each half lit in its own state
+// (Game Day / Golden Hour) whatever the page is set to. The live dual clock sits on the seam.
+import Photo from './Photo.astro';
+import Icon from './Icon.astro';
+import { smart, type Photo as PhotoData, type Settings } from '@/lib/content';
+interface World { photo: PhotoData; line: string; count: number }
+interface Props { sports: World; lifestyle: World; cities: Settings['cities'] }
+const { sports, lifestyle, cities } = Astro.props;
+const halves = [
+  { key: 'gameday', title: 'Game Day', what: 'Sports', href: '/sports', ...sports },
+  { key: 'goldenhour', title: 'Golden Hour', what: 'Lifestyle', href: '/lifestyle', ...lifestyle },
+];
+---
+<section class="worlds" id="worlds" aria-label="Two worlds: sports and lifestyle">
+  {halves.map((h) => (
+    <a href={h.href} class:list={['half', h.key]} data-mode-local={h.key}>
+      <Photo photo={h.photo} sizes="(max-width: 760px) 100vw, 50vw" widths={[480, 800, 1200, 1600]} class="bg" />
+      <span class="body">
+        <span class="top"><span class="label">{h.what}</span><span class="num count">{h.count} frames</span></span>
+        <span class="display title">{h.title}</span>
+        <span class="line">{smart(h.line)}</span>
+        <span class="go"><span>See {h.what.toLowerCase()}</span><Icon name="arrow-right" /></span>
+      </span>
+    </a>
+  ))}
+  <div class="seam" role="group" aria-label="Local time in Noelle's two home cities">
+    {cities.map((c, i) => (
+      <span class="clock" data-mode-local={i === 0 ? 'goldenhour' : 'gameday'}>
+        <span class="city">{c.name}</span>
+        <time class="num" data-clock={c.tz}><span class="hm">--:--</span><span class="ap"></span></time>
+      </span>
+    ))}
+  </div>
+</section>
+
+<style>
+  .worlds { position: relative; display: grid; grid-template-columns: 1fr 1fr; min-height: min(92svh, 980px); }
+  .half { position: relative; display: grid; align-content: end; overflow: hidden; color: var(--fg); background: var(--bg); text-decoration: none; isolation: isolate; }
+  .half :global(.bg) { position: absolute !important; inset: 0; z-index: -2; aspect-ratio: auto !important; height: 100%; }
+  .half :global(.bg img) { transition: transform 1.2s var(--ease-out); }
+  .half::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgb(var(--scrim) / 0.94) 0%, rgb(var(--scrim) / 0.6) 30%, rgb(var(--scrim) / 0) 58%); }
+  .body { display: grid; gap: 12px; padding: clamp(20px, 3.5vw, 48px); padding-bottom: clamp(28px, 4vw, 56px); }
+  .top { display: flex; justify-content: space-between; align-items: baseline; }
+  .count { font-size: 1.05rem; color: var(--fg-2); }
+  .title { font-size: calc(clamp(3rem, 7vw, 6.4rem) * var(--d-scale)); }
+  .line { font-size: var(--fs-lg); max-width: 32ch; }
+  .go { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; margin-top: 6px; }
+  .go span { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 0.25em; }
+  .go :global(.icon) { width: 20px; height: 20px; color: var(--accent); transition: transform 300ms var(--ease-out); }
+  .half:hover :global(.bg img) { transform: scale(1.035); }
+  .half:hover .go :global(.icon) { transform: translateX(4px); }
+  .half:focus-visible { outline-offset: -6px; }
+  .seam { position: absolute; left: 50%; top: clamp(24px, 6vh, 64px); transform: translateX(-50%); display: flex; z-index: 2; }
+  .clock { display: grid; gap: 2px; padding: 10px 16px 8px; background: var(--bg); color: var(--fg); min-width: 150px; }
+  .clock:first-child { text-align: right; }
+  .city { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-2); }
+  .clock time { font-size: 2rem; line-height: 1; color: var(--accent); }
+  .clock .ap { font-size: 0.45em; margin-left: 0.2em; color: var(--fg-2); }
+  :global(:root:not(.js)) .seam { display: none; }
+  @media (max-width: 760px) {
+    .worlds { grid-template-columns: 1fr; min-height: 0; }
+    .half { min-height: 78svh; }
+    .seam { position: static; transform: none; order: 1; grid-row: 2; display: grid; grid-template-columns: 1fr 1fr; }
+    .clock { min-width: 0; }
+    .clock time { font-size: 1.6rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .half :global(.bg img) { transition: none; } }
+</style>

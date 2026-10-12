@@ -1,0 +1,70 @@
+---
+// Mobile menu sheet (a modal dialog) and the thumb bar that appears after the first scroll.
+import ModeToggle from './ModeToggle.astro';
+import Icon from './Icon.astro';
+import { NAV } from '@/lib/nav';
+interface Props { current: string }
+const { current } = Astro.props;
+---
+<dialog class="menu-sheet" id="menu" aria-label="Menu">
+  <div class="sheet-inner">
+    <div class="top">
+      <span class="label muted">Menu</span>
+      <button type="button" class="close" data-menu-close><Icon name="x" label="Close menu" /></button>
+    </div>
+    <nav aria-label="Mobile">
+      <ul>
+        {NAV.map((item, i) => (
+          <li style={`--i:${i}`}><a href={item.href} class="display" aria-current={current === item.id ? 'page' : undefined}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <div class="row">
+      <ModeToggle />
+    </div>
+    <a href="/inquire" class="btn btn-primary full">Inquire</a>
+  </div>
+</dialog>
+
+<div class="mobile-bar" data-mobile-bar>
+  <a href="/inquire" class="btn btn-primary">Inquire</a>
+  <button type="button" class="btn menu" data-menu-open data-js-only aria-haspopup="dialog" aria-controls="menu"><Icon name="list" /><span class="visually-hidden">Menu</span></button>
+  <a href="#footer-nav" class="btn menu nojs-only"><Icon name="list" /><span class="visually-hidden">Menu</span></a>
+</div>
+
+<style>
+  .menu-sheet {
+    margin: auto 0 0; width: 100%; max-width: 100%; max-height: 92dvh; border: 0; padding: 0;
+    background: var(--bg); color: var(--fg); box-shadow: 0 -24px 60px -20px rgb(var(--shadow) / 0.5);
+  }
+  .menu-sheet::backdrop { background: rgb(var(--scrim) / 0.72); }
+  .sheet-inner { padding: 12px 16px calc(20px + env(safe-area-inset-bottom)); display: grid; gap: 18px; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .close { display: grid; place-items: center; width: 48px; height: 48px; margin-right: -8px; }
+  .close :global(.icon) { width: 26px; height: 26px; }
+  ul { list-style: none; padding: 0; display: grid; gap: 2px; }
+  nav a { display: block; padding: 6px 0; font-size: calc(clamp(2.6rem, 13vw, 4rem) * max(var(--d-scale), 0.7)); text-decoration: none; }
+  nav a[aria-current='page'] { color: var(--accent-text); }
+  .row { display: flex; }
+  .full { width: 100%; min-height: 56px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .menu-sheet[open] { animation: sheet-up 420ms var(--ease-out); }
+    .menu-sheet[open] li { animation: item-in 520ms var(--ease-out) both; animation-delay: calc(80ms + var(--i) * 45ms); }
+  }
+  @keyframes sheet-up { from { transform: translateY(100%); } }
+  @keyframes item-in { from { opacity: 0; transform: translateY(14px); } }
+
+  .mobile-bar {
+    position: fixed; z-index: var(--z-bar); left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom));
+    display: none; gap: 8px; transition: transform 380ms var(--ease-out), opacity 300ms;
+  }
+  .mobile-bar .btn { min-height: 54px; box-shadow: 0 10px 30px -10px rgb(var(--shadow) / 0.6); }
+  .mobile-bar .btn-primary { flex: 1; }
+  .mobile-bar .menu { width: 54px; padding: 0; background: var(--bg-2); color: var(--fg); box-shadow: inset 0 0 0 1.5px var(--line-strong), 0 10px 30px -10px rgb(var(--shadow) / 0.6); }
+  .mobile-bar .menu :global(.icon) { width: 24px; height: 24px; }
+  @media (max-width: 1080px) {
+    .mobile-bar { display: flex; }
+    :global(:root.js) .mobile-bar:not(.is-shown) { transform: translateY(140%); opacity: 0; pointer-events: none; visibility: hidden; transition: transform 380ms var(--ease-out), opacity 300ms, visibility 0s 380ms; }
+  }
+  @media (prefers-reduced-motion: reduce) { .mobile-bar { transition: none; } }
+</style>

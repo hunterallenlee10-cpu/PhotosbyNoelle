@@ -1,0 +1,23 @@
+[
+  {
+    "id": "site",
+    "name": "Photos by Noelle",
+    "photographer": "Noelle Lanham",
+    "jobTitle": "Sports and lifestyle photographer",
+    "instagram": { "handle": "@noelle.lanham", "url": "https://www.instagram.com/noelle.lanham" },
+    "clientGalleries": {
+      "label": "Client Galleries",
+      "url": "https://noellelanham.mypixieset.com/",
+      "confirm": "Confirm she keeps Pixieset for client gallery delivery, and the exact client-gallery URL"
+    },
+    "email": { "value": null, "confirm": "Noelle's inquiry email address (set INQUIRY_TO_EMAIL)" },
+    "phone": { "value": null, "confirm": "Phone number, only if she wants one listed" },
+    "since": { "label": "shooting since 2023", "confirm": "Her home page says four years of experience; her About page says she went pro in March 2023" },
+    "logo": { "confirm": "Logo approval: the PHOTOS BY NOELLE wordmark and N mark are new" },
+    "cities": [
+      { "name": "Honolulu", "region": "HI", "regionName": "Hawaii", "tz": "Pacific/Honolulu", "zone": "HST" },
+      { "name": "Fredericksburg", "region": "VA", "regionName": "Virginia", "tz": "America/New_York", "zone": "ET" }
+    ],
+    "credit": { "label": "Site by Lee Systems Co.", "url": null }
+  }
+]

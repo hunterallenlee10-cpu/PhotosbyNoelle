@@ -1,0 +1,66 @@
+---
+import Base from '@/layouts/Base.astro';
+import Photo from '@/components/Photo.astro';
+import Icon from '@/components/Icon.astro';
+import { page, photo, smart, testimonials } from '@/lib/content';
+
+const { data } = await page('kind-words');
+const d = { ...data, heading: data.heading!, lead: data.lead! };
+const items = await Promise.all((await testimonials()).map(async (t) => ({ ...t, image: await photo(t.photo) })));
+const [first, ...rest] = items;
+---
+<Base title={d.title} description={d.description} og="kind-words" mode={d.mode} current="kind-words">
+  <header class="top wrap">
+    <h1 class="display d-xl">{d.heading}</h1>
+    <p class="lead muted">{d.lead}</p>
+  </header>
+
+  <article class="feature wrap" aria-labelledby="kw-0">
+    <Photo photo={first.image} priority sizes="(max-width: 760px) 100vw, 56vw" widths={[640, 960, 1280, 1600]} />
+    <blockquote>
+      <p class="q big">{smart(first.quote)}</p>
+      <footer><cite><span class="who" id="kw-0">{first.name}</span><span class="role">{first.role}</span></cite></footer>
+    </blockquote>
+  </article>
+
+  <ul class="grid wrap" role="list">
+    {rest.map((t, i) => (
+      <li class="item" data-reveal>
+        <article aria-labelledby={`kw-${i + 1}`}>
+          <Photo photo={t.image} sizes="(max-width: 760px) 100vw, 44vw" widths={[480, 800, 1200]} ratio={t.image.height / t.image.width > 1.25 ? '4 / 5' : undefined} />
+          <blockquote>
+            <p class="q">{smart(t.quote)}</p>
+            <footer><cite><span class="who" id={`kw-${i + 1}`}>{t.name}</span><span class="role">{t.role}</span></cite></footer>
+          </blockquote>
+        </article>
+      </li>
+    ))}
+  </ul>
+
+  <section class="wrap cta">
+    <a href="/inquire" class="btn btn-primary">Inquire<Icon name="arrow-right" /></a>
+  </section>
+</Base>
+
+<style>
+  .top { padding-top: var(--s-8); padding-bottom: var(--s-6); display: grid; gap: var(--s-4); }
+  .feature { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 80px); align-items: center; padding-bottom: var(--s-8); }
+  .grid { list-style: none; columns: 2; column-gap: clamp(28px, 5vw, 80px); padding-bottom: var(--s-7); }
+  .item { break-inside: avoid; margin-bottom: var(--s-8); }
+  .item:nth-child(2) { margin-top: var(--s-8); }
+  blockquote { display: grid; gap: var(--s-4); margin-top: var(--s-5); }
+  .feature blockquote { margin-top: 0; }
+  .q { font-family: var(--font-display); font-stretch: 92%; font-weight: 500; font-size: clamp(1.3rem, 2vw, 1.75rem); line-height: 1.25; letter-spacing: -0.01em; max-width: 34ch; text-indent: -0.42em; }
+  .q.big { font-size: clamp(1.6rem, 3vw, 2.6rem); }
+  .q::before { content: '\201C'; color: var(--accent); }
+  .q::after { content: '\201D'; color: var(--accent); }
+  cite { display: grid; gap: 2px; font-style: normal; }
+  .who { font-weight: 800; }
+  .role { color: var(--fg-2); font-size: var(--fs-sm); }
+  .cta { padding-bottom: var(--s-8); }
+  @media (max-width: 760px) {
+    .feature { grid-template-columns: 1fr; }
+    .grid { columns: 1; }
+    .item:nth-child(2) { margin-top: 0; }
+  }
+</style>

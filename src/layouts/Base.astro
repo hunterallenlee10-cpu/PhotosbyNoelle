@@ -1,0 +1,132 @@
+---
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Menu from '@/components/Menu.astro';
+import anybodyUrl from '@fontsource-variable/anybody/files/anybody-latin-standard-normal.woff2?url';
+import anybodyItalicUrl from '@fontsource-variable/anybody/files/anybody-latin-standard-italic.woff2?url';
+import { launched, settings } from '@/lib/content';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Page id used for the generated Open Graph image (/og/<id>.jpg). */
+  og: string;
+  /** Nav item to mark current. */
+  current?: string;
+  /** Lighting state for this page: fixed, or 'auto' (follows system until the visitor picks). */
+  mode: 'gameday' | 'goldenhour' | 'auto';
+  overlayHeader?: boolean;
+  noindex?: boolean;
+}
+const { title, description, og, current = '', mode, overlayHeader = false, noindex = false } = Astro.props;
+const s = await settings();
+const site = Astro.site ?? new URL('https://photosbynoelle.vercel.app');
+const canonical = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/'), site).href;
+const ogImage = new URL(`/og/${og}.jpg`, site).href;
+const robots = !launched || noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${site.href}#noelle`,
+      name: s.photographer,
+      jobTitle: s.jobTitle,
+      url: site.href,
+      image: new URL('/og/about.jpg', site).href,
+      sameAs: [s.instagram.url],
+      worksFor: { '@id': `${site.href}#business` },
+      alumniOf: { '@type': 'CollegeOrUniversity', name: 'Randolph-Macon College' },
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${site.href}#business`,
+      name: s.name,
+      description: 'Sports and lifestyle photography: game-day action, team and athlete coverage, senior, graduation, couples and portrait sessions.',
+      url: site.href,
+      image: new URL('/og/home.jpg', site).href,
+      logo: new URL('/apple-touch-icon.png', site).href,
+      founder: { '@id': `${site.href}#noelle` },
+      sameAs: [s.instagram.url],
+      areaServed: s.cities.map((c) => ({
+        '@type': 'City',
+        name: c.name,
+        containedInPlace: { '@type': 'State', name: c.regionName },
+      })),
+      knowsAbout: ['Sports photography', 'Lifestyle photography', 'Portrait photography', 'Senior portraits', 'Couples photography'],
+    },
+  ],
+};
+---
+<!doctype html>
+<html lang="en" data-mode={mode} data-default={mode}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonical} />
+    <script is:inline>
+      // Pick the lighting state before first paint: saved choice, else page default, else system.
+      (function () {
+        var d = document.documentElement, def = d.getAttribute('data-default'), m = null;
+        d.classList.add('js');
+        if (/[?&]confirm\b/.test(location.search)) d.classList.add('show-confirm');
+        try { m = localStorage.getItem('pbn-mode'); } catch (e) {}
+        if (m !== 'gameday' && m !== 'goldenhour') {
+          m = def === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'gameday' : 'goldenhour') : def;
+        }
+        d.setAttribute('data-mode', m);
+      })();
+    </script>
+    <script is:inline define:vars={{ upright: anybodyUrl, italic: anybodyItalicUrl }}>
+      // Preload only the display face used above the fold: upright caps for Game Day, italics for Golden Hour.
+      var l = document.createElement('link');
+      l.rel = 'preload'; l.as = 'font'; l.type = 'font/woff2'; l.crossOrigin = '';
+      l.href = document.documentElement.getAttribute('data-mode') === 'gameday' ? upright : italic;
+      document.head.appendChild(l);
+    </script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#f7dcb0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b111d" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Photos by Noelle" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header current={current} overlay={overlayHeader} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    <Menu current={current} />
+    <div class="shutter-flash" aria-hidden="true"></div>
+    <script>
+      import '@/scripts/site';
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  main:focus { outline: none; }
+  .shutter-flash { position: fixed; inset: 0; z-index: var(--z-flash); background: #fff; opacity: 0; pointer-events: none; }
+</style>

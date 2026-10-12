@@ -1,0 +1,12 @@
+---
+// "PHOTOS BY / NOELLE" in viewfinder crop marks. Outlined paths, so no font is needed.
+// {{CONFIRM: logo approval}} The mark is new; Noelle has not approved it yet.
+import raw from '../assets/brand/wordmark.svg?raw';
+interface Props { class?: string; decorative?: boolean }
+const { class: cls, decorative = true } = Astro.props;
+const svg = raw
+  .replace(/<title[^>]*>.*?<\/title>/, '')
+  .replace(/ role="img" aria-labelledby="t"/, decorative ? ' aria-hidden="true" focusable="false"' : ' role="img" aria-label="Photos by Noelle"')
+  .replace('<svg ', `<svg class="wordmark ${cls ?? ''}" `);
+---
+<Fragment set:html={svg} />

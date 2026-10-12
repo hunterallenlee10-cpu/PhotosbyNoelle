@@ -1,0 +1,26 @@
+---
+import Base from '@/layouts/Base.astro';
+import Scripture from '@/components/Scripture.astro';
+import ContactSheet from '@/components/ContactSheet.astro';
+import { category, page } from '@/lib/content';
+
+const { data } = await page('lifestyle');
+const all = await category('lifestyle');
+---
+<Base title={data.title} description={data.description} og="lifestyle" mode={data.mode} current="lifestyle">
+  <h1 class="visually-hidden">Lifestyle and portrait photography by Noelle Lanham</h1>
+  <Scripture text={data.verse!.text} reference={data.verse!.ref} intro={data.opener} />
+  <section class="wrap gallery" aria-labelledby="every-frame">
+    <div class="head">
+      <h2 class="display d-m" id="every-frame">{data.galleryHeading}</h2>
+      <p class="num count">{all.length} frames</p>
+    </div>
+    <ContactSheet photos={all} gallery="lifestyle" primary counter label="Lifestyle gallery" rowHeight={340} eagerCount={4} />
+  </section>
+</Base>
+
+<style>
+  .gallery { padding-bottom: var(--s-8); }
+  .head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: var(--s-5); flex-wrap: wrap; }
+  .count { font-size: 1.4rem; color: var(--fg-2); }
+</style>

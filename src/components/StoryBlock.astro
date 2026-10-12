@@ -1,0 +1,57 @@
+---
+// Feature story for captioned frames (pro ball, state championship). Uses the same
+// lightbox as the gallery; each frame keeps its published caption.
+import Photo from './Photo.astro';
+import CropMarks from './CropMarks.astro';
+import { exifLine, smart, type Photo as PhotoData } from '@/lib/content';
+interface Props { id: string; heading: string; body: string; photos: PhotoData[]; flip?: boolean; eager?: boolean }
+const { id, heading, body, photos, flip = false, eager = false } = Astro.props;
+const [lead, ...rest] = photos;
+---
+<article class:list={['story wrap', { flip }]} id={id} aria-labelledby={`${id}-h`}>
+  <figure class="lead crop-frame" data-reveal>
+    <a href={`#frame-${String(lead.order).padStart(3, '0')}`} data-frame-link class="lead-link" aria-label={`Open frame ${String(lead.order).padStart(3, '0')} in the gallery`}>
+      <Photo photo={lead} sizes="(max-width: 900px) 100vw, 58vw" widths={[480, 800, 1200, 1600, 2000]} eager={eager} />
+    </a>
+    <CropMarks inset="-10px" size="22px" />
+    <figcaption>
+      <span>{smart(lead.caption ?? lead.alt)}</span>
+      {lead.exif && <span class="exif num">{exifLine(lead)}</span>}
+    </figcaption>
+  </figure>
+  <div class="text" data-reveal>
+    <h2 class="display d-m" id={`${id}-h`}>{heading}</h2>
+    <p class="lead-p">{smart(body)}</p>
+    {rest.length > 0 && (
+      <ul class="more" role="list">
+        {rest.map((p) => (
+          <li>
+            <a href={`#frame-${String(p.order).padStart(3, '0')}`} data-frame-link aria-label={`Frame ${String(p.order).padStart(3, '0')}: ${p.caption ? smart(p.caption) : p.alt}`}>
+              <Photo photo={p} sizes="(max-width: 900px) 30vw, 14vw" widths={[320, 480, 640]} ratio="4 / 5" />
+            </a>
+            <span class="cap">{p.caption ? smart(p.caption).split(' - ').pop() : ''}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</article>
+
+<style>
+  .story { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 80px); align-items: center; padding-block: var(--s-8); }
+  .story.flip { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+  .story.flip .lead { order: 2; }
+  .lead { position: relative; --crop-color: var(--fg); }
+  .lead-link { display: block; }
+  figcaption { margin-top: 18px; display: grid; gap: 4px; font-size: var(--fs-sm); color: var(--fg-2); }
+  .exif { font-size: 0.78rem; letter-spacing: 0.06em; white-space: pre-wrap; }
+  .text { display: grid; gap: var(--s-5); align-content: start; }
+  .lead-p { font-size: var(--fs-lg); max-width: 40ch; }
+  .more { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; list-style: none; padding: 0; margin-top: var(--s-3); }
+  .more a { display: block; }
+  .more .cap { display: block; margin-top: 6px; font-size: 0.78rem; line-height: 1.35; color: var(--fg-2); }
+  @media (max-width: 900px) {
+    .story, .story.flip { grid-template-columns: 1fr; }
+    .story.flip .lead { order: 0; }
+  }
+</style>

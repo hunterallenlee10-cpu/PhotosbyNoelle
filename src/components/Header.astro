@@ -1,0 +1,49 @@
+---
+import Wordmark from './Wordmark.astro';
+import ModeToggle from './ModeToggle.astro';
+import Icon from './Icon.astro';
+import { NAV } from '@/lib/nav';
+interface Props { current: string; overlay?: boolean }
+const { current, overlay = false } = Astro.props;
+---
+<header class:list={['site-header', { overlay }]} data-header>
+  <div class="bar wrap">
+    <a href="/" class="brand" aria-label="Photos by Noelle, home"><Wordmark /></a>
+    <nav class="primary" aria-label="Main">
+      <ul>
+        {NAV.map((item) => (
+          <li><a href={item.href} aria-current={current === item.id ? 'page' : undefined}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <ModeToggle class="header-toggle" />
+    <a href="/inquire" class="btn btn-primary inquire" aria-current={current === 'inquire' ? 'page' : undefined}>Inquire</a>
+    <button type="button" class="menu-btn" data-menu-open data-js-only aria-haspopup="dialog" aria-controls="menu">
+      <Icon name="list" /><span>Menu</span>
+    </button>
+    <a href="#footer-nav" class="menu-btn nojs-only"><Icon name="list" /><span>Menu</span></a>
+  </div>
+</header>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: var(--z-header); background: var(--bg); transition: transform 400ms var(--ease-out), background-color var(--dur-mode); }
+  .site-header.overlay { position: absolute; inset: 0 0 auto; background: linear-gradient(180deg, rgb(var(--scrim) / 0.82), rgb(var(--scrim) / 0)); }
+  .site-header.is-hidden { transform: translateY(-100%); }
+  .bar { display: flex; align-items: center; gap: clamp(16px, 2.2vw, 32px); height: var(--header-h); }
+  .brand { display: block; color: var(--fg); --wm-accent: var(--accent); flex: none; padding: 6px 0; }
+  .brand :global(.wordmark) { height: 40px; width: auto; }
+  .primary { margin-left: auto; }
+  .primary ul { display: flex; gap: clamp(14px, 1.8vw, 28px); list-style: none; padding: 0; }
+  .primary a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; font-size: 0.95rem; text-decoration: none; position: relative; }
+  .primary a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 8px; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 300ms var(--ease-out); }
+  .primary a:hover::after, .primary a[aria-current='page']::after { transform: scaleX(1); }
+  .inquire { min-height: 44px; }
+  .menu-btn { display: none; align-items: center; gap: 8px; min-height: 44px; min-width: 44px; padding: 0 4px; font-weight: 700; text-decoration: none; margin-left: auto; }
+  .menu-btn :global(.icon) { width: 24px; height: 24px; }
+  @media (max-width: 1080px) {
+    .primary, .site-header :global(.header-toggle), .inquire { display: none !important; }
+    .menu-btn { display: inline-flex; }
+    .brand :global(.wordmark) { height: 34px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .site-header { transition: none; } }
+</style>

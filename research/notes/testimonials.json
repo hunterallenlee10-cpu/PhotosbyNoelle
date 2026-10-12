@@ -1,0 +1,74 @@
+[
+ {
+  "id": "t-jake-lowery",
+  "alt": "A player in a red shirt and backward cap with goggles roars while spraying a bottle in a celebration full of flying droplets.",
+  "focal": [
+   55,
+   35
+  ],
+  "sport": "baseball"
+ },
+ {
+  "id": "t-becky-larkin",
+  "alt": "A soccer player in a maroon number 11 jersey leaps to head the ball, ponytail flying, as an opponent in white challenges.",
+  "focal": [
+   40,
+   25
+  ],
+  "sport": "soccer"
+ },
+ {
+  "id": "t-aidan-pinto",
+  "alt": "A baseball player in black raises both arms in triumph as teammates in gold helmets crowd around him.",
+  "focal": [
+   55,
+   22
+  ],
+  "sport": "baseball"
+ },
+ {
+  "id": "t-jason-burton",
+  "alt": "Close view of white batting gloves gripping a worn wooden bat resting on a player's shoulder.",
+  "focal": [
+   50,
+   45
+  ],
+  "sport": "baseball"
+ },
+ {
+  "id": "t-billy-fluharty",
+  "alt": "A batter in a navy number 11 jersey adjusts his helmet between pitches, bat held upright, focused on the field.",
+  "focal": [
+   38,
+   30
+  ],
+  "sport": "baseball"
+ },
+ {
+  "id": "t-bryan-diehr",
+  "alt": "Two basketball players in gold uniforms laugh together on the sideline, one with an arm around the other, as fans cheer behind.",
+  "focal": [
+   55,
+   25
+  ],
+  "sport": "basketball"
+ },
+ {
+  "id": "t-abby-lybarger",
+  "alt": "A player in a red jersey holds a freshly signed baseball and a pen as fans reach in for autographs.",
+  "focal": [
+   52,
+   45
+  ],
+  "sport": "baseball"
+ },
+ {
+  "id": "t-jack-bowles",
+  "alt": "A batter in a white jersey with eye black flips his bat aside and starts running down the line.",
+  "focal": [
+   35,
+   25
+  ],
+  "sport": "baseball"
+ }
+]

@@ -1,0 +1,349 @@
+/* Photos by Noelle: global tokens and base styles.
+   Two lighting states: Game Day (stadium night) and Golden Hour (sunlit sand).
+   Colors come from research/palette.json; every text pair is WCAG 2.2 AA or better. */
+
+@font-face {
+  font-family: 'Anybody';
+  src: url('@fontsource-variable/anybody/files/anybody-latin-standard-normal.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-stretch: 50% 150%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Anybody';
+  src: url('@fontsource-variable/anybody/files/anybody-latin-standard-italic.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-stretch: 50% 150%;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  src: url('@fontsource-variable/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-wght-normal.woff2') format('woff2-variations');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  src: url('@fontsource-variable/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-wght-italic.woff2') format('woff2-variations');
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+/* Metric-matched fallbacks keep layout steady while the real faces load. */
+@font-face {
+  font-family: 'Anybody Fallback';
+  src: local('Arial Narrow'), local('Arial');
+  size-adjust: 92%;
+  ascent-override: 92%;
+}
+@font-face {
+  font-family: 'Atkinson Fallback';
+  src: local('Verdana'), local('Arial');
+  size-adjust: 94%;
+}
+
+/* ---------- Lighting states ---------- */
+:root {
+  --font-display: 'Anybody', 'Anybody Fallback', sans-serif;
+  --font-text: 'Atkinson Hyperlegible Next', 'Atkinson Fallback', system-ui, sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-shutter: cubic-bezier(0.7, 0, 0.2, 1);
+  --dur-mode: 700ms;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --max: 1520px;
+  --header-h: 72px;
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem; --s-5: 1.5rem;
+  --s-6: 2rem; --s-7: 3rem; --s-8: clamp(3.5rem, 7vw, 6rem); --s-9: clamp(5rem, 11vw, 10rem);
+
+  --fs-xs: 0.78rem; --fs-sm: 0.9rem; --fs-md: 1.0625rem; --fs-lg: clamp(1.15rem, 1.4vw, 1.3rem);
+  --fs-d-s: clamp(1.7rem, 3vw, 2.6rem);
+  --fs-d-m: clamp(2.4rem, 5.2vw, 4.6rem);
+  --fs-d-l: clamp(3.2rem, 8vw, 7rem);
+  --fs-d-xl: clamp(4.6rem, 13vw, 12.5rem);
+
+  --z-base: 1; --z-sticky: 20; --z-header: 30; --z-bar: 40; --z-dialog: 60; --z-flash: 80;
+}
+
+/* Golden Hour: sunlit sand, deep ocean teal, coral. (default when nothing else applies) */
+:root,
+:root[data-mode='goldenhour'],
+[data-mode-local='goldenhour'] {
+  --bg: #f7dcb0;
+  --bg-2: #fbe8c9;
+  --bg-3: #f1cf99;
+  --fg: #073b45;
+  --fg-2: #3d6068;
+  --accent: #c23a20;
+  --accent-text: #a3301a;
+  --on-accent: #fff6e8;
+  --line: rgb(7 59 69 / 0.2);
+  --line-strong: rgb(7 59 69 / 0.55);
+  --sheet: #073b45;
+  --sheet-fg: #f7dcb0;
+  --sheet-fg-2: #e9c690;
+  --sheet-accent: #ff9b7e;
+  --scrim: 247 220 176;
+  --shadow: 7 59 69;
+  --d-stretch: 125%;
+  --d-weight: 620;
+  --d-style: italic;
+  --d-case: none;
+  --d-track: -0.015em;
+  --d-scale: 0.66;
+  --d-leading: 0.92;
+  color-scheme: light;
+}
+
+/* Game Day: stadium ink, floodlight white, dugout red. */
+:root[data-mode='gameday'],
+[data-mode-local='gameday'] {
+  --bg: #0b111d;
+  --bg-2: #141c2c;
+  --bg-3: #1c2639;
+  --fg: #eef2f6;
+  --fg-2: #9fabbd;
+  --accent: #ff4b3a;
+  --accent-text: #ff6a5b;
+  --on-accent: #0b111d;
+  --line: rgb(238 242 246 / 0.16);
+  --line-strong: rgb(238 242 246 / 0.5);
+  --sheet: #141c2c;
+  --sheet-fg: #eef2f6;
+  --sheet-fg-2: #9fabbd;
+  --sheet-accent: #ff4b3a;
+  --scrim: 11 17 29;
+  --shadow: 0 0 0;
+  --d-stretch: 56%;
+  --d-weight: 900;
+  --d-style: normal;
+  --d-case: uppercase;
+  --d-track: -0.005em;
+  --d-scale: 1;
+  --d-leading: 0.84;
+  color-scheme: dark;
+}
+
+/* Pages without a fixed lighting state follow the visitor's system setting until they choose. */
+@media (prefers-color-scheme: dark) {
+  :root[data-mode='auto'] {
+    --bg: #0b111d; --bg-2: #141c2c; --bg-3: #1c2639; --fg: #eef2f6; --fg-2: #9fabbd;
+    --accent: #ff4b3a; --accent-text: #ff6a5b; --on-accent: #0b111d;
+    --line: rgb(238 242 246 / 0.16); --line-strong: rgb(238 242 246 / 0.5);
+    --sheet: #141c2c; --sheet-fg: #eef2f6; --sheet-fg-2: #9fabbd; --sheet-accent: #ff4b3a; --scrim: 11 17 29; --shadow: 0 0 0;
+    --d-stretch: 56%; --d-weight: 900; --d-style: normal; --d-case: uppercase; --d-track: -0.005em; --d-scale: 1; --d-leading: 0.84;
+    color-scheme: dark;
+  }
+}
+
+/* The crossfade between lighting states (fallback when View Transitions are unavailable). */
+:root.mode-shift,
+:root.mode-shift * {
+  transition: background-color var(--dur-mode) var(--ease-out), color var(--dur-mode) var(--ease-out),
+    border-color var(--dur-mode) var(--ease-out), fill var(--dur-mode) var(--ease-out),
+    stroke var(--dur-mode) var(--ease-out) !important;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 600ms;
+  animation-timing-function: var(--ease-out);
+}
+
+/* Shutter flash between pages (cross-document view transitions; ignored where unsupported). */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root) { animation: 220ms var(--ease-shutter) both shutter-out; }
+  ::view-transition-new(root) { animation: 420ms var(--ease-out) both shutter-in; }
+}
+@keyframes shutter-out { to { opacity: 0; filter: brightness(1.8); } }
+@keyframes shutter-in { from { opacity: 0; filter: brightness(1.8); } }
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+  scroll-padding-bottom: 16px;
+  background: var(--bg);
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-text);
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  font-feature-settings: 'ss01' 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+  overflow-x: clip;
+}
+img, picture, svg, video { display: block; max-width: 100%; }
+img { height: auto; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 1.5px; }
+a:hover { text-decoration-color: var(--accent); }
+p, li { text-wrap: pretty; }
+h1, h2, h3 { text-wrap: balance; }
+
+::selection { background: var(--accent); color: var(--on-accent); }
+:focus { outline: none; }
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+html { scrollbar-color: var(--fg-2) var(--bg); }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--fg-2); border: 3px solid var(--bg); }
+
+/* ---------- Type ---------- */
+.display {
+  font-family: var(--font-display);
+  font-stretch: var(--d-stretch);
+  font-weight: var(--d-weight);
+  font-style: var(--d-style);
+  text-transform: var(--d-case);
+  letter-spacing: var(--d-track);
+  line-height: var(--d-leading);
+  font-synthesis: none;
+}
+.d-xl { font-size: calc(var(--fs-d-xl) * var(--d-scale)); }
+.d-l { font-size: calc(var(--fs-d-l) * var(--d-scale)); }
+.d-m { font-size: calc(var(--fs-d-m) * max(var(--d-scale), 0.78)); }
+.d-s { font-size: calc(var(--fs-d-s) * max(var(--d-scale), 0.86)); }
+/* Italic display needs room for descenders. */
+:root[data-mode='goldenhour'] .display, [data-mode-local='goldenhour'] .display { padding-bottom: 0.06em; }
+
+.num {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-stretch: 68%;
+  font-weight: 750;
+  font-style: normal;
+  letter-spacing: 0;
+}
+.label {
+  font-family: var(--font-text);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.lead { font-size: var(--fs-lg); line-height: 1.55; max-width: 38ch; }
+.prose { max-width: 62ch; }
+.prose p + p { margin-top: 1em; }
+.muted { color: var(--fg-2); }
+
+/* ---------- Layout ---------- */
+.wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: max(var(--gutter), env(safe-area-inset-left)) max(var(--gutter), env(safe-area-inset-right)); }
+.section { padding-block: var(--s-8); }
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip-link {
+  position: fixed; z-index: calc(var(--z-dialog) + 1); left: 12px; top: 12px;
+  background: var(--accent); color: var(--on-accent); padding: 12px 18px; font-weight: 700;
+  transform: translateY(-160%); transition: transform 200ms var(--ease-out);
+}
+.skip-link:focus-visible { transform: none; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  --btn-bg: transparent; --btn-fg: var(--fg);
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6em;
+  min-height: 48px; padding: 0 1.4em;
+  background: var(--btn-bg); color: var(--btn-fg);
+  font-family: var(--font-text); font-weight: 700; font-size: 0.98rem; letter-spacing: 0.01em;
+  text-decoration: none; white-space: nowrap; border-radius: 0;
+  box-shadow: inset 0 0 0 1.5px var(--btn-border, transparent);
+  transition: transform 160ms var(--ease-out), background-color 200ms, color 200ms, box-shadow 200ms;
+}
+.btn:active { transform: translateY(1px) scale(0.985); }
+.btn-primary { --btn-bg: var(--accent); --btn-fg: var(--on-accent); }
+.btn-primary:hover { --btn-bg: var(--fg); --btn-fg: var(--bg); }
+.btn-ghost { --btn-border: var(--fg); }
+.btn-ghost:hover { --btn-bg: var(--fg); --btn-fg: var(--bg); }
+.btn svg { width: 1.1em; height: 1.1em; }
+
+/* Text link with an arrow, used for secondary actions. */
+.link-arrow { font-weight: 700; text-decoration: none; display: inline-flex; gap: 0.5em; align-items: center; min-height: 44px; }
+.link-arrow span { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.25em; text-decoration-color: var(--accent); }
+.link-arrow:hover span { text-decoration-thickness: 3px; }
+.link-arrow svg { width: 1.1em; height: 1.1em; transition: transform 200ms var(--ease-out); }
+.link-arrow:hover svg { transform: translateX(3px); }
+
+/* ---------- Viewfinder crop marks (the site's one framing system) ---------- */
+.crop-frame { position: relative; }
+.crop-marks { position: absolute; inset: var(--crop-inset, 0); pointer-events: none; z-index: 2; color: var(--crop-color, var(--fg)); }
+.crop-marks i { position: absolute; width: var(--crop-size, 26px); height: var(--crop-size, 26px); border: 0 solid currentColor; }
+.crop-marks i:nth-child(1) { top: 0; left: 0; border-top-width: 2px; border-left-width: 2px; }
+.crop-marks i:nth-child(2) { top: 0; right: 0; border-top-width: 2px; border-right-width: 2px; }
+.crop-marks i:nth-child(3) { bottom: 0; left: 0; border-bottom-width: 2px; border-left-width: 2px; }
+.crop-marks i:nth-child(4) { bottom: 0; right: 0; border-bottom-width: 2px; border-right-width: 2px; }
+
+/* ---------- Photos: blur-up "develop" ---------- */
+.ph { position: relative; overflow: hidden; background-color: var(--ph-color, var(--bg-2)); background-size: cover; background-position: var(--ph-pos, 50% 50%); }
+.ph picture { display: block; width: 100%; height: 100%; }
+.ph img { width: 100%; height: 100%; object-fit: cover; object-position: var(--ph-pos, 50% 50%); }
+:root.js .ph img[data-develop]:not(.in) { filter: blur(14px) saturate(0.6) brightness(1.12); }
+@media (prefers-reduced-motion: no-preference) {
+  :root.js .ph img[data-develop] { transition: filter 900ms var(--ease-out); }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root.js .ph img[data-develop]:not(.in) { filter: none; }
+}
+
+/* Without JS there is no live clock, so don't show a blank one. */
+:root:not(.js) [data-clock] { display: none; }
+
+/* Placeholder marker for facts still waiting on Noelle (preview only). */
+/* Hidden for the client demo; add ?confirm to any URL to show every open question. */
+.confirm-tag { display: none !important; }
+:root.show-confirm .confirm { text-decoration: underline dotted var(--accent); text-underline-offset: 0.2em; }
+:root.show-confirm .confirm-tag { display: inline-block !important; }
+.confirm-tag {
+  display: inline-block; margin-left: 0.4em; padding: 0.1em 0.45em; vertical-align: 0.1em;
+  font: 700 0.62rem/1.4 var(--font-text); letter-spacing: 0.06em; text-transform: uppercase;
+  background: var(--accent); color: var(--on-accent);
+}
+
+/* Reveal-on-scroll: content is visible by default; JS opts elements in. */
+:root.js [data-reveal]:not(.is-in) { opacity: 0; transform: translateY(24px); }
+@media (prefers-reduced-motion: no-preference) {
+  :root.js [data-reveal] { transition: opacity 800ms var(--ease-out), transform 900ms var(--ease-out); transition-delay: var(--reveal-delay, 0ms); }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root.js [data-reveal]:not(.is-in) { opacity: 1; transform: none; }
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: clip; }
+
+@media (max-width: 760px) {
+  :root { --header-h: 60px; }
+}
+/* The fixed thumb bar must never cover a focused element. */
+@media (max-width: 1080px) {
+  html { scroll-padding-bottom: calc(90px + env(safe-area-inset-bottom)); }
+}
+@media print {
+  .site-header, .mobile-bar, .site-footer .clocks { display: none !important; }
+}
+
+/* Controls that only work with JavaScript stay out of the way without it. */
+:root:not(.js) [data-js-only] { display: none !important; }
+:root.js .nojs-only { display: none !important; }

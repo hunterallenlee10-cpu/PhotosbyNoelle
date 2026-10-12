@@ -1,0 +1,41 @@
+---
+import Base from '@/layouts/Base.astro';
+import Photo from '@/components/Photo.astro';
+import CropMarks from '@/components/CropMarks.astro';
+import Icon from '@/components/Icon.astro';
+import { page, photo } from '@/lib/content';
+const { data } = await page('not-found');
+const d = { ...data, heading: data.heading!, lead: data.lead! };
+const p = await photo(d.ogPhoto);
+---
+<Base title={d.title} description={d.description} og="not-found" mode={d.mode} noindex>
+  <section class="nf wrap">
+    <div class="shot crop-frame">
+      <Photo photo={p} priority sizes="(max-width: 760px) 90vw, 40vw" widths={[480, 800, 1200]} ratio="4 / 5" class="blurry" />
+      <CropMarks inset="-12px" size="26px" color="var(--accent)" />
+    </div>
+    <div class="text">
+      <p class="num code" aria-hidden="true">404</p>
+      <h1 class="display d-l">{d.heading}</h1>
+      <p class="lead">{d.lead}</p>
+      <ul class="links" role="list">
+        <li><a href="/sports" class="link-arrow"><span>Sports</span><Icon name="arrow-right" /></a></li>
+        <li><a href="/lifestyle" class="link-arrow"><span>Lifestyle</span><Icon name="arrow-right" /></a></li>
+        <li><a href="/" class="link-arrow"><span>Home</span><Icon name="arrow-right" /></a></li>
+      </ul>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: clamp(28px, 6vw, 96px); align-items: center; min-height: calc(100svh - var(--header-h)); padding-block: var(--s-7); }
+  .shot { position: relative; max-width: 420px; }
+  /* Out of focus on purpose, then it snaps sharp on hover: you missed this one. */
+  .shot :global(.blurry img) { filter: blur(10px) saturate(0.9); transition: filter 600ms var(--ease-out); }
+  .shot:hover :global(.blurry img) { filter: none; }
+  .text { display: grid; gap: var(--s-5); justify-items: start; }
+  .code { font-size: 1.6rem; color: var(--accent-text); }
+  .links { list-style: none; padding: 0; display: flex; gap: var(--s-5); flex-wrap: wrap; }
+  @media (max-width: 760px) { .nf { grid-template-columns: 1fr; } .shot { max-width: 70%; } }
+  @media (prefers-reduced-motion: reduce) { .shot :global(.blurry img) { transition: none; } }
+</style>

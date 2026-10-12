@@ -1,0 +1,126 @@
+---
+import Base from '@/layouts/Base.astro';
+import Photo from '@/components/Photo.astro';
+import CropMarks from '@/components/CropMarks.astro';
+import ContactSheet from '@/components/ContactSheet.astro';
+import Confirm from '@/components/Confirm.astro';
+import Icon from '@/components/Icon.astro';
+import { category, page, photo, settings, smart } from '@/lib/content';
+
+const { data } = await page('about');
+const d = { ...data, heading: data.heading!, lead: data.lead!, portrait: data.portrait!, chapters: data.chapters!, facts: data.facts!, parks: data.parks!, roll: data.roll! };
+const s = await settings();
+const portrait = await photo(d.portrait);
+const chapters = await Promise.all(
+  d.chapters.map(async (c) => ({ ...c, image: await photo(c.photo) })),
+);
+const facts = await Promise.all(
+  d.facts.items.map(async (f) => ({
+    ...f,
+    image: f.photo ? await photo(f.photo) : null,
+  })),
+);
+// Every personal photo from her About page, in her order (three are hidden; see README).
+const roll = (await category('about')).filter((p) => p.id !== 'noelle-portrait');
+const { visited, total } = d.parks;
+---
+<Base title={d.title} description={d.description} og="about" mode={d.mode} current="about">
+  <section class="opener wrap">
+    <div class="op-text">
+      <h1 class="display d-xl">{smart(d.heading)}</h1>
+      <p class="lead">{smart(d.lead)}</p>
+    </div>
+    <figure class="op-photo crop-frame">
+      <Photo photo={portrait} priority sizes="(max-width: 760px) 86vw, 36vw" widths={[480, 720, 960, 1280]} ratio="4 / 5" />
+      <CropMarks inset="-14px" size="28px" color="var(--accent)" />
+    </figure>
+  </section>
+
+  {chapters.map((c, i) => (
+    <section class:list={['chapter wrap', { flip: i % 2 === 1 }]} aria-labelledby={`ch-${i}`}>
+      <figure class="ch-photo" data-reveal>
+        <Photo photo={c.image} sizes="(max-width: 760px) 100vw, 44vw" widths={[480, 800, 1200]} />
+      </figure>
+      <div class="ch-text" data-reveal>
+        <h2 class="display d-m" id={`ch-${i}`}>{smart(c.heading)}</h2>
+        <p class="lead-p">{smart(c.body)}</p>
+      </div>
+    </section>
+  ))}
+
+  <section class="facts wrap" aria-labelledby="facts-h">
+    <h2 class="display d-m" id="facts-h">{d.facts.heading}</h2>
+    <ul class="cards" role="list">
+      {facts.map((f, i) => (
+        <li class:list={['card', `c${i}`, { hasimg: f.image }]} data-reveal style={`--reveal-delay:${i * 80}ms`}>
+          {f.image && <Photo photo={f.image} sizes="(max-width: 760px) 80vw, 22vw" widths={[400, 640]} ratio="1 / 1" class="snap" />}
+          {f.id === 'parks' && (
+            <p class="parks" aria-label={`${visited} of ${total} national parks visited`}>
+              <span class="num big">{visited}</span><span class="num of">of {total}</span>
+            </p>
+          )}
+          <h3 class="card-h display">{f.label}</h3>
+          <p>{f.confirm ? <Confirm note={f.confirm}>{smart(f.text)}</Confirm> : smart(f.text)}</p>
+          {f.id === 'parks' && (
+            <span class="dots" aria-hidden="true">{Array.from({ length: total }, (_, k) => <i class:list={{ on: k < visited }}></i>)}</span>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="roll wrap" aria-labelledby="roll-h">
+    <div class="roll-head">
+      <h2 class="display d-m" id="roll-h">{d.roll.heading}</h2>
+      <p class="lead muted">{smart(d.roll.sub)}</p>
+      <a href={s.instagram.url} class="btn btn-ghost" rel="me noopener" target="_blank"><Icon name="instagram-logo" /><span translate="no">{s.instagram.handle}</span><span class="visually-hidden"> on Instagram (opens in a new tab)</span></a>
+    </div>
+    <ContactSheet photos={roll} gallery="roll" label="Camera roll photos" rowHeight={220} />
+    <p class="credit muted">Wedding party photo by Robin Skievaski Photography.</p>
+  </section>
+</Base>
+
+<style>
+  .opener { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 6vw, 96px); align-items: end; padding-top: calc(var(--s-8)); padding-bottom: var(--s-8); }
+  .op-text { display: grid; gap: var(--s-5); padding-bottom: var(--s-6); }
+  .op-text .lead { max-width: 30ch; }
+  .op-photo { position: relative; max-width: 480px; justify-self: end; width: 100%; }
+
+  .chapter { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 6vw, 96px); align-items: center; padding-block: var(--s-7); }
+  .chapter.flip .ch-photo { order: 2; }
+  .ch-text { display: grid; gap: var(--s-5); }
+  .lead-p { font-size: var(--fs-lg); max-width: 46ch; }
+
+  .facts { padding-block: var(--s-8); }
+  .facts h2 { margin-bottom: var(--s-6); }
+  .cards { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); align-items: start; }
+  .card { background: var(--bg-2); padding: 14px 14px 20px; display: grid; gap: 10px; align-content: start; min-height: 230px; box-shadow: 0 18px 40px -22px rgb(var(--shadow) / 0.45); }
+  .card:nth-child(1) { transform: rotate(-2.2deg); }
+  .card:nth-child(2) { transform: rotate(1.6deg) translateY(28px); }
+  .card:nth-child(3) { transform: rotate(-1deg) translateY(-6px); }
+  .card:nth-child(4) { transform: rotate(2deg) translateY(18px); }
+  :global(.js) .card[data-reveal].is-in:nth-child(1) { transform: rotate(-2.2deg); }
+  :global(.js) .card[data-reveal].is-in:nth-child(2) { transform: rotate(1.6deg) translateY(28px); }
+  :global(.js) .card[data-reveal].is-in:nth-child(3) { transform: rotate(-1deg) translateY(-6px); }
+  :global(.js) .card[data-reveal].is-in:nth-child(4) { transform: rotate(2deg) translateY(18px); }
+  .card-h { font-size: calc(2.1rem * max(var(--d-scale), 0.78)); }
+  .parks { display: flex; align-items: baseline; gap: 10px; min-height: 120px; }
+  .parks .big { font-size: 7rem; line-height: 0.8; color: var(--accent); }
+  .parks .of { font-size: 1.6rem; color: var(--fg-2); }
+  .dots { display: grid; grid-template-columns: repeat(21, 1fr); gap: 3px; margin-top: 4px; }
+  .dots i { aspect-ratio: 1; background: var(--line); }
+  .dots i.on { background: var(--accent); }
+
+  .roll { padding-block: var(--s-8); }
+  .roll-head { display: grid; gap: var(--s-4); justify-items: start; margin-bottom: var(--s-6); }
+  .credit { margin-top: var(--s-4); font-size: var(--fs-sm); }
+
+  @media (max-width: 1000px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; } }
+  @media (max-width: 760px) {
+    .opener, .chapter { grid-template-columns: 1fr; }
+    .chapter.flip .ch-photo { order: 0; }
+    .op-photo { justify-self: start; max-width: 86%; }
+    .op-text { padding-bottom: 0; }
+  }
+  @media (max-width: 480px) { .cards { grid-template-columns: 1fr; } .card { transform: none !important; } }
+</style>

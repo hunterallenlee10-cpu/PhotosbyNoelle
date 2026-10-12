@@ -1,0 +1,22 @@
+[
+  {
+    "page": "sports-desktop",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 100,
+    "LCP": "0.7 s",
+    "CLS": "0",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "lifestyle-desktop",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 100,
+    "LCP": "0.7 s",
+    "CLS": "0",
+    "TBT": "0 ms"
+  }
+]

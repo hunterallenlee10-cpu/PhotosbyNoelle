@@ -1,0 +1,7 @@
+---
+// Four viewfinder corners. Purely decorative; the parent must be position: relative.
+interface Props { inset?: string; size?: string; color?: string; class?: string }
+const { inset, size, color, class: cls } = Astro.props;
+const style = [inset && `--crop-inset:${inset}`, size && `--crop-size:${size}`, color && `--crop-color:${color}`].filter(Boolean).join(';');
+---
+<span class:list={['crop-marks', cls]} style={style || undefined} aria-hidden="true"><i></i><i></i><i></i><i></i></span>

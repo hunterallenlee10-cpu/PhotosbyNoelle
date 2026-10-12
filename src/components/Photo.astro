@@ -1,0 +1,49 @@
+---
+// One of Noelle's photos: AVIF + WebP + JPEG, responsive widths, fixed aspect (no CLS),
+// a blurred LQIP underneath, and object-position from the photo's focal point.
+import { Picture } from 'astro:assets';
+import type { Photo as PhotoData } from '@/lib/content';
+
+interface Props {
+  photo: PhotoData;
+  sizes: string;
+  widths?: number[];
+  priority?: boolean;
+  /** Load immediately (likely in the first phone viewport) without the high fetch priority. */
+  eager?: boolean;
+  develop?: boolean;
+  /** CSS aspect-ratio for a cropped frame; omit to keep the photo's own ratio. */
+  ratio?: string;
+  alt?: string;
+  class?: string;
+  imgClass?: string;
+  quality?: number;
+}
+const { photo, sizes, widths = [480, 800, 1200, 1600, 2400], priority = false, eager = false, develop = !priority && !eager, ratio, alt, class: cls, imgClass, quality = 64 } = Astro.props;
+const usable = widths.filter((w) => w <= photo.width);
+if (!usable.length || usable[usable.length - 1] < Math.min(photo.width, widths[widths.length - 1])) usable.push(Math.min(photo.width, widths[widths.length - 1]));
+const [fx, fy] = photo.focal;
+const style = [
+  `--ph-pos:${fx}% ${fy}%`,
+  `--ph-color:${photo.color}`,
+  `background-image:url("${photo.lqip}")`,
+  `aspect-ratio:${ratio ?? `${photo.width} / ${photo.height}`}`,
+].join(';');
+---
+<div class:list={['ph', cls]} style={style}>
+  <Picture
+    src={photo.file}
+    alt={alt ?? photo.alt}
+    widths={[...new Set(usable)]}
+    sizes={sizes}
+    formats={['avif', 'webp']}
+    fallbackFormat="jpg"
+    quality={quality}
+    loading={priority || eager ? 'eager' : 'lazy'}
+    decoding={priority ? 'sync' : 'async'}
+    fetchpriority={priority ? 'high' : 'auto'}
+    class={imgClass}
+    data-develop={develop ? '' : undefined}
+    onload={develop ? "this.classList.add('in')" : undefined}
+  />
+</div>

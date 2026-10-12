@@ -1,0 +1,76 @@
+---
+import Wordmark from './Wordmark.astro';
+import Icon from './Icon.astro';
+import Confirm from './Confirm.astro';
+import { NAV } from '@/lib/nav';
+import { settings } from '@/lib/content';
+const s = await settings();
+const year = new Date().getFullYear();
+---
+<footer class="site-footer" id="site-footer">
+  <div class="wrap">
+    <div class="scoreboard" role="group" aria-label="Local time in Noelle's two home cities">
+      {s.cities.map((c, i) => (
+        <div class:list={['city', { right: i === 1 }]}>
+          <span class="label">{c.name}, {c.region}</span>
+          <time class="time num" data-clock={c.tz}>
+            <span class="hm">--:--</span><span class="ap"></span>
+          </time>
+          <span class="zone label muted">{c.zone}</span>
+        </div>
+      ))}
+      <a href="/" class="mark" aria-label="Photos by Noelle, home"><Wordmark /></a>
+    </div>
+
+    <div class="cols">
+      <nav aria-label="Footer" id="footer-nav">
+        <ul>
+          {NAV.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+          <li><a href="/inquire" class="accent">Inquire</a></li>
+        </ul>
+      </nav>
+      <ul class="links">
+        <li><a href={s.instagram.url} rel="me noopener" target="_blank"><Icon name="instagram-logo" /><span translate="no">{s.instagram.handle}</span><span class="visually-hidden"> on Instagram (opens in a new tab)</span></a></li>
+        <li>
+          <a href={s.clientGalleries.url} rel="noopener" target="_blank">
+            <Icon name="arrow-up-right" />
+            {s.clientGalleries.confirm ? <Confirm note={s.clientGalleries.confirm}>{s.clientGalleries.label}</Confirm> : s.clientGalleries.label}
+            <span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+        </li>
+      </ul>
+      <p class="fine muted">
+        Sports and lifestyle photographer in Honolulu, HI and Fredericksburg, VA.<br />
+        &copy; {year} Photos by Noelle. {s.credit.url ? <a href={s.credit.url}>{s.credit.label}</a> : s.credit.label}
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer { border-top: 2px solid var(--line); padding: var(--s-7) 0 calc(var(--s-7) + 72px); background: var(--bg); }
+  .scoreboard { display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: var(--s-5); padding-bottom: var(--s-6); border-bottom: 2px solid var(--line); }
+  .city { display: grid; gap: 4px; justify-items: start; }
+  .city.right { justify-items: end; text-align: right; grid-column: 3; grid-row: 1; }
+  .mark { grid-column: 2; grid-row: 1; align-self: center; color: var(--fg); --wm-accent: var(--accent); }
+  .mark :global(.wordmark) { height: clamp(56px, 7vw, 92px); width: auto; }
+  .time { font-size: clamp(3rem, 8vw, 6.4rem); line-height: 0.82; color: var(--accent); font-stretch: 60%; font-weight: 800; }
+  .ap { font-size: 0.3em; margin-left: 0.18em; color: var(--fg-2); letter-spacing: 0.02em; }
+  .cols { display: grid; grid-template-columns: 1.4fr 1fr 1.4fr; gap: var(--s-6); padding-top: var(--s-6); align-items: start; }
+  nav ul, .links { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 22px; }
+  nav a, .links a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 700; text-decoration: none; }
+  nav a:hover, .links a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
+  .links { flex-direction: column; gap: 0; }
+  .links :global(.icon) { width: 18px; height: 18px; flex: none; }
+  .accent { color: var(--accent-text); }
+  .fine { font-size: var(--fs-sm); text-align: right; }
+  @media (max-width: 860px) {
+    .scoreboard { grid-template-columns: 1fr 1fr; }
+    .mark { grid-column: 1 / -1; grid-row: 1; justify-self: start; margin-bottom: var(--s-4); }
+    .city { grid-row: 2; }
+    .city.right { grid-column: 2; grid-row: 2; }
+    .time { font-size: 15vw; }
+    .cols { grid-template-columns: 1fr; }
+    .fine { text-align: left; }
+  }
+</style>
