@@ -12,7 +12,7 @@
 .lightbox:not([open]) { display: none; }
 .lightbox::backdrop { background: transparent; }
 :root.lb-open { overflow: hidden; }
-.lb-top { display: flex; align-items: center; justify-content: space-between; padding: max(10px, env(safe-area-inset-top)) clamp(12px, 3vw, 32px) 0; }
+.lb-top { display: flex; align-items: center; justify-content: space-between; padding: max(10px, env(safe-area-inset-top)) max(clamp(12px, 3vw, 32px), env(safe-area-inset-right)) 0 max(clamp(12px, 3vw, 32px), env(safe-area-inset-left)); }
 .lb-count { font-size: 1.05rem; color: #9fabbd; }
 .lb-n { font-size: 2.2rem; color: #ff4b3a; line-height: 1; }
 .lb-btn {

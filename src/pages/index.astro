@@ -8,7 +8,7 @@ import Photo from '@/components/Photo.astro';
 import CropMarks from '@/components/CropMarks.astro';
 import Confirm from '@/components/Confirm.astro';
 import Icon from '@/components/Icon.astro';
-import { category, page, photo, photos, settings, testimonials } from '@/lib/content';
+import { category, page, photo, photos, settings, smart, testimonials } from '@/lib/content';
 import { render } from 'astro:content';
 
 const entry = await page('home');
@@ -58,7 +58,7 @@ const kind = await Promise.all(
       <CropMarks inset="-12px" size="24px" color="var(--accent)" />
     </figure>
     <div class="intro-text" data-reveal>
-      <h2 class="display d-m" id="intro-h">{d.intro.heading}</h2>
+      <h2 class="display d-m" id="intro-h">{smart(d.intro.heading)}</h2>
       <div class="prose lead-prose"><Content /></div>
       <p class="since num"><Confirm note={s.since.confirm ?? ''}>{s.since.label}</Confirm></p>
       <a href="/about" class="link-arrow"><span>{d.intro.link}</span><Icon name="arrow-right" /></a>
@@ -70,13 +70,13 @@ const kind = await Promise.all(
   <section class="ig wrap" aria-labelledby="ig-h">
     <h2 class="label muted" id="ig-h">{d.instagram.heading}</h2>
     <a href={s.instagram.url} class="display ig-link" rel="me noopener" target="_blank">
-      <Icon name="instagram-logo" />{s.instagram.handle}<span class="visually-hidden"> on Instagram (opens in a new tab)</span>
+      <Icon name="instagram-logo" /><span translate="no">{s.instagram.handle}</span><span class="visually-hidden"> on Instagram (opens in a new tab)</span>
     </a>
   </section>
 
   <section class="closing" aria-labelledby="close-h">
     <div class="wrap closing-inner">
-      <h2 class="display d-l" id="close-h">{d.closing.heading}</h2>
+      <h2 class="display d-l" id="close-h">{smart(d.closing.heading)}</h2>
       <a href="/inquire" class="btn btn-primary big">{d.closing.button}<Icon name="arrow-right" /></a>
     </div>
   </section>

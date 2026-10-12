@@ -3,7 +3,7 @@
 // (Game Day / Golden Hour) whatever the page is set to. The live dual clock sits on the seam.
 import Photo from './Photo.astro';
 import Icon from './Icon.astro';
-import type { Photo as PhotoData, Settings } from '@/lib/content';
+import { smart, type Photo as PhotoData, type Settings } from '@/lib/content';
 interface World { photo: PhotoData; line: string; count: number }
 interface Props { sports: World; lifestyle: World; cities: Settings['cities'] }
 const { sports, lifestyle, cities } = Astro.props;
@@ -15,11 +15,11 @@ const halves = [
 <section class="worlds" id="worlds" aria-label="Two worlds: sports and lifestyle">
   {halves.map((h) => (
     <a href={h.href} class:list={['half', h.key]} data-mode-local={h.key}>
-      <Photo photo={h.photo} sizes="(max-width: 760px) 100vw, 50vw" widths={[640, 960, 1280, 1600]} class="bg" />
+      <Photo photo={h.photo} sizes="(max-width: 760px) 100vw, 50vw" widths={[480, 800, 1200, 1600]} class="bg" />
       <span class="body">
         <span class="top"><span class="label">{h.what}</span><span class="num count">{h.count} frames</span></span>
         <span class="display title">{h.title}</span>
-        <span class="line">{h.line}</span>
+        <span class="line">{smart(h.line)}</span>
         <span class="go"><span>See {h.what.toLowerCase()}</span><Icon name="arrow-right" /></span>
       </span>
     </a>

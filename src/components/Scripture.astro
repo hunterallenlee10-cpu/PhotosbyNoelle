@@ -31,6 +31,7 @@ const { text, reference, intro } = Astro.props;
       SplitText.create(el, {
         type: 'lines',
         mask: 'lines',
+        aria: 'none', // lines keep whole words, so the text reads normally; no aria-label on a <p>
         autoSplit: true,
         onSplit: (self) =>
           gsap.from(self.lines, { yPercent: 105, duration: 1.1, ease: 'expo.out', stagger: 0.09, delay: 0.15 }),

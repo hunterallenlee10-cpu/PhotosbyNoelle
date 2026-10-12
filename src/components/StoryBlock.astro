@@ -4,14 +4,14 @@
 import Photo from './Photo.astro';
 import CropMarks from './CropMarks.astro';
 import { exifLine, smart, type Photo as PhotoData } from '@/lib/content';
-interface Props { id: string; heading: string; body: string; photos: PhotoData[]; flip?: boolean }
-const { id, heading, body, photos, flip = false } = Astro.props;
+interface Props { id: string; heading: string; body: string; photos: PhotoData[]; flip?: boolean; eager?: boolean }
+const { id, heading, body, photos, flip = false, eager = false } = Astro.props;
 const [lead, ...rest] = photos;
 ---
 <article class:list={['story wrap', { flip }]} id={id} aria-labelledby={`${id}-h`}>
   <figure class="lead crop-frame" data-reveal>
     <a href={`#frame-${String(lead.order).padStart(3, '0')}`} data-frame-link class="lead-link" aria-label={`Open frame ${String(lead.order).padStart(3, '0')} in the gallery`}>
-      <Photo photo={lead} sizes="(max-width: 900px) 100vw, 58vw" widths={[640, 960, 1280, 1600, 2000]} />
+      <Photo photo={lead} sizes="(max-width: 900px) 100vw, 58vw" widths={[480, 800, 1200, 1600, 2000]} eager={eager} />
     </a>
     <CropMarks inset="-10px" size="22px" />
     <figcaption>
@@ -21,7 +21,7 @@ const [lead, ...rest] = photos;
   </figure>
   <div class="text" data-reveal>
     <h2 class="display d-m" id={`${id}-h`}>{heading}</h2>
-    <p class="lead-p">{body}</p>
+    <p class="lead-p">{smart(body)}</p>
     {rest.length > 0 && (
       <ul class="more" role="list">
         {rest.map((p) => (

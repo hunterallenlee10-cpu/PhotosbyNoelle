@@ -62,6 +62,8 @@ export const launched = import.meta.env.PUBLIC_LAUNCH === 'true' || process.env.
 /** Real typographic apostrophes and quotes without changing a word. */
 export const smart = (s: string) =>
   s
+    .replace(/'(\d\d)\b/g, '’$1') // class of '26
+    .replace(/\.\.\./g, '…')
     .replace(/(\w)'(\w)/g, '$1’$2')
     .replace(/(^|[\s(])'/g, '$1‘')
     .replace(/'/g, '’')

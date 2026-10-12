@@ -5,7 +5,7 @@ import CropMarks from '@/components/CropMarks.astro';
 import ContactSheet from '@/components/ContactSheet.astro';
 import Confirm from '@/components/Confirm.astro';
 import Icon from '@/components/Icon.astro';
-import { category, page, photo, settings } from '@/lib/content';
+import { category, page, photo, settings, smart } from '@/lib/content';
 
 const { data } = await page('about');
 const d = { ...data, heading: data.heading!, lead: data.lead!, portrait: data.portrait!, chapters: data.chapters!, facts: data.facts!, parks: data.parks!, roll: data.roll! };
@@ -27,8 +27,8 @@ const { visited, total } = d.parks;
 <Base title={d.title} description={d.description} og="about" mode={d.mode} current="about">
   <section class="opener wrap">
     <div class="op-text">
-      <h1 class="display d-xl">{d.heading}</h1>
-      <p class="lead">{d.lead}</p>
+      <h1 class="display d-xl">{smart(d.heading)}</h1>
+      <p class="lead">{smart(d.lead)}</p>
     </div>
     <figure class="op-photo crop-frame">
       <Photo photo={portrait} priority sizes="(max-width: 760px) 86vw, 36vw" widths={[480, 720, 960, 1280]} ratio="4 / 5" />
@@ -42,8 +42,8 @@ const { visited, total } = d.parks;
         <Photo photo={c.image} sizes="(max-width: 760px) 100vw, 44vw" widths={[480, 800, 1200]} />
       </figure>
       <div class="ch-text" data-reveal>
-        <h2 class="display d-m" id={`ch-${i}`}>{c.heading}</h2>
-        <p class="lead-p">{c.body}</p>
+        <h2 class="display d-m" id={`ch-${i}`}>{smart(c.heading)}</h2>
+        <p class="lead-p">{smart(c.body)}</p>
       </div>
     </section>
   ))}
@@ -60,7 +60,7 @@ const { visited, total } = d.parks;
             </p>
           )}
           <h3 class="card-h display">{f.label}</h3>
-          <p>{f.confirm ? <Confirm note={f.confirm}>{f.text}</Confirm> : f.text}</p>
+          <p>{f.confirm ? <Confirm note={f.confirm}>{smart(f.text)}</Confirm> : smart(f.text)}</p>
           {f.id === 'parks' && (
             <span class="dots" aria-hidden="true">{Array.from({ length: total }, (_, k) => <i class:list={{ on: k < visited }}></i>)}</span>
           )}
@@ -72,10 +72,10 @@ const { visited, total } = d.parks;
   <section class="roll wrap" aria-labelledby="roll-h">
     <div class="roll-head">
       <h2 class="display d-m" id="roll-h">{d.roll.heading}</h2>
-      <p class="lead muted">{d.roll.sub}</p>
-      <a href={s.instagram.url} class="btn btn-ghost" rel="me noopener" target="_blank"><Icon name="instagram-logo" />{s.instagram.handle}<span class="visually-hidden"> on Instagram (opens in a new tab)</span></a>
+      <p class="lead muted">{smart(d.roll.sub)}</p>
+      <a href={s.instagram.url} class="btn btn-ghost" rel="me noopener" target="_blank"><Icon name="instagram-logo" /><span translate="no">{s.instagram.handle}</span><span class="visually-hidden"> on Instagram (opens in a new tab)</span></a>
     </div>
-    <ContactSheet photos={roll} gallery="roll" label="Camera roll" rowHeight={220} />
+    <ContactSheet photos={roll} gallery="roll" label="Camera roll photos" rowHeight={220} />
     <p class="credit muted">Wedding party photo by Robin Skievaski Photography.</p>
   </section>
 </Base>

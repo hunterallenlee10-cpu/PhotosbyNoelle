@@ -86,6 +86,7 @@
   --sheet: #073b45;
   --sheet-fg: #f7dcb0;
   --sheet-fg-2: #e9c690;
+  --sheet-accent: #ff9b7e;
   --scrim: 247 220 176;
   --shadow: 7 59 69;
   --d-stretch: 125%;
@@ -114,6 +115,7 @@
   --sheet: #141c2c;
   --sheet-fg: #eef2f6;
   --sheet-fg-2: #9fabbd;
+  --sheet-accent: #ff4b3a;
   --scrim: 11 17 29;
   --shadow: 0 0 0;
   --d-stretch: 56%;
@@ -132,7 +134,7 @@
     --bg: #0b111d; --bg-2: #141c2c; --bg-3: #1c2639; --fg: #eef2f6; --fg-2: #9fabbd;
     --accent: #ff4b3a; --accent-text: #ff6a5b; --on-accent: #0b111d;
     --line: rgb(238 242 246 / 0.16); --line-strong: rgb(238 242 246 / 0.5);
-    --sheet: #141c2c; --sheet-fg: #eef2f6; --sheet-fg-2: #9fabbd; --scrim: 11 17 29; --shadow: 0 0 0;
+    --sheet: #141c2c; --sheet-fg: #eef2f6; --sheet-fg-2: #9fabbd; --sheet-accent: #ff4b3a; --scrim: 11 17 29; --shadow: 0 0 0;
     --d-stretch: 56%; --d-weight: 900; --d-style: normal; --d-case: uppercase; --d-track: -0.005em; --d-scale: 1; --d-leading: 0.84;
     color-scheme: dark;
   }
@@ -143,8 +145,7 @@
 :root.mode-shift * {
   transition: background-color var(--dur-mode) var(--ease-out), color var(--dur-mode) var(--ease-out),
     border-color var(--dur-mode) var(--ease-out), fill var(--dur-mode) var(--ease-out),
-    stroke var(--dur-mode) var(--ease-out), font-stretch var(--dur-mode) var(--ease-out),
-    font-weight var(--dur-mode) var(--ease-out) !important;
+    stroke var(--dur-mode) var(--ease-out) !important;
 }
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -168,6 +169,7 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: calc(var(--header-h) + 16px);
+  scroll-padding-bottom: 16px;
   background: var(--bg);
   -webkit-tap-highlight-color: transparent;
 }
@@ -243,7 +245,7 @@ html { scrollbar-color: var(--fg-2) var(--bg); }
 .muted { color: var(--fg-2); }
 
 /* ---------- Layout ---------- */
-.wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+.wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: max(var(--gutter), env(safe-area-inset-left)) max(var(--gutter), env(safe-area-inset-right)); }
 .section { padding-block: var(--s-8); }
 .visually-hidden {
   position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -294,11 +296,16 @@ html { scrollbar-color: var(--fg-2) var(--bg); }
 .ph { position: relative; overflow: hidden; background-color: var(--ph-color, var(--bg-2)); background-size: cover; background-position: var(--ph-pos, 50% 50%); }
 .ph picture { display: block; width: 100%; height: 100%; }
 .ph img { width: 100%; height: 100%; object-fit: cover; object-position: var(--ph-pos, 50% 50%); }
-:root.js .ph img[data-develop] { opacity: 0; filter: blur(14px) saturate(0.6) brightness(1.12); }
-:root.js .ph img[data-develop].in { opacity: 1; filter: none; }
+:root.js .ph img[data-develop]:not(.in) { filter: blur(14px) saturate(0.6) brightness(1.12); }
 @media (prefers-reduced-motion: no-preference) {
-  :root.js .ph img[data-develop] { transition: opacity 500ms var(--ease-out), filter 900ms var(--ease-out); }
+  :root.js .ph img[data-develop] { transition: filter 900ms var(--ease-out); }
 }
+@media (prefers-reduced-motion: reduce) {
+  :root.js .ph img[data-develop]:not(.in) { filter: none; }
+}
+
+/* Without JS there is no live clock, so don't show a blank one. */
+:root:not(.js) [data-clock] { display: none; }
 
 /* Placeholder marker for facts still waiting on Noelle (preview only). */
 .confirm { text-decoration: underline dotted var(--accent); text-underline-offset: 0.2em; }
@@ -326,9 +333,14 @@ html.lenis, html.lenis body { height: auto; }
 @media (max-width: 760px) {
   :root { --header-h: 60px; }
 }
+/* The fixed thumb bar must never cover a focused element. */
+@media (max-width: 1080px) {
+  html { scroll-padding-bottom: calc(90px + env(safe-area-inset-bottom)); }
+}
 @media print {
   .site-header, .mobile-bar, .site-footer .clocks { display: none !important; }
 }
 
 /* Controls that only work with JavaScript stay out of the way without it. */
 :root:not(.js) [data-js-only] { display: none !important; }
+:root.js .nojs-only { display: none !important; }

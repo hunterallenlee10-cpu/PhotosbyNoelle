@@ -13,7 +13,7 @@ export default defineConfig({
   adapter: vercel({ imageService: false, webAnalytics: { enabled: false } }),
   trailingSlash: 'never',
   build: { format: 'file', inlineStylesheets: 'auto' },
-  integrations: launched ? [sitemap({ filter: (page) => !page.includes('/404') })] : [],
+  integrations: launched ? [sitemap({ filter: (page) => !page.includes('/404') && !page.includes('/inquire/') })] : [],
   image: {
     responsiveStyles: false,
     // ~200 photos x several widths x AVIF/WebP/JPEG: keep cold builds well under Vercel's limit.

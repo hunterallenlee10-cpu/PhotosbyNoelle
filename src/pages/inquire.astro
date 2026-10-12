@@ -3,7 +3,7 @@ import Base from '@/layouts/Base.astro';
 import Photo from '@/components/Photo.astro';
 import CropMarks from '@/components/CropMarks.astro';
 import Icon from '@/components/Icon.astro';
-import { page, photo, settings } from '@/lib/content';
+import { page, photo, settings, smart } from '@/lib/content';
 import { LOOKING_FOR, WHERE } from '@/lib/inquiry';
 
 const { data } = await page('inquire');
@@ -14,8 +14,8 @@ const side = await photo(d.ogPhoto);
 <Base title={d.title} description={d.description} og="inquire" mode={d.mode} current="inquire">
   <section class="inq wrap">
     <div class="intro">
-      <h1 class="display d-l">{d.heading}</h1>
-      <p class="lead">{d.lead}</p>
+      <h1 class="display d-l">{smart(d.heading)}</h1>
+      <p class="lead">{smart(d.lead)}</p>
       <figure class="side crop-frame">
         <Photo photo={side} sizes="(max-width: 900px) 60vw, 30vw" widths={[480, 800, 1200]} ratio="4 / 5" />
         <CropMarks inset="-10px" size="22px" color="var(--accent)" />
@@ -29,19 +29,19 @@ const side = await photo(d.ogPhoto);
         <div class="field">
           <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
           <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120" aria-describedby="e-name" />
-          <p class="err" id="e-name" data-err="name"></p>
+          <p class="err" id="e-name" data-err="name" aria-live="polite"></p>
         </div>
 
         <div class="two">
           <div class="field">
             <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
-            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200" aria-describedby="e-email" />
-            <p class="err" id="e-email" data-err="email"></p>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required maxlength="200" aria-describedby="e-email" />
+            <p class="err" id="e-email" data-err="email" aria-live="polite"></p>
           </div>
           <div class="field">
             <label for="f-phone">Phone <span class="opt">(optional)</span></label>
             <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" aria-describedby="e-phone" />
-            <p class="err" id="e-phone" data-err="phone"></p>
+            <p class="err" id="e-phone" data-err="phone" aria-live="polite"></p>
           </div>
         </div>
 
@@ -52,7 +52,7 @@ const side = await photo(d.ogPhoto);
               <label class="chip"><input type="radio" name="lookingFor" value={o} required={i === 0} /><span>{o}</span></label>
             ))}
           </div>
-          <p class="err" id="e-lookingFor" data-err="lookingFor"></p>
+          <p class="err" id="e-lookingFor" data-err="lookingFor" aria-live="polite"></p>
         </fieldset>
 
         <fieldset class="field">
@@ -62,25 +62,25 @@ const side = await photo(d.ogPhoto);
               <label class="chip"><input type="radio" name="where" value={o} /><span>{o}</span></label>
             ))}
           </div>
-          <p class="err" id="e-where" data-err="where"></p>
+          <p class="err" id="e-where" data-err="where" aria-live="polite"></p>
         </fieldset>
 
         <div class="field">
           <label for="f-when">Date or season <span class="opt">(optional)</span></label>
-          <input id="f-when" name="when" type="text" maxlength="120" aria-describedby="h-when" />
-          <p class="hint muted" id="h-when">A game date, a season, or "flexible" all work.</p>
+          <input id="f-when" name="when" type="text" autocomplete="off" maxlength="120" aria-describedby="h-when" />
+          <p class="hint muted" id="h-when">A game date, a season, or “flexible” all work.</p>
         </div>
 
         <div class="field">
           <label for="f-message">Message <span class="req" aria-hidden="true">*</span></label>
           <textarea id="f-message" name="message" rows="6" required minlength="10" maxlength="4000" aria-describedby="h-message e-message"></textarea>
           <p class="hint muted" id="h-message">Who, what, and anything I should know.</p>
-          <p class="err" id="e-message" data-err="message"></p>
+          <p class="err" id="e-message" data-err="message" aria-live="polite"></p>
         </div>
 
         <div class="field">
           <label for="f-heard">How did you hear about me? <span class="opt">(optional)</span></label>
-          <input id="f-heard" name="heard" type="text" maxlength="160" />
+          <input id="f-heard" name="heard" type="text" autocomplete="off" maxlength="160" />
         </div>
 
         <!-- Spam trap: people never see or fill this. -->
@@ -141,7 +141,10 @@ const side = await photo(d.ogPhoto);
   .trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
   .submit-row { display: flex; align-items: center; gap: var(--s-5); flex-wrap: wrap; }
   .send { min-height: 56px; font-size: 1.05rem; }
-  .send[aria-busy='true'] { opacity: 0.7; pointer-events: none; }
+  .send[aria-busy='true'] { opacity: 0.75; cursor: progress; }
+  .send[aria-busy='true'] :global(.icon) { animation: nudge 700ms var(--ease-out) infinite alternate; }
+  @keyframes nudge { to { transform: translateX(5px); } }
+  @media (prefers-reduced-motion: reduce) { .send[aria-busy='true'] :global(.icon) { animation: none; } }
   .status { font-weight: 700; }
   .status.is-error { color: var(--accent-text); }
   .success { display: grid; gap: var(--s-5); justify-items: start; }
@@ -163,6 +166,16 @@ const side = await photo(d.ogPhoto);
     const status = form.querySelector<HTMLElement>('[data-status]')!;
     const send = form.querySelector<HTMLButtonElement>('.send')!;
     const success = document.querySelector<HTMLElement>('[data-success]')!;
+    const label = send.querySelector<HTMLElement>('.send-label')!;
+    let sending = false;
+    let dirty = false;
+    let sent = false;
+    form.addEventListener('input', () => (dirty = true), { once: true });
+    // Don't lose a half-written message by accident.
+    window.addEventListener('beforeunload', (e) => {
+      const msg = (form.elements.namedItem('message') as HTMLTextAreaElement).value.trim();
+      if (dirty && !sent && msg) e.preventDefault();
+    });
     form.querySelector<HTMLInputElement>('[data-started]')!.value = String(Date.now());
 
     const messages: Record<string, (el: HTMLInputElement | HTMLTextAreaElement) => string> = {
@@ -218,7 +231,10 @@ const side = await photo(d.ogPhoto);
       try {
         const r = await fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
         const body = await r.json().catch(() => ({}));
-        if (r.ok && body.ok) return celebrate();
+        if (r.ok && body.ok) {
+          sent = true;
+          return celebrate();
+        }
         if (body.errors) {
           for (const [k, v] of Object.entries(body.errors)) setError(k, String(v));
           status.textContent = 'Please fix the highlighted fields.';
@@ -232,7 +248,10 @@ const side = await photo(d.ogPhoto);
         status.textContent = 'You seem to be offline. Your message is still here; try again when you’re connected.';
         status.classList.add('is-error');
       } finally {
+        sending = false;
+        send.disabled = false;
         send.removeAttribute('aria-busy');
+        label.textContent = 'Send inquiry';
       }
     });
 

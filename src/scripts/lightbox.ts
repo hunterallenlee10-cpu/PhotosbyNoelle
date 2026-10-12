@@ -43,6 +43,8 @@ let state: OpenOptions;
 let idx = 0;
 let zoom = { s: 1, x: 0, y: 0 };
 let returnFocus: Element | null = null;
+let pushed = false;
+let ignorePop = false;
 const basePath = () => location.pathname + location.search;
 
 function build() {
@@ -77,6 +79,9 @@ function build() {
     else if (e.key === 'ArrowLeft') go(-1);
     else if (e.key === 'Home') show(0, 0);
     else if (e.key === 'End') show(state.items.length - 1, 0);
+    else if (e.key === '+' || e.key === '=') keyZoom(Math.min(4, zoom.s + 1));
+    else if (e.key === '-' || e.key === '_') keyZoom(Math.max(1, zoom.s - 1));
+    else if (e.key === '0') resetZoom();
     else return;
     e.preventDefault();
   });
@@ -85,6 +90,20 @@ function build() {
     if (e.target === stage && zoom.s === 1) close();
   });
   gestures();
+  // Browser Back closes the viewer instead of leaving the page.
+  window.addEventListener('popstate', () => {
+    if (ignorePop) return void (ignorePop = false);
+    if (dlg.open) {
+      pushed = false;
+      close();
+    }
+  });
+}
+
+function keyZoom(s: number) {
+  zoom = { s, x: 0, y: 0 };
+  gsap.to(img, { scale: s, x: 0, y: 0, duration: reduced() ? 0 : 0.3, ease: 'expo.out' });
+  dlg.classList.toggle('is-zoomed', s > 1);
 }
 
 function sizeFrame(it: GalleryItem) {
@@ -95,12 +114,26 @@ function sizeFrame(it: GalleryItem) {
   frame.style.height = `${Math.round(it.h * s)}px`;
 }
 
+let token = 0;
 function render(it: GalleryItem) {
+  // Show the grid thumbnail's pixels at once, then swap in the sharp version once decoded.
+  const mine = ++token;
+  const thumb = state.thumbFor(it.id);
   img.removeAttribute('srcset');
-  img.src = '';
-  img.sizes = '100vw';
-  img.srcset = it.srcset;
+  img.src = thumb instanceof HTMLImageElement && thumb.currentSrc ? thumb.currentSrc : '';
   img.alt = it.alt;
+  const full = new Image();
+  full.sizes = '100vw';
+  full.srcset = it.srcset;
+  full
+    .decode()
+    .then(() => {
+      if (mine !== token) return;
+      img.sizes = '100vw';
+      img.srcset = it.srcset;
+      img.src = full.currentSrc;
+    })
+    .catch(() => {});
   sizeFrame(it);
   const pos = state.items.indexOf(it) + 1;
   dlg.querySelector('.lb-n')!.textContent = it.n;
@@ -126,7 +159,10 @@ function render(it: GalleryItem) {
     c.textContent = `Photo: ${it.credit}`;
     cap.append(c);
   }
-  history.replaceState(history.state, '', `${basePath()}#${it.id}`);
+  if (!pushed && !location.hash.endsWith(it.id)) {
+    history.pushState({ lightbox: true }, '', `${basePath()}#${it.id}`);
+    pushed = true;
+  } else history.replaceState(history.state, '', `${basePath()}#${it.id}`);
   preload(idx + 1);
   preload(idx - 1);
 }
@@ -173,8 +209,6 @@ export function openLightbox(opts: OpenOptions) {
   document.documentElement.classList.add('lb-open');
   window.dispatchEvent(new CustomEvent('lightbox', { detail: true }));
   render(opts.items[idx]);
-  // Start with the thumbnail's already-loaded pixels so the morph never shows a blank box.
-  if (thumb instanceof HTMLImageElement && thumb.currentSrc) img.src = thumb.currentSrc;
   if (flipState && thumb) {
     img.dataset.flipId = 'lb-morph';
     Flip.from(flipState, { targets: img, duration: 0.7, ease: 'expo.out', absolute: true, scale: true, simple: true });
@@ -193,7 +227,11 @@ function close() {
     gsap.set([img, frame], { clearProps: 'all' });
     document.documentElement.classList.remove('lb-open');
     window.dispatchEvent(new CustomEvent('lightbox', { detail: false }));
-    history.replaceState(history.state, '', basePath());
+    if (pushed) {
+      pushed = false;
+      ignorePop = true;
+      history.back();
+    } else history.replaceState(history.state, '', basePath());
     // Return focus to the frame now in view (or where the visitor started).
     const link = thumb?.closest('a') ?? (returnFocus as HTMLElement | null);
     link?.focus({ preventScroll: false });

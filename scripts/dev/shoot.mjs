@@ -9,6 +9,7 @@ const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromi
 for (const w of widths.split(',').map(Number)) {
   const h = w <= 500 ? 844 : w <= 1024 ? 1024 : Number(process.env.HEIGHT || 900);
   const ctx = await browser.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 1, reducedMotion: process.env.MOTION || 'no-preference', colorScheme: process.env.SCHEME || 'light', isMobile: w <= 500, hasTouch: w <= 500 });
+  if (process.env.MODE) await ctx.addInitScript((m) => { try { localStorage.setItem('pbn-mode', m); sessionStorage.setItem('pbn-burst', '1'); } catch {} }, process.env.MODE);
   const page = await ctx.newPage();
   page.on('console', (m) => { if (['error', 'warning'].includes(m.type())) console.log(`[console ${m.type()}] ${m.text()}`); });
   page.on('pageerror', (e) => console.log('[pageerror]', e.message));

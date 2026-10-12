@@ -1,0 +1,122 @@
+[
+  {
+    "page": "home-mobile",
+    "perf": 86,
+    "a11y": 96,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "4.1 s",
+    "CLS": "0",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "sports-mobile",
+    "perf": 90,
+    "a11y": 96,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "3.6 s",
+    "CLS": "0",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "lifestyle-mobile",
+    "perf": 93,
+    "a11y": 92,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "3.2 s",
+    "CLS": "0.019",
+    "TBT": "10 ms"
+  },
+  {
+    "page": "about-mobile",
+    "perf": 89,
+    "a11y": 96,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "3.6 s",
+    "CLS": "0.037",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "kind-words-mobile",
+    "perf": 90,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "3.6 s",
+    "CLS": "0",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "inquire-mobile",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66,
+    "LCP": "1.7 s",
+    "CLS": "0.029",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "home-desktop",
+    "perf": 98,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "1.2 s",
+    "CLS": "0",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "sports-desktop",
+    "perf": 100,
+    "a11y": 96,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "0.8 s",
+    "CLS": "0",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "lifestyle-desktop",
+    "perf": 100,
+    "a11y": 93,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "0.7 s",
+    "CLS": "0.03",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "about-desktop",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "0.7 s",
+    "CLS": "0.015",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "kind-words-desktop",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "0.7 s",
+    "CLS": "0",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "inquire-desktop",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "0.5 s",
+    "CLS": "0",
+    "TBT": "0 ms"
+  }
+]

@@ -13,7 +13,7 @@ const { items, heading } = Astro.props;
     <h2 class="display d-m" id="kind-h">{heading}</h2>
     <div class="controls" data-js-only>
       <button type="button" class="ctl" data-prev><Icon name="arrow-left" label="Previous testimonial" /></button>
-      <button type="button" class="ctl" data-pause aria-pressed="false"><span class="p"><Icon name="pause" label="Pause rotation" /></span><span class="r"><Icon name="play" label="Resume rotation" /></span></button>
+      <button type="button" class="ctl" data-pause aria-pressed="false" aria-label="Pause rotation"><span class="p"><Icon name="pause" /></span><span class="r"><Icon name="play" /></span></button>
       <button type="button" class="ctl" data-next><Icon name="arrow-right" label="Next testimonial" /></button>
     </div>
   </div>
@@ -81,11 +81,18 @@ const { items, heading } = Astro.props;
     };
     const schedule = () => {
       clearTimeout(timer);
-      if (!paused && !hovering) timer = window.setTimeout(() => (show(i + 1), schedule()), 7000);
+      if (!paused && !hovering) timer = window.setTimeout(() => (root.querySelector('.slides')!.setAttribute('aria-live', 'off'), show(i + 1), schedule()), 7000);
     };
     pauseBtn.setAttribute('aria-pressed', String(paused));
-    root.querySelector('[data-prev]')!.addEventListener('click', () => (show(i - 1), schedule()));
-    root.querySelector('[data-next]')!.addEventListener('click', () => (show(i + 1), schedule()));
+    const list = root.querySelector<HTMLElement>('.slides')!;
+    // Announce slides the visitor changes; stay quiet during automatic rotation.
+    const manual = (d: number) => {
+      list.setAttribute('aria-live', 'polite');
+      show(i + d);
+      schedule();
+    };
+    root.querySelector('[data-prev]')!.addEventListener('click', () => manual(-1));
+    root.querySelector('[data-next]')!.addEventListener('click', () => manual(1));
     pauseBtn.addEventListener('click', () => {
       paused = !paused;
       pauseBtn.setAttribute('aria-pressed', String(paused));

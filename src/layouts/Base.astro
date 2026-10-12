@@ -4,7 +4,7 @@ import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import Menu from '@/components/Menu.astro';
 import anybodyUrl from '@fontsource-variable/anybody/files/anybody-latin-standard-normal.woff2?url';
-import atkinsonUrl from '@fontsource-variable/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-wght-normal.woff2?url';
+import anybodyItalicUrl from '@fontsource-variable/anybody/files/anybody-latin-standard-italic.woff2?url';
 import { launched, settings } from '@/lib/content';
 
 interface Props {
@@ -81,8 +81,13 @@ const jsonLd = {
         d.setAttribute('data-mode', m);
       })();
     </script>
-    <link rel="preload" href={anybodyUrl} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={atkinsonUrl} as="font" type="font/woff2" crossorigin />
+    <script is:inline define:vars={{ upright: anybodyUrl, italic: anybodyItalicUrl }}>
+      // Preload only the display face used above the fold: upright caps for Game Day, italics for Golden Hour.
+      var l = document.createElement('link');
+      l.rel = 'preload'; l.as = 'font'; l.type = 'font/woff2'; l.crossOrigin = '';
+      l.href = document.documentElement.getAttribute('data-mode') === 'gameday' ? upright : italic;
+      document.head.appendChild(l);
+    </script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

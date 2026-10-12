@@ -15,7 +15,7 @@ const all = await category('lifestyle');
       <h2 class="display d-m" id="every-frame">{data.galleryHeading}</h2>
       <p class="num count">{all.length} frames</p>
     </div>
-    <ContactSheet photos={all} gallery="lifestyle" primary counter label="Lifestyle gallery" rowHeight={340} />
+    <ContactSheet photos={all} gallery="lifestyle" primary counter label="Lifestyle gallery" rowHeight={340} eagerCount={4} />
   </section>
 </Base>
 

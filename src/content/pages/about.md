@@ -4,14 +4,14 @@ description: "Meet Noelle Lanham: sports and lifestyle photographer, Randolph-Ma
 ogPhoto: noelle-portrait
 mode: auto
 heading: "Hey friends!"
-lead: "Let's take a look at life through my lens... haha, get it?"
+lead: "Let's take a look at life through my lens… haha, get it?"
 portrait: noelle-portrait
 chapters:
   - heading: "How it started"
     body: "I entered the professional photography world in March 2023, and time has absolutely flown by since. What started as a silly little hobby, photographing my high school's sports teams, grew into a full-blown passion and a career. All through college I got to do what I love as a student photographer for Randolph-Macon College Athletics and the Digital Media Director for RMC Baseball."
     photo: a025
   - heading: "Island life"
-    body: "I moved to Hawai'i right after graduating (woohoo, class of '26!), so I'm new to island life and loving every new place. Sometimes that means swimming with turtles and sharks. Other times it's a walk around my neighborhood with a podcast."
+    body: "I moved to Hawaiʻi right after graduating (woohoo, class of '26!), so I'm new to island life and loving every new place. Sometimes that means swimming with turtles and sharks. Other times it's a walk around my neighborhood with a podcast."
     photo: a004
   - heading: "Faith"
     body: "I love love love Jesus. I enjoy visiting different churches and listening to worship music, and I'm more than blessed to have found a great church community in Honolulu, where I spend a good part of each week with my husband, Cody."

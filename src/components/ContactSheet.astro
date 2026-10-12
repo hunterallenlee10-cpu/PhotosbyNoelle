@@ -16,8 +16,10 @@ interface Props {
   counter?: boolean;
   label: string;
   rowHeight?: number;
+  /** First N frames load immediately (when the sheet starts in the first viewport). */
+  eagerCount?: number;
 }
-const { photos, gallery, primary = false, filters = false, counter = false, label, rowHeight = 300 } = Astro.props;
+const { photos, gallery, primary = false, filters = false, counter = false, label, rowHeight = 300, eagerCount = 0 } = Astro.props;
 const total = photos.length;
 const anchor = (i: number) => (primary ? `frame-${frameNo(i + 1)}` : `${gallery}-${frameNo(i + 1)}`);
 
@@ -80,7 +82,7 @@ const data = items.map(({ p, i, id, srcset }) => ({
       return (
         <li class="item" id={id} style={`--ar:${ar.toFixed(4)}`} data-sport={p.sport ?? ''} data-index={i}>
           <a class="link" href={href} aria-describedby={`${id}-n`}>
-            <Photo photo={p} widths={[360, 640, 960, 1280]} sizes={`(max-width: 760px) ${Math.round(ar * 150)}px, ${Math.round(ar * rowHeight)}px`} />
+            <Photo photo={p} eager={i < eagerCount} widths={[360, 640, 960, 1280]} sizes={`(max-width: 760px) ${Math.round(ar * 150)}px, ${Math.round(ar * rowHeight)}px`} />
           </a>
           <span class="n num" id={`${id}-n`}><span class="visually-hidden">Frame </span>{frameNo(i + 1)}</span>
         </li>
@@ -92,11 +94,12 @@ const data = items.map(({ p, i, id, srcset }) => ({
 </section>
 
 <style>
-  .sheet { position: relative; background: var(--sheet); color: var(--sheet-fg); padding: clamp(10px, 1.6vw, 22px); }
+  .sheet { position: relative; background: var(--sheet); color: var(--sheet-fg); padding: clamp(10px, 1.6vw, 22px) clamp(10px, 1.6vw, 22px) calc(clamp(10px, 1.6vw, 22px) + 22px); }
   .grid { display: flex; flex-wrap: wrap; gap: 26px clamp(8px, 1vw, 14px); list-style: none; padding: 0; margin: 0; }
   .grid::after { content: ''; flex-grow: 260; } /* last row stretches a little, never into giant tiles */
   .item { position: relative; flex-grow: calc(var(--ar) * 100); flex-basis: calc(var(--ar) * var(--row-h)); max-width: 100%; }
   .item[hidden] { display: none; }
+  .item { scroll-margin-top: calc(var(--header-h) + 84px); }
   .link { display: block; color: inherit; }
   .link :global(.ph) { width: 100%; }
   .link:focus-visible { outline-color: var(--sheet-fg); outline-offset: 4px; }
@@ -115,7 +118,7 @@ const data = items.map(({ p, i, id, srcset }) => ({
   .chip[aria-pressed='true'] { background: var(--sheet-fg); color: var(--sheet); }
   .chip[aria-pressed='true'] .num { color: inherit; }
   .counter { margin: 0 0 0 auto; font-size: 1.1rem; line-height: 1; white-space: nowrap; }
-  .counter [data-counter-n] { font-size: 2rem; color: var(--accent); }
+  .counter [data-counter-n] { font-size: 2rem; color: var(--sheet-accent); }
   .counter .lbl { font-family: var(--font-text); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
   .counter .of { color: var(--sheet-fg-2); }
   .finder { position: absolute; z-index: 4; left: 0; top: 0; width: 0; height: 0; pointer-events: none; opacity: 0; color: var(--sheet-fg); transition: opacity 200ms; }
@@ -126,7 +129,7 @@ const data = items.map(({ p, i, id, srcset }) => ({
   .finder i:nth-child(4) { bottom: -8px; right: -8px; border-bottom-width: 2px; border-right-width: 2px; }
   .finder.on { opacity: 1; }
   @media (max-width: 760px) {
-    .sheet { --row-h: 150px !important; padding: 8px; margin-inline: calc(var(--gutter) * -1); }
+    .sheet { --row-h: 150px !important; padding: 8px 8px 30px; margin-inline: calc(var(--gutter) * -1); }
     .grid { gap: 24px 6px; }
     .toolbar { margin: -8px -8px 12px; padding: 8px; }
     .filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: 4px; }

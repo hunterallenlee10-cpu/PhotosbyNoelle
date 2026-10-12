@@ -18,9 +18,10 @@ const { current, overlay = false } = Astro.props;
     </nav>
     <ModeToggle class="header-toggle" />
     <a href="/inquire" class="btn btn-primary inquire" aria-current={current === 'inquire' ? 'page' : undefined}>Inquire</a>
-    <a href="#menu" class="menu-btn" data-menu-open aria-haspopup="dialog" aria-controls="menu">
+    <button type="button" class="menu-btn" data-menu-open data-js-only aria-haspopup="dialog" aria-controls="menu">
       <Icon name="list" /><span>Menu</span>
-    </a>
+    </button>
+    <a href="#footer-nav" class="menu-btn nojs-only"><Icon name="list" /><span>Menu</span></a>
   </div>
 </header>
 

@@ -37,11 +37,20 @@ export function initSheet(sheet: HTMLElement) {
 
   // ---------- Filters ----------
   const chips = [...sheet.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+  const setFilter = (f: string) => {
+    chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.filter === f)));
+    items.forEach((it) => (it.hidden = f !== 'all' && it.dataset.sport !== f));
+    const url = new URL(location.href);
+    if (f === 'all') url.searchParams.delete('sport');
+    else url.searchParams.set('sport', f);
+    history.replaceState(history.state, '', url);
+  };
+  const initial = new URLSearchParams(location.search).get('sport');
+  if (initial && chips.some((c) => c.dataset.filter === initial)) setFilter(initial);
   chips.forEach((chip) =>
     chip.addEventListener('click', async () => {
       const f = chip.dataset.filter!;
-      chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
-      const apply = () => items.forEach((it) => (it.hidden = f !== 'all' && it.dataset.sport !== f));
+      const apply = () => setFilter(f);
       if (reduced()) return apply();
       const [{ gsap }, { Flip }] = await Promise.all([import('gsap'), import('gsap/Flip')]);
       gsap.registerPlugin(Flip);

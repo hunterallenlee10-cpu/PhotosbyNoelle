@@ -1,0 +1,32 @@
+[
+  {
+    "page": "home-mobile",
+    "perf": 93,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "3.0 s",
+    "CLS": "0",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "sports-mobile",
+    "perf": 93,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "3.1 s",
+    "CLS": "0",
+    "TBT": "0 ms"
+  },
+  {
+    "page": "lifestyle-mobile",
+    "perf": 96,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 69,
+    "LCP": "2.8 s",
+    "CLS": "0.001",
+    "TBT": "0 ms"
+  }
+]

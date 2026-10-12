@@ -159,11 +159,14 @@ if (!reduced() && matchMedia('(hover: hover) and (pointer: fine)').matches && wi
         const a = (e.target as Element).closest<HTMLAnchorElement>('a[href^="#"]');
         const id = a?.getAttribute('href');
         if (!a || !id || id === '#' || a.hasAttribute('data-menu-open') || a.hasAttribute('data-frame-link')) return;
-        const target = document.querySelector(id);
+        const target = document.querySelector<HTMLElement>(id);
         if (target) {
           e.preventDefault();
-          lenis.scrollTo(target as HTMLElement, { offset: -80 });
+          lenis.scrollTo(target, { offset: -80 });
           history.pushState(null, '', id);
+          // Keep keyboard focus in step with the scroll (skip link, in-page links).
+          if (!target.matches('a, button, input, textarea, select, [tabindex]')) target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
         }
       });
     });

@@ -1,0 +1,18 @@
+burst: playing at 0.7s=true; landed on frame 081
+mode: goldenhour -> gameday, stored=gameday
+mode persists on /lifestyle: gameday
+lightbox open: true hash=#frame-012
+after ArrowRight: hash=#frame-013 counter=013
+after Esc: open=false focus=frame-013 hash=
+deep link #frame-052: open=true counter=052
+filter field-hockey: 20 visible
+mobile bar hidden at top: true
+mobile bar shown after scroll: true
+menu open: true
+empty submit errors: e-name, e-email, e-lookingFor, e-message; focus=f-name
+  [console error] Failed to load resource: the server responded with a status of 404 (Not Found)
+API invalid -> 404 {"error":{"code":"not_found","message":"The requested path could not be found"}}
+  [console error] Failed to load resource: the server responded with a status of 404 (Not Found)
+API honeypot -> 404 {"error":{"code":"not_found","message":"The requested path could not be found"}}
+reduced motion: burst playing=false
+no-JS: frame link -> /_astro/frame-001.DTWyJuEL_1JiQ9S.jpg; toggle visible=false; form action=200

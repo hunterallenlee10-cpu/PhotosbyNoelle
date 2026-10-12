@@ -1,0 +1,194 @@
+[
+  {
+    "page": "/",
+    "mode": "gameday",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/sports",
+    "mode": "gameday",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/lifestyle",
+    "mode": "gameday",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/about",
+    "mode": "gameday",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/kind-words",
+    "mode": "gameday",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/inquire",
+    "mode": "gameday",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/inquire/thanks",
+    "mode": "gameday",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/missing-page",
+    "mode": "gameday",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/",
+    "mode": "gameday",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/sports",
+    "mode": "gameday",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/lifestyle",
+    "mode": "gameday",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/about",
+    "mode": "gameday",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/kind-words",
+    "mode": "gameday",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/inquire",
+    "mode": "gameday",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/inquire/thanks",
+    "mode": "gameday",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/missing-page",
+    "mode": "gameday",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/",
+    "mode": "goldenhour",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/sports",
+    "mode": "goldenhour",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/lifestyle",
+    "mode": "goldenhour",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/about",
+    "mode": "goldenhour",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/kind-words",
+    "mode": "goldenhour",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/inquire",
+    "mode": "goldenhour",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/inquire/thanks",
+    "mode": "goldenhour",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/missing-page",
+    "mode": "goldenhour",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "page": "/",
+    "mode": "goldenhour",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/sports",
+    "mode": "goldenhour",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/lifestyle",
+    "mode": "goldenhour",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/about",
+    "mode": "goldenhour",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/kind-words",
+    "mode": "goldenhour",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/inquire",
+    "mode": "goldenhour",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/inquire/thanks",
+    "mode": "goldenhour",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "page": "/missing-page",
+    "mode": "goldenhour",
+    "width": 390,
+    "violations": []
+  }
+]

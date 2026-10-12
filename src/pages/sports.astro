@@ -15,7 +15,7 @@ const stories = await Promise.all(
   <h1 class="visually-hidden">Sports photography by Noelle Lanham</h1>
   <Scripture text={data.verse!.text} reference={data.verse!.ref} intro={data.opener} />
 
-  {stories.map((s, i) => <StoryBlock id={s.id} heading={s.heading} body={s.body} photos={s.photos} flip={i % 2 === 1} />)}
+  {stories.map((s, i) => <StoryBlock id={s.id} heading={s.heading} body={s.body} photos={s.photos} flip={i % 2 === 1} eager={i === 0} />)}
 
   <section class="wrap gallery" aria-labelledby="every-frame">
     <div class="head">

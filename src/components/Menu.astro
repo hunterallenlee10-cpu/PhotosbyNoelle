@@ -28,7 +28,8 @@ const { current } = Astro.props;
 
 <div class="mobile-bar" data-mobile-bar>
   <a href="/inquire" class="btn btn-primary">Inquire</a>
-  <a href="#menu" class="btn menu" data-menu-open aria-haspopup="dialog" aria-controls="menu"><Icon name="list" /><span class="visually-hidden">Menu</span></a>
+  <button type="button" class="btn menu" data-menu-open data-js-only aria-haspopup="dialog" aria-controls="menu"><Icon name="list" /><span class="visually-hidden">Menu</span></button>
+  <a href="#footer-nav" class="btn menu nojs-only"><Icon name="list" /><span class="visually-hidden">Menu</span></a>
 </div>
 
 <style>
@@ -63,7 +64,7 @@ const { current } = Astro.props;
   .mobile-bar .menu :global(.icon) { width: 24px; height: 24px; }
   @media (max-width: 1080px) {
     .mobile-bar { display: flex; }
-    :global(:root.js) .mobile-bar:not(.is-shown) { transform: translateY(140%); opacity: 0; pointer-events: none; }
+    :global(:root.js) .mobile-bar:not(.is-shown) { transform: translateY(140%); opacity: 0; pointer-events: none; visibility: hidden; transition: transform 380ms var(--ease-out), opacity 300ms, visibility 0s 380ms; }
   }
   @media (prefers-reduced-motion: reduce) { .mobile-bar { transition: none; } }
 </style>

@@ -27,7 +27,7 @@ const [first, ...rest] = items;
     {rest.map((t, i) => (
       <li class="item" data-reveal>
         <article aria-labelledby={`kw-${i + 1}`}>
-          <Photo photo={t.image} sizes="(max-width: 760px) 100vw, 44vw" widths={[480, 800, 1200]} />
+          <Photo photo={t.image} sizes="(max-width: 760px) 100vw, 44vw" widths={[480, 800, 1200]} ratio={t.image.height / t.image.width > 1.25 ? '4 / 5' : undefined} />
           <blockquote>
             <p class="q">{smart(t.quote)}</p>
             <footer><cite><span class="who" id={`kw-${i + 1}`}>{t.name}</span><span class="role">{t.role}</span></cite></footer>
