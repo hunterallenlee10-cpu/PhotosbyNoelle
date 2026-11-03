@@ -18,6 +18,6 @@
       { "name": "Honolulu", "region": "HI", "regionName": "Hawaii", "tz": "Pacific/Honolulu", "zone": "HST" },
       { "name": "Fredericksburg", "region": "VA", "regionName": "Virginia", "tz": "America/New_York", "zone": "ET" }
     ],
-    "credit": { "label": "Site by Lee Systems Co.", "url": null }
+    "credit": { "label": "Lee Enterprises Unlimited", "url": "https://www.leeenterprisesunlimited.com/" }
   }
 ]
